@@ -1,0 +1,108 @@
+%\documentclass[12pt,papel,twoside]{ibtesis}
+\documentclass[12pt,screen,twoside,pagebackref]{ibtesis}
+% \documentclass[12pt,papel,singlespace,oneside]{ibtesis}
+% \documentclass[12pt,papel,preprint,singlespace,oneside]{ibtesis}
+\usepackage{ibextra}
+\usepackage{listings}
+\makeatletter
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{}
+\makeatother
+\renewcommand{\lstlistingname}{Código}
+\lstset{
+  captionpos=b   % "b" de "bottom"
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% Informacion sobre la tesis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Patrones de interacción espacio-temporal de animales en su hábitat natural}
+\author{Luciano Carlos Lopez Bertazza}
+\director{Dra. Karina Laneri, Dr. David Alonso}
+\carrera{Tesis Carrera de Licenciatura en F\'{\i}sica}
+\grado{Licenciatura en Física}
+\laboratorio{Física Estadística e Interdisciplinaria -- Centro At\'{o}mico Bariloche}
+\jurado{Dr. Guillermo Abramson (Instituto Balseiro, Centro At\'{o}mico Bariloche) \\ 
+Dr.~Luiz Menon Junior (Instituto Balseiro, Centro At\'{o}mico Bariloche)\\
+Mg.~Jorge Cogo (Universidad Nacional de Río Negro, Instituto Balseiro, Centro At\'{o}mico Bariloche)\\
+}
+\palabrasclave{comportamiento animal, movimiento subdifusivo, leyes de potencias, simulaciones estocásticas, \textit{Chelonoidis chilensis}.}
+\keywords{animal behavior, subdiffusive movement, power laws, stochastic simulations, \textit{Chelonoidis chilensis}.}
+% Si queremos poner la fecha manualmente:
+% \date{Diciembre de 2099}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\titlepagefalse % Si no quiere compilar la portada descomente esta linea
+%\includeonly{apendices} % Compilar s\'{o}lo estos archivos 
+\graphicspath{{figs/}} % Lugar donde encontrar las figuras generales (se puede poner uno en cada cap{\'{\i}}tulo)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+% Dentro del environment 'preliminary' va:
+% la dedicatoria, resumen, abstract, indices
+
+\begin{preliminary}
+
+% Escriba su dedicatoria
+\dedicatoria{
+A ....\\
+}
+
+%%% \'{I}ndices %%%%
+
+\begin{abreviaturas}
+\begin{description}
+    \item[GPS] Global Positioning System (Sistema de Posicionamiento Global)
+\end{description}
+\end{abreviaturas}
+
+\tableofcontents                %\'{I}ndice
+
+\listoffigures                  %Figuras
+
+\listoftables                   %Tablas
+
+\include{resumen}
+
+\end{preliminary}
+
+
+% Podemos usar cualquiera de los dos comandos: \input o \include para incluir el texto
+\include{cap1}
+\include{cap2}
+\include{cap3}
+\include{cap4}
+\include{cap5}
+
+\appendix
+\include{apend1}
+
+\begin{biblio}
+\bibliography{mibib}
+\end{biblio}
+
+
+\begin{postliminary}
+
+\begin{seccion}{Publicaciones asociadas}
+\begin{enumerate}
+  \item Presentación oral en \textbf{111va Reunión de la Asociación Física Argentina}, 2026, Catamarca, Argentina. ``Reconstruyendo el movimiento de tortugas terrestres patagónicas:  del acelerómetro al GPS''. Luciano Lopez Bertazza, Karina Laneri, Rubio-puzzo Leticia, Grigera Tomás, Kubisch Erika, Echave María Eugenia, Callenbach Tellechea Carlos
+.
+\end{enumerate} 
+\end{seccion}
+\begin{seccion}{Agradecimientos}
+
+Grazie Mille
+
+
+
+
+
+
+
+\end{seccion}
+
+\end{postliminary}
+
+\end{document}
+

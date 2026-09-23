@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99e
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: template.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+The style file: ibtesis.bst
+Reallocating 'name_of_file' (item size: 1) to 12 items.
+A level-1 auxiliary file: resumen.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+A level-1 auxiliary file: cap1.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+A level-1 auxiliary file: cap2.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+A level-1 auxiliary file: cap3.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+A level-1 auxiliary file: cap4.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+A level-1 auxiliary file: cap5.aux
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+A level-1 auxiliary file: apend1.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+Database file #1: mibib.bib
+Warning--entry type for "oliva2023" isn't style-file defined
+--line 33 of file mibib.bib
+You've used 5 entries,
+            2634 wiz_defined-function locations,
+            1064 strings with 10403 characters,
+and the built_in function-call counts, 1351 in all, are:
+= -- 92
+> -- 36
+< -- 0
++ -- 18
+- -- 9
+* -- 47
+:= -- 167
+add.period$ -- 17
+call.type$ -- 5
+change.case$ -- 7
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 141
+empty$ -- 139
+format.name$ -- 11
+if$ -- 293
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 39
+newline$ -- 32
+num.names$ -- 5
+pop$ -- 66
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 26
+stack$ -- 0
+substring$ -- 25
+swap$ -- 92
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 6
+width$ -- 6
+write$ -- 61
+(There was 1 warning)

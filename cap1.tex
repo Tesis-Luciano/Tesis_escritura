@@ -1,0 +1,104 @@
+\chapter{Introducción y metodología}\label{Introduccion}
+\chapterquote{}{}
+
+\section{Motivación}\label{I:mot}
+La ciencia no avanza únicamente a través de grandes descubrimientos disruptivos, sino también mediante la acumulación de pequeños aportes que, 
+en conjunto, terminan generando un impacto significativo. En esta línea, el estudio del comportamiento animal, y en especial su movimiento, 
+no suele ser más que un granito de arena en el conjunto de técnicas y herramientas que los conservacionistas utilizan para proteger a las 
+especies, entendiendo cómo interactúan con otros individuos, cómo utilizan su hábitat y cómo se adaptan ante el cambio del mismo. 
+En el caso de la tortuga terrestre argentina, \textit{Chelonoidis chilensis}, estos aportes cobran relevancia, dado su estado de vulnerabilidad 
+y el escaso conocimiento cuantitativo sobre la misma.
+
+El objetivo generar de esta tesis es estudiar y replicar el comportamiento de estas tortugas en su hábitat natural, con el objetivo de entender mejor su estrategia
+de movimiento y su interacción con el entorno que las rodea. Para ello, se dispone de un conjunto de datos obtenidos mediante rastreadores de GPS,
+que permiten registrar la posición de los animales a lo largo del tiempo. Adicionalmente, se toma como principal inspiración el trabajo realizado
+por C. Callenbach et al. \cite{callenbach2025}, quienes aplicaron técnicas de aprendizaje automático para clasificar los patrones de movimiento de 
+tortugas en cautiverio y en su hábitat natural.
+
+\section{Tortuga terrestre argentina: \textit{Chelonoidis chilensis}}\label{I:tortuga}
+
+El objeto de estudio de esta tesis es la tortuga terrestre argentina, \textit{Chelonoidis chilensis}, una especie clasificada como ``En Peligro''
+en la lista roja de la \textit{International Union for Conservation of Nature} (IUCN) \cite{kubisch2023chelonoidis}. Esta clasificación se ve impulsada especialmente 
+por la expansión ganadera, que se encarga de segmentar y deteriorar su hábitat, y por la captura y venta ilegal de los individuos. En adición, la 
+introducción de nuevos depredadores como el jabalí (\textit{Sus scrofa}) \cite{kubisch2014} pone en tensión la ya de por sí delicada población de tortugas. 
+Estos reptiles son nativos de Sudamérica, abarcando gran parte de Argentina, el sur de Bolivia y el norte de Paraguay, como se observa en la Figura \ref{fig:mapa}. 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.8]{figs/mapa.png}
+    \caption{Distribución geográfica de la tortuga terrestre argentina, \textit{Chelonoidis chilensis}.}
+    \label{fig:mapa}
+\end{figure}
+
+La especie estudiada se caracteriza por su larga esperanza de vida y su dieta herbívora. Adicionalmente, al igual que cualquier reptil, es ectoterma, 
+por lo que no poseen un mecanismo interno para regular su temperatura corporal, dependiendo de la temperatura ambiental para mantener su metabolismo activo. 
+Esta necesidad de depender del entorno para regular la temperatura hace que los individuos deban refugiarse en sombras provistas por la vegetación 
+y reducir su actividad en condiciones de baja temperatura, dadas durante el invierno, en el que entran en brumación. Al entrar en brumación, los individuos 
+se resguardan en refugios excavados en el suelo.
+
+El trabajo de esta tesis es dependiente de los datos obtenidos sobre una de las poblaciones más australes de la especie, ubicada a unos 20 km al norte 
+de la ciudad de San Antonio Oeste, Río Negro, Argentina. Debido a la ubicación latitudinal, la variación de horas con luz solar fluctúa considerablemente
+con el paso de las estaciones.
+
+Esta especie de tortugas se encuentra dentro de la lista de animales caracterizados por un claro dimorfismo sexual, en donde las hembras son más grandes que su
+contraparte masculina. Las hembras, por su parte, tienen un caparazón ventral o plastrón plano, mientras que en los machos es más cóncavo. La edad a partir de 
+la cual los individuos se vuelven activos sexualmente se da entre los 10 y los 13 años. La reproducción comienza con la copulación entre individuos, para
+que posteriormente la hembra seleccione el lugar donde depositará entre 2 y 4 huevos por puesta, principalmente durante los meses de enero y febrero. 
+Dichos huevos suelen colocarse en un pozo de aproximadamente 10 cm y posteriormente son recubiertos por tierra. El tiempo que pueden tardar estos huevos en 
+eclosionar depende de las condiciones ambientales y puede extenderse de 125 días a un año.
+
+
+\section{Clasificación de comportamiento}\label{I:Charly}
+
+Previamente mencionamos que una parte considerable se basa en el trabajo realizado por C. Callenbach \cite{callenbach2025} durante su tesis de licenciatura en 
+el año 2025. En dicho trabajo se trabajó utilizando un dispositivo de navegación construido por el equipo de investigación en el Centro Atómico Bariloche.
+El cual permitía tomar mediciones de aceleración y velocidad angular, a partir de la utilización de un acelerómetro y de un giróscopo, las cuales eran 
+almacenadas en una tarjeta de memoria SD. Para evitar que el dispositivos aderido a los animales afecte a su comportamiento se suele tomar como regla, 
+que los mismo no deben pesar más que un $5\%$ del peso total del indivuo. El dispositivo, el cual se muestra en la Figura \ref{fig:dispositivo_navegacion},
+poseía un tamaño de 5x8x1 cm y un peso de 44.9 g, el cual al compararlo con el peso promedio de las tortugas de 1.5 kg representa un $3\%$ de la masa \cite{oliva2023}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.75\textwidth]{dispositivo_navegacion.png}
+    \caption{Dispositivo de navegación utilizado para la recolección de datos.}
+    \label{fig:dispositivo_navegacion}
+\end{figure}
+
+Todos los códigos utilizados para el procesamiento de datos, entrenamiento de modelos y generación de figuras de la tesis de C. Callenbach 
+están disponibles públicamente en un repositorio GitHub \cite{callenbach2025codes}.
+
+En su trabajo logró, a partir de la utilización de herramientas de aprendizaje profundo y a partir de mediciones de campo clasificar el comportamiento 
+de las tortugas en dos grupos (movimiento y quietud). Una vez se clasificaron los movimientos tiempo a tiempo, encontró que el tiempo que pasaba 
+en cada uno de los estados de forma ininterrumpida seguían una distribución de ley de potencia de exponentes negativos en un rango entre $-1$ y $-2$. 
+Salvo contadas excepciones para un mismo individuo, la distribución de tiempos de caminata caía de forma más abrupta que en los tiempos de espera.
+Un ejemplo de estas distribuciones se muestra en la Figura \ref{fig:distribuciones}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.45\textwidth]{distribucion_actividad_T405.png}
+    \includegraphics[width=0.45\textwidth]{distribucion_quietud_T405.png}
+    \caption{Ejemplo de distribuciones de tiempos que el individuo, en este caso la tortuga T405, se pasa cada uno de los estados de forma ininterrumpida.}
+    \label{fig:distribuciones}
+\end{figure}
+
+
+
+\section{Datos espaciotemporales a partir de dispositivos de GPS}\label{I:GPS}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "template"
+%%% End: 

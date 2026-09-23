@@ -1,0 +1,37 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{callenbach2025}
+Callenbach~Tellechea, C.~E.
+\newblock Din{\'a}mica de poblaciones animales en su h{\'a}bitat natural.
+\newblock Tesis de licenciatura en f{\'{i}}sica, Instituto Balseiro,
+  Universidad Nacional de Cuyo, Comisi{\'{o}}n Nacional de Energ{\'{i}}a
+  At{\'{o}}mica, San Carlos de Bariloche, Argentina, December 2025.
+\newblock Directora: Dra. Karina Laneri. Jurado: Dr. Guillermo Abramson, Dr.
+  Luiz Menon Junior, Mg. Jorge Cogo.
+
+\bibitem{kubisch2023chelonoidis}
+Kubisch, E., Alcalde, L., Waller, T.
+\newblock \emph{Chelonoidis chilensis}.
+\newblock \emph{The IUCN Red List of Threatened Species}, 2023.
+\newblock In press. Tortoise \& Freshwater Turtle Specialist Group. Cochabamba.
+
+\bibitem{kubisch2014}
+Kubisch, E., Echave, M.~E., Echave, L.
+\newblock \emph{{C}helonoidis chilensis} ({Chaco} tortoise). {P}redation.
+\newblock \emph{Herpetological review}, \textbf{45}~(4), 684--685, 2014.
+
+\bibitem{oliva2023}
+Trevisan, A.~O.
+\newblock Desarrollo de un dispositivo de sensores integrados para el estudio
+  del comportamiento animal.
+\newblock https://ricabib.cab.cnea.gov.ar/1196/, 2023.
+
+\bibitem{callenbach2025codes}
+Tellechea, C. E.~C.
+\newblock Códigos utilizados: modelos de \emph{machine learning} y
+  simulaciones.
+\newblock \url{https://github.com/charli6080/Tesis_Callenbach}, 2025.
+
+\end{thebibliography}
