@@ -77,7 +77,7 @@ Un ejemplo de estas distribuciones se muestra en la Figura \ref{fig:distribucion
     \centering
     \includegraphics[width=0.45\textwidth]{distribucion_actividad_T405.png}
     \includegraphics[width=0.45\textwidth]{distribucion_quietud_T405.png}
-    \caption{Ejemplo de distribuciones de tiempos que el individuo, en este caso la tortuga T405, se pasa cada uno de los estados de forma ininterrumpida.}
+    \caption{Ejemplo de distribuciones de tiempos que el individuo, en este caso la tortuga T405, pasa en cada uno de los estados de forma ininterrumpida \cite{callenbach2025}.}
     \label{fig:distribuciones}
 \end{figure}
 
@@ -85,15 +85,34 @@ Un ejemplo de estas distribuciones se muestra en la Figura \ref{fig:distribucion
 
 \section{Datos espaciotemporales a partir de dispositivos de GPS}\label{I:GPS}
 
+Para este trabajo se utilaron datos recolectados entre enero 2022 y febrero 2023. Durante estas campañas de campo se marca el caparazon de las tortugas para 
+poder reconocerlas. Una vez se identificados los individuos se decide, teniendo en consideración la cantidad de tortugas monitoriadas y la cantidad de 
+rastreadores disponibles, si se le agrega o no un dispositivo para registrar su trayectoria. Si se toma la decisión de rastrear al individuo, se le adhiere
+al caparazón un dispositivo capaz de registrar las coordenadas espaciotemporales y un radiotransmisor para, al finalizar la medición, recuperar los dispositivos.
+En el trabajo de tesis de M. Madille \cite{madile2023} se haya en detalle el trabajo de campaña realizado para la adquisición de datos. A continuación solo 
+explicaremos el dispositivo utilizado que sirve para el trabajo desarrollado en la presente tesis.
 
+\subsection{Unidad de navegación}
 
+La unidad de navegación utilizada durante la campaña para la obtención de registros espaciotemporales de la ubicación de los individuos fue el dispositivo 
+comercial i-gotU GT120, mostrado en la Figura \ref{fig:igotU}. Este dispositivo posee un receptor de GPS, cuya frecuencia es ajustable mediante el 
+software del fabricante. La batería del dispositivo tiene una autonomía de 7 días y su peso es de $21 g$, dicho peso representa un $1.5 \%$ del peso promedio 
+las tortugas, lo cual se encuentra dentro del margen deñ $5 \%$ para evitar perturbar el comportamiento. La unidad de memoria almacena posición y hora 
+para cada dato adquirido, siendo accesible mediante conexión USB. 
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{IgotU.png}
+    \caption{Imagen del dispositivo i-gotU, utilizado para la adquisición de datos espaciotemporales de las tortugas.}
+    \label{fig:igotU}
+\end{figure}
 
-
-
-
-
-
+Durante esta campaña se disponía de 12 unidades de estos dispositivos, los cuales se utilizaron para medir a 6 individuos distintos, intercambiando 
+los i-gotU a cada uno después de 7 días de adquisición. De esta manera se mantuvo una adquisición continua de cada una de las tortugas dado que mientras 
+un dispositivo medía, su reemplazo se encontraba recargando la batería. Se programaron los dispositivos con una frecuencia de adquisición de un dato cada
+15 minutos entre las 6 de la mañana y las 9 de la noche. Se evitó adquirir datos durante la noche para favorecer el ahorro de batería. Sin embargo, esta 
+decisión se revirtió, tomando datos adicionales de 1am a 2am, con el objetivo de poder determinar la posición de los refugios nocturnos. La base de datos
+final contó con aproximadamente 3300 horas de rastreo por tortuga.
 
 
 

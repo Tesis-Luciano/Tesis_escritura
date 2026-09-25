@@ -233,6 +233,8 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 OUTPUT template.toc
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmss12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
 INPUT .\template.lof
 INPUT .\template.lof
 INPUT template.lof
@@ -264,8 +266,6 @@ INPUT .\figs\mapa.png
 INPUT .\figs\mapa.png
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmss12.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
 INPUT .\figs\dispositivo_navegacion.png
 INPUT .\figs\dispositivo_navegacion.png
 INPUT .\figs\dispositivo_navegacion.png
@@ -284,6 +284,12 @@ INPUT .\figs\distribucion_quietud_T405.png
 INPUT .\figs\distribucion_quietud_T405.png
 INPUT .\figs\distribucion_quietud_T405.png
 INPUT .\figs\distribucion_quietud_T405.png
+INPUT .\figs\IgotU.png
+INPUT .\figs\IgotU.png
+INPUT .\figs\IgotU.png
+INPUT .\figs\IgotU.png
+INPUT .\figs\IgotU.png
+INPUT .\figs\IgotU.png
 INPUT .\cap2.tex
 INPUT .\cap2.tex
 OUTPUT cap2.aux
@@ -356,6 +362,8 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb

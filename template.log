@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.22)  23 SEP 2026 13:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.22)  25 SEP 2026 12:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -522,16 +522,18 @@ LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
-)
-\tf@toc=\write4
-\openout4 = `template.toc'.
-
  [7
 
 
-] [8
+])
+\tf@toc=\write4
+\openout4 = `template.toc'.
 
-] (template.lof
+LaTeX Info: Redefining \. on input line 61.
+LaTeX Info: Redefining \% on input line 61.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported on input line 61.
+ [8] (template.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 3.
@@ -543,6 +545,7 @@ LaTeX Info: Redefining \% on input line 5.
 \openout5 = `template.lof'.
 
  [9
+
 
 ] [10
 
@@ -606,17 +609,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<figs/mapa.png, id=202, 396.39pt x 454.425pt>
+<figs/mapa.png, id=213, 396.39pt x 454.425pt>
 File: figs/mapa.png Graphic file (type png)
 <use figs/mapa.png>
 Package pdftex.def Info: figs/mapa.png  used on input line 28.
 (pdftex.def)             Requested size: 317.11243pt x 363.54048pt.
 LaTeX Info: Redefining \. on input line 38.
 LaTeX Info: Redefining \% on input line 38.
-Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported on input line 38.
  [2 <./figs/mapa.png>]
-<figs/dispositivo_navegacion.png, id=219, 348.55219pt x 227.34938pt>
+<figs/dispositivo_navegacion.png, id=229, 348.55219pt x 227.34938pt>
 File: figs/dispositivo_navegacion.png Graphic file (type png)
 <use figs/dispositivo_navegacion.png>
 Package pdftex.def Info: figs/dispositivo_navegacion.png  used on input line 62.
@@ -624,25 +625,35 @@ Package pdftex.def Info: figs/dispositivo_navegacion.png  used on input line 62.
 LaTeX Info: Redefining \. on input line 75.
 LaTeX Info: Redefining \% on input line 75.
  [3]
-<figs/distribucion_actividad_T405.png, id=230, 570.2103pt x 426.393pt>
+<figs/distribucion_actividad_T405.png, id=240, 570.2103pt x 426.393pt>
 File: figs/distribucion_actividad_T405.png Graphic file (type png)
 <use figs/distribucion_actividad_T405.png>
 Package pdftex.def Info: figs/distribucion_actividad_T405.png  used on input line 78.
 (pdftex.def)             Requested size: 198.45662pt x 148.40048pt.
-<figs/distribucion_quietud_T405.png, id=231, 570.2103pt x 426.393pt>
+<figs/distribucion_quietud_T405.png, id=241, 570.2103pt x 426.393pt>
 File: figs/distribucion_quietud_T405.png Graphic file (type png)
 <use figs/distribucion_quietud_T405.png>
 Package pdftex.def Info: figs/distribucion_quietud_T405.png  used on input line 79.
 (pdftex.def)             Requested size: 198.45662pt x 148.40048pt.
-)
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
+ [4 <./figs/dispositivo_navegacion.png> <./figs/distribucion_actividad_T405.png> <./figs/distribucion_quietud_T405.png>]
+<figs/IgotU.png, id=254, 501.875pt x 440.64626pt>
+File: figs/IgotU.png Graphic file (type png)
+<use figs/IgotU.png>
+Package pdftex.def Info: figs/IgotU.png  used on input line 105.
+(pdftex.def)             Requested size: 198.45662pt x 174.24498pt.
+LaTeX Info: Redefining \. on input line 116.
+LaTeX Info: Redefining \% on input line 116.
+ [5 <./figs/IgotU.png (PNG copy)>])
 LaTeX Info: Redefining \. on input line 71.
 LaTeX Info: Redefining \% on input line 71.
- [4 <./figs/dispositivo_navegacion.png> <./figs/distribucion_actividad_T405.png> <./figs/distribucion_quietud_T405.png>]
+ [6]
 \openout2 = `cap2.aux'.
 
  (cap2.tex
 Cap\'{\i }tulo 2.
-) [5
+) [7
 
 
 
@@ -650,44 +661,44 @@ Cap\'{\i }tulo 2.
 ]
 \openout2 = `cap3.aux'.
 
- (cap3.tex [6
+ (cap3.tex [8
 
 
 
 
 ]
 Cap\'{\i }tulo 3.
-) [7]
+) [9]
 \openout2 = `cap4.aux'.
 
- (cap4.tex [8
+ (cap4.tex [10
 
 
 
 
 ]
 Cap\'{\i }tulo 4.
-) [9]
+) [11]
 \openout2 = `cap5.aux'.
 
- (cap5.tex [10
+ (cap5.tex [12
 
 
 
 
 ]
 Cap\'{\i }tulo 5.
-) [11]
+) [13]
 \openout2 = `apend1.aux'.
 
- (apend1.tex [12
+ (apend1.tex [14
 
 
 
 
 ]
 Ap\'{e}ndice A.
-) [13] [14
+) [15] [16
 
 
 
@@ -695,20 +706,20 @@ Ap\'{e}ndice A.
 \tf@brf=\write7
 \openout7 = `template.brf'.
 
-) [15
-
-] [16
-
-] [17
-
-
+) [17
 
 ] [18
 
 ] [19
 
 
+
 ] [20
+
+] [21
+
+
+] [22
 
 ] (template.aux
 LaTeX Info: Redefining \. on input line 12.
@@ -725,22 +736,22 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-08-10>
  ***********
 Package rerunfilecheck Info: File `template.out' has not changed.
-(rerunfilecheck)             Checksum: E5BA7F050AB5B05A32A0203EED7C8310;3706.
+(rerunfilecheck)             Checksum: 7D435D6919BD10D138236D9F73CDC17B;3877.
 Package rerunfilecheck Info: File `template.brf' has not changed.
-(rerunfilecheck)             Checksum: 35D7FA0F412658A55F8CCCA64B49F274;311.
+(rerunfilecheck)             Checksum: B76683E080922FE77359672B5DA1CFF2;483.
  ) 
 Here is how much of TeX's memory you used:
- 15930 strings out of 467441
- 259440 string characters out of 5417700
- 694111 words of memory out of 5000000
- 44895 multiletter control sequences out of 15000+600000
+ 15958 strings out of 467441
+ 259883 string characters out of 5417700
+ 694287 words of memory out of 5000000
+ 44918 multiletter control sequences out of 15000+600000
  637847 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,12n,107p,476b,1006s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on template.pdf (36 pages, 1912243 bytes).
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on template.pdf (38 pages, 2065489 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
- 76 named destinations out of 1000 (max. 500000)
- 189 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 414 PDF objects out of 1000 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
+ 202 words of extra memory for PDF output out of 10000 (max. 10000000)
 

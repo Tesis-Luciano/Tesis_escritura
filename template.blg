@@ -21,45 +21,47 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 Database file #1: mibib.bib
 Warning--entry type for "oliva2023" isn't style-file defined
 --line 33 of file mibib.bib
-You've used 5 entries,
+Warning--entry type for "madile2023" isn't style-file defined
+--line 335 of file mibib.bib
+You've used 6 entries,
             2634 wiz_defined-function locations,
-            1064 strings with 10403 characters,
-and the built_in function-call counts, 1351 in all, are:
-= -- 92
-> -- 36
+            1069 strings with 10617 characters,
+and the built_in function-call counts, 1546 in all, are:
+= -- 105
+> -- 40
 < -- 0
-+ -- 18
-- -- 9
-* -- 47
-:= -- 167
-add.period$ -- 17
-call.type$ -- 5
-change.case$ -- 7
++ -- 20
+- -- 10
+* -- 49
+:= -- 191
+add.period$ -- 20
+call.type$ -- 6
+change.case$ -- 8
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 141
-empty$ -- 139
-format.name$ -- 11
-if$ -- 293
+cite$ -- 6
+duplicate$ -- 160
+empty$ -- 164
+format.name$ -- 12
+if$ -- 338
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 39
-newline$ -- 32
-num.names$ -- 5
-pop$ -- 66
+int.to.str$ -- 6
+missing$ -- 44
+newline$ -- 37
+num.names$ -- 6
+pop$ -- 78
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 26
+skip$ -- 31
 stack$ -- 0
 substring$ -- 25
-swap$ -- 92
+swap$ -- 104
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 6
-width$ -- 6
-write$ -- 61
-(There was 1 warning)
+while$ -- 7
+width$ -- 7
+write$ -- 71
+(There were 2 warnings)
