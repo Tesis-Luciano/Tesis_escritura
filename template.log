@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.22)  1 OCT 2026 01:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.22)  1 OCT 2026 18:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -609,7 +609,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<figs/mapa.png, id=228, 396.39pt x 454.425pt>
+<figs/mapa.png, id=245, 396.39pt x 454.425pt>
 File: figs/mapa.png Graphic file (type png)
 <use figs/mapa.png>
 Package pdftex.def Info: figs/mapa.png  used on input line 28.
@@ -617,7 +617,7 @@ Package pdftex.def Info: figs/mapa.png  used on input line 28.
 LaTeX Info: Redefining \. on input line 38.
 LaTeX Info: Redefining \% on input line 38.
  [2 <./figs/mapa.png>]
-<figs/dispositivo_navegacion.png, id=244, 348.55219pt x 227.34938pt>
+<figs/dispositivo_navegacion.png, id=261, 348.55219pt x 227.34938pt>
 File: figs/dispositivo_navegacion.png Graphic file (type png)
 <use figs/dispositivo_navegacion.png>
 Package pdftex.def Info: figs/dispositivo_navegacion.png  used on input line 62.
@@ -625,12 +625,12 @@ Package pdftex.def Info: figs/dispositivo_navegacion.png  used on input line 62.
 LaTeX Info: Redefining \. on input line 75.
 LaTeX Info: Redefining \% on input line 75.
  [3]
-<figs/distribucion_actividad_T405.png, id=256, 570.2103pt x 426.393pt>
+<figs/distribucion_actividad_T405.png, id=273, 570.2103pt x 426.393pt>
 File: figs/distribucion_actividad_T405.png Graphic file (type png)
 <use figs/distribucion_actividad_T405.png>
 Package pdftex.def Info: figs/distribucion_actividad_T405.png  used on input line 78.
 (pdftex.def)             Requested size: 198.45662pt x 148.40048pt.
-<figs/distribucion_quietud_T405.png, id=257, 570.2103pt x 426.393pt>
+<figs/distribucion_quietud_T405.png, id=274, 570.2103pt x 426.393pt>
 File: figs/distribucion_quietud_T405.png Graphic file (type png)
 <use figs/distribucion_quietud_T405.png>
 Package pdftex.def Info: figs/distribucion_quietud_T405.png  used on input line 79.
@@ -638,7 +638,7 @@ Package pdftex.def Info: figs/distribucion_quietud_T405.png  used on input line 
 LaTeX Info: Redefining \. on input line 93.
 LaTeX Info: Redefining \% on input line 93.
  [4 <./figs/dispositivo_navegacion.png> <./figs/distribucion_actividad_T405.png> <./figs/distribucion_quietud_T405.png>]
-<figs/IgotU.png, id=269, 501.875pt x 440.64626pt>
+<figs/IgotU.png, id=286, 501.875pt x 440.64626pt>
 File: figs/IgotU.png Graphic file (type png)
 <use figs/IgotU.png>
 Package pdftex.def Info: figs/IgotU.png  used on input line 104.
@@ -662,17 +662,62 @@ Cap\'{\i }tulo 2.
 LaTeX Info: Redefining \. on input line 50.
 LaTeX Info: Redefining \% on input line 50.
  [8]
-LaTeX Info: Redefining \. on input line 91.
-LaTeX Info: Redefining \% on input line 91.
- [9])
+<figs/Correlated_Random_Walk.png, id=316, 201.8742pt x 206.2104pt>
+File: figs/Correlated_Random_Walk.png Graphic file (type png)
+<use figs/Correlated_Random_Walk.png>
+Package pdftex.def Info: figs/Correlated_Random_Walk.png  used on input line 83.
+(pdftex.def)             Requested size: 220.50885pt x 225.25887pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
+ [9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 118.
+LaTeX Info: Redefining \% on input line 118.
+ [10 <./figs/Correlated_Random_Walk.png>]
+<figs/distribucion_tamanio_paso_empirica.png, id=342, 461.92575pt x 336.0555pt>
+File: figs/distribucion_tamanio_paso_empirica.png Graphic file (type png)
+<use figs/distribucion_tamanio_paso_empirica.png>
+Package pdftex.def Info: figs/distribucion_tamanio_paso_empirica.png  used on input line 121.
+(pdftex.def)             Requested size: 308.71104pt x 224.59708pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 135.
+LaTeX Info: Redefining \% on input line 135.
+ [11 <./figs/distribucion_tamanio_paso_empirica.png>]
+<figs/Despl_CteW.png, id=350, 538.1706pt x 357.0138pt>
+File: figs/Despl_CteW.png Graphic file (type png)
+<use figs/Despl_CteW.png>
+Package pdftex.def Info: figs/Despl_CteW.png  used on input line 138.
+(pdftex.def)             Requested size: 308.71104pt x 204.7965pt.
+LaTeX Info: Redefining \. on input line 157.
+LaTeX Info: Redefining \% on input line 157.
+ [12 <./figs/Despl_CteW.png>]
+<figs/Despl_CteS.png, id=359, 567.0786pt x 347.3778pt>
+File: figs/Despl_CteS.png Graphic file (type png)
+<use figs/Despl_CteS.png>
+Package pdftex.def Info: figs/Despl_CteS.png  used on input line 160.
+(pdftex.def)             Requested size: 308.71104pt x 189.11307pt.
+<figs/MSD_CteS.png, id=361, 566.5968pt x 336.2964pt>
+File: figs/MSD_CteS.png Graphic file (type png)
+<use figs/MSD_CteS.png>
+Package pdftex.def Info: figs/MSD_CteS.png  used on input line 172.
+(pdftex.def)             Requested size: 308.71104pt x 183.22916pt.
+LaTeX Info: Redefining \. on input line 180.
+LaTeX Info: Redefining \% on input line 180.
+ [13 <./figs/Despl_CteS.png> <./figs/MSD_CteS.png>])
 LaTeX Info: Redefining \. on input line 72.
 LaTeX Info: Redefining \% on input line 72.
- [10]
+ [14]
 \openout2 = `cap3.aux'.
 
  (cap3.tex
 Cap\'{\i }tulo 3.
-) [11
+) [15
 
 
 
@@ -680,57 +725,57 @@ Cap\'{\i }tulo 3.
 ]
 \openout2 = `cap4.aux'.
 
- (cap4.tex [12
+ (cap4.tex [16
 
 
 
 
 ]
 Cap\'{\i }tulo 4.
-) [13]
+) [17]
 \openout2 = `cap5.aux'.
 
- (cap5.tex [14
+ (cap5.tex [18
 
 
 
 
 ]
 Cap\'{\i }tulo 5.
-) [15]
+) [19]
 \openout2 = `apend1.aux'.
 
- (apend1.tex [16
+ (apend1.tex [20
 
 
 
 
 ]
 Ap\'{e}ndice A.
-[17])
+[21])
 LaTeX Info: Redefining \. on input line 78.
 LaTeX Info: Redefining \% on input line 78.
- [18] (template.bbl (template.brf)
+ [22] (template.bbl (template.brf)
 \tf@brf=\write7
 \openout7 = `template.brf'.
 
-) [19
+) [23
 
 
-
-
-] [20
-
-] [21
-
-
-
-] [22
-
-] [23
 
 
 ] [24
+
+] [25
+
+
+
+] [26
+
+] [27
+
+
+] [28
 
 ] (template.aux
 LaTeX Info: Redefining \. on input line 12.
@@ -747,22 +792,22 @@ LaTeX2e <2026-06-01>
 L3 programming layer <2026-08-10>
  ***********
 Package rerunfilecheck Info: File `template.out' has not changed.
-(rerunfilecheck)             Checksum: FBC9CC9C12745386E9245B8A9045D76F;4621.
+(rerunfilecheck)             Checksum: 2206036FF41F960C24CCD6A9701C4BFF;4621.
 Package rerunfilecheck Info: File `template.brf' has not changed.
-(rerunfilecheck)             Checksum: 11297871187E059F1494F142ABE2AA54;882.
+(rerunfilecheck)             Checksum: EAAF18DA7D902ED5BC41CEAEDF7FE583;882.
  ) 
 Here is how much of TeX's memory you used:
- 16012 strings out of 467441
- 260831 string characters out of 5417700
- 694526 words of memory out of 5000000
- 44954 multiletter control sequences out of 15000+600000
- 637847 words of font info for 74 fonts, out of 8000000 for 9000
+ 16091 strings out of 467441
+ 262550 string characters out of 5417700
+ 695230 words of memory out of 5000000
+ 45014 multiletter control sequences out of 15000+600000
+ 641058 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,12n,107p,476b,1006s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on template.pdf (40 pages, 2161491 bytes).
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on template.pdf (44 pages, 2808722 bytes).
 PDF statistics:
- 499 PDF objects out of 1000 (max. 8388607)
- 99 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 562 PDF objects out of 1000 (max. 8388607)
+ 112 named destinations out of 1000 (max. 500000)
+ 251 words of extra memory for PDF output out of 10000 (max. 10000000)
 

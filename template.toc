@@ -18,13 +18,13 @@
 \contentsline {chapter}{\numberline {2}De los datos al modelo y del modelo a los datos}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Introducción}{7}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Nuestro modelo}{8}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Resultados del modelo}{10}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Discusiones y conlcusiones}{10}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Datos y mediciones a lo largo del año}{11}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Modelando y simulando patrones de movimiento a lo largo del año.}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introducción}{13}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{15}{chapter.5}%
-\contentsline {chapter}{\numberline {A}Tasa de transición con un tiempo máximo de comportamiento}{17}{appendix.A}%
-\contentsline {chapter}{Bibliograf{\'{\i }}a}{19}{section*.18}%
-\contentsline {chapter}{Publicaciones asociadas}{21}{section*.20}%
-\contentsline {chapter}{Agradecimientos}{23}{section*.22}%
+\contentsline {section}{\numberline {2.3}Resultados del modelo}{11}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Discusiones y conlcusiones}{14}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Datos y mediciones a lo largo del año}{15}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Modelando y simulando patrones de movimiento a lo largo del año.}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introducción}{17}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{19}{chapter.5}%
+\contentsline {chapter}{\numberline {A}Tasa de transición con un tiempo máximo de comportamiento}{21}{appendix.A}%
+\contentsline {chapter}{Bibliograf{\'{\i }}a}{23}{section*.27}%
+\contentsline {chapter}{Publicaciones asociadas}{25}{section*.29}%
+\contentsline {chapter}{Agradecimientos}{27}{section*.31}%

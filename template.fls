@@ -296,6 +296,52 @@ OUTPUT cap2.aux
 INPUT .\cap2.tex
 INPUT .\cap2.tex
 INPUT cap2.tex
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx5.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib5.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy5.tfm
+INPUT .\figs\distribucion_tamanio_paso_empirica.png
+INPUT .\figs\distribucion_tamanio_paso_empirica.png
+INPUT .\figs\distribucion_tamanio_paso_empirica.png
+INPUT .\figs\distribucion_tamanio_paso_empirica.png
+INPUT .\figs\distribucion_tamanio_paso_empirica.png
+INPUT .\figs\distribucion_tamanio_paso_empirica.png
+INPUT .\figs\distribucion_tamanio_paso_empirica.png
+INPUT .\figs\Despl_CteW.png
+INPUT .\figs\Despl_CteW.png
+INPUT .\figs\Despl_CteW.png
+INPUT .\figs\Despl_CteW.png
+INPUT .\figs\Despl_CteW.png
+INPUT .\figs\Despl_CteW.png
+INPUT .\figs\Despl_CteW.png
+INPUT .\figs\Despl_CteS.png
+INPUT .\figs\Despl_CteS.png
+INPUT .\figs\Despl_CteS.png
+INPUT .\figs\Despl_CteS.png
+INPUT .\figs\Despl_CteS.png
+INPUT .\figs\Despl_CteS.png
+INPUT .\figs\Despl_CteS.png
+INPUT .\figs\MSD_CteS.png
+INPUT .\figs\MSD_CteS.png
+INPUT .\figs\MSD_CteS.png
+INPUT .\figs\MSD_CteS.png
+INPUT .\figs\MSD_CteS.png
+INPUT .\figs\MSD_CteS.png
+INPUT .\figs\MSD_CteS.png
 INPUT .\cap3.tex
 INPUT .\cap3.tex
 OUTPUT cap3.aux
@@ -364,10 +410,14 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
