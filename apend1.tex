@@ -1,6 +1,38 @@
-\chapter{Apéndice 1}\label{A:1}
+\chapter{Tasa de transición con un tiempo máximo de comportamiento}\label{A:transition rate PL}
 
+Se ha demostrado que el comportamiento de las tortugas puede clasificarse en dos grupos, cada uno de los cuales sigue una distribución de ley de potencia 
+$f(t)$ de exponente $\alpha$, con un tiempo máximo de comportamiento $t_{max}$ \cite{callenbach2025}. Con el fin de facilitar el análisis teórico, podemos 
+inferir una tasa de transición de un estado a otro, en función del tiempo transcurrido en el estado actual, $t$. Otra cuestión a tener en cuenta es que, 
+en nuestra simulación, contamos con pasos de tiempo discretos, $\delta t$. Obtenemos la tasa de transición a través de la siguiente relación:
 
+\begin{equation}
+    \gamma (t) = 1 - P(f(t+\delta t)|f(t))
+\end{equation}
+
+Donde $P(f(t+\delta t)|f(t))$ es la probabilidad condicional de permanecer en el mismo estado en el tiempo $t+\delta t$, dado que se encontraba en dicho 
+estado en el tiempo $t$. Esta probabilidad condicional puede expresarse como:
+
+\begin{equation}
+    P(f(t+\delta t)|f(t)) = P(f(t)|f(t+\delta t))\frac{P(f(t+\delta t))}{P(f(t))}
+\end{equation}
+
+en donde $P(f(t)|f(t+\delta t))=1$ y $f(t)=A t^{-\alpha}$, con $A$ una constante de normalización. $P(f(t))$ puede calcularse de la siguiente manera:
+
+\begin{equation}
+    P(f(t))=\int_{t}^{t_{\text{max}}}f(t')\,dt'=\frac{A\left(t_{\text{max}}^{1-\alpha}-t^{1-\alpha}\right)}{1-\alpha}
+\end{equation}
+
+En esta ecuación estamos asumiendo que el estado comenzó en el tiempo $t=0$, por lo que, si aplicamos esto a la probabilidad condicional, obtenemos:
+
+\begin{equation}
+    P(f(t+\delta t)|f(t)) = \frac{t_{\text{max}}^{1-\alpha}-(t+\delta t)^{1-\alpha}}{t_{\text{max}}^{1-\alpha}-t^{1-\alpha}} 
+\end{equation}
+
+Finalmente, podemos expresar la tasa de transición como:
+
+\begin{equation}
+    \gamma (t)=\frac{(t+\delta t)^{1-\alpha}-t^{1-\alpha}}{t_{\text{max}}^{1-\alpha}-t^{1-\alpha}} 
+\end{equation}
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "template"

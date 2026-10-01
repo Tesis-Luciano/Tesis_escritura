@@ -9,9 +9,9 @@ especies, entendiendo cómo interactúan con otros individuos, cómo utilizan su
 En el caso de la tortuga terrestre argentina, \textit{Chelonoidis chilensis}, estos aportes cobran relevancia, dado su estado de vulnerabilidad 
 y el escaso conocimiento cuantitativo sobre la misma.
 
-El objetivo generar de esta tesis es estudiar y replicar el comportamiento de estas tortugas en su hábitat natural, con el objetivo de entender mejor su estrategia
-de movimiento y su interacción con el entorno que las rodea. Para ello, se dispone de un conjunto de datos obtenidos mediante rastreadores de GPS,
-que permiten registrar la posición de los animales a lo largo del tiempo. Adicionalmente, se toma como principal inspiración el trabajo realizado
+Nuestro objetivo general en esta tesis es estudiar y replicar el comportamiento de estas tortugas en su hábitat natural, entendiendo mejor su estrategia
+de movimiento y su interacción con el entorno que las rodea. Para ello, disponemos de un conjunto de datos obtenidos mediante rastreadores de GPS,
+que permiten registrar la posición de los animales a lo largo del tiempo. Adicionalmente, tomamos como principal inspiración el trabajo realizado
 por C. Callenbach et al. \cite{callenbach2025}, quienes aplicaron técnicas de aprendizaje automático para clasificar los patrones de movimiento de 
 tortugas en cautiverio y en su hábitat natural.
 
@@ -36,7 +36,7 @@ Esta necesidad de depender del entorno para regular la temperatura hace que los 
 y reducir su actividad en condiciones de baja temperatura, dadas durante el invierno, en el que entran en brumación. Al entrar en brumación, los individuos 
 se resguardan en refugios excavados en el suelo.
 
-El trabajo de esta tesis es dependiente de los datos obtenidos sobre una de las poblaciones más australes de la especie, ubicada a unos 20 km al norte 
+El trabajo de esta tesis depende de los datos obtenidos sobre una de las poblaciones más australes de la especie, ubicada a unos 20 km al norte 
 de la ciudad de San Antonio Oeste, Río Negro, Argentina. Debido a la ubicación latitudinal, la variación de horas con luz solar fluctúa considerablemente
 con el paso de las estaciones.
 
@@ -50,12 +50,12 @@ eclosionar depende de las condiciones ambientales y puede extenderse de 125 día
 
 \section{Clasificación de comportamiento}\label{I:Charly}
 
-Previamente mencionamos que una parte considerable se basa en el trabajo realizado por C. Callenbach \cite{callenbach2025} durante su tesis de licenciatura en 
-el año 2025. En dicho trabajo se trabajó utilizando un dispositivo de navegación construido por el equipo de investigación en el Centro Atómico Bariloche.
-El cual permitía tomar mediciones de aceleración y velocidad angular, a partir de la utilización de un acelerómetro y de un giróscopo, las cuales eran 
-almacenadas en una tarjeta de memoria SD. Para evitar que el dispositivos aderido a los animales afecte a su comportamiento se suele tomar como regla, 
-que los mismo no deben pesar más que un $5\%$ del peso total del indivuo. El dispositivo, el cual se muestra en la Figura \ref{fig:dispositivo_navegacion},
-poseía un tamaño de 5x8x1 cm y un peso de 44.9 g, el cual al compararlo con el peso promedio de las tortugas de 1.5 kg representa un $3\%$ de la masa \cite{oliva2023}.
+Previamente mencionamos que una parte considerable de esta tesis se basa en el trabajo realizado por C. Callenbach \cite{callenbach2025} durante su tesis de licenciatura en 
+el año 2025. En dicho trabajo se trabajó utilizando un dispositivo de navegación construido por el equipo de investigación del Centro Atómico Bariloche, 
+el cual permitía tomar mediciones de aceleración y velocidad angular, a partir de la utilización de un acelerómetro y de un giróscopo, las cuales eran 
+almacenadas en una tarjeta de memoria SD. Para evitar que el dispositivo adherido a los animales afecte su comportamiento, se suele tomar como regla 
+que el mismo no debe pesar más que un $5\%$ del peso total del individuo. El dispositivo, el cual se muestra en la Figura \ref{fig:dispositivo_navegacion},
+poseía un tamaño de $5 \times 8 \times 1$ cm y un peso de 44.9 g, el cual, al compararlo con el peso promedio de las tortugas de 1.5 kg, representa un $3\%$ de la masa \cite{oliva2023}.
 
 \begin{figure}[ht]
     \centering
@@ -67,11 +67,11 @@ poseía un tamaño de 5x8x1 cm y un peso de 44.9 g, el cual al compararlo con el
 Todos los códigos utilizados para el procesamiento de datos, entrenamiento de modelos y generación de figuras de la tesis de C. Callenbach 
 están disponibles públicamente en un repositorio GitHub \cite{callenbach2025codes}.
 
-En su trabajo logró, a partir de la utilización de herramientas de aprendizaje profundo y a partir de mediciones de campo clasificar el comportamiento 
-de las tortugas en dos grupos (movimiento y quietud). Una vez se clasificaron los movimientos tiempo a tiempo, encontró que el tiempo que pasaba 
-en cada uno de los estados de forma ininterrumpida seguían una distribución de ley de potencia de exponentes negativos en un rango entre $-1$ y $-2$. 
-Salvo contadas excepciones para un mismo individuo, la distribución de tiempos de caminata caía de forma más abrupta que en los tiempos de espera.
-Un ejemplo de estas distribuciones se muestra en la Figura \ref{fig:distribuciones}
+En su trabajo logró, a partir de la utilización de herramientas de aprendizaje profundo y de mediciones de campo, clasificar el comportamiento 
+de las tortugas en dos grupos (movimiento y quietud). Una vez clasificados los movimientos tiempo a tiempo, encontró que el tiempo que pasaba 
+en cada uno de los estados de forma ininterrumpida seguía una distribución de ley de potencia con exponentes negativos en un rango entre $-1$ y $-2$. 
+Salvo contadas excepciones para un mismo individuo, la distribución de tiempos de caminata caía de forma más abrupta que la de los tiempos de espera.
+Un ejemplo de estas distribuciones se muestra en la Figura \ref{fig:distribuciones}.
 
 \begin{figure}[ht]
     \centering
@@ -82,22 +82,21 @@ Un ejemplo de estas distribuciones se muestra en la Figura \ref{fig:distribucion
 \end{figure}
 
 
-
 \section{Datos espaciotemporales a partir de dispositivos de GPS}\label{I:GPS}
 
-Para este trabajo se utilaron datos recolectados entre enero 2022 y febrero 2023. Durante estas campañas de campo se marca el caparazon de las tortugas para 
-poder reconocerlas. Una vez se identificados los individuos se decide, teniendo en consideración la cantidad de tortugas monitoriadas y la cantidad de 
+Para este trabajo utilizamos datos recolectados entre enero de 2022 y febrero de 2023. Durante estas campañas de campo se marcaba el caparazón de las tortugas para 
+poder reconocerlas. Una vez identificados los individuos, se decide, teniendo en consideración la cantidad de tortugas monitoreadas y la cantidad de 
 rastreadores disponibles, si se le agrega o no un dispositivo para registrar su trayectoria. Si se toma la decisión de rastrear al individuo, se le adhiere
 al caparazón un dispositivo capaz de registrar las coordenadas espaciotemporales y un radiotransmisor para, al finalizar la medición, recuperar los dispositivos.
-En el trabajo de tesis de M. Madille \cite{madile2023} se haya en detalle el trabajo de campaña realizado para la adquisición de datos. A continuación solo 
-explicaremos el dispositivo utilizado que sirve para el trabajo desarrollado en la presente tesis.
+En el trabajo de tesis de M. Madile \cite{madile2023} se halla en detalle el trabajo de campaña realizado para la adquisición de datos. A continuación solo 
+explicaremos el dispositivo utilizado, que sirve para el trabajo desarrollado en la presente tesis.
 
 \subsection{Unidad de navegación}
 
 La unidad de navegación utilizada durante la campaña para la obtención de registros espaciotemporales de la ubicación de los individuos fue el dispositivo 
 comercial i-gotU GT120, mostrado en la Figura \ref{fig:igotU}. Este dispositivo posee un receptor de GPS, cuya frecuencia es ajustable mediante el 
 software del fabricante. La batería del dispositivo tiene una autonomía de 7 días y su peso es de $21 g$, dicho peso representa un $1.5 \%$ del peso promedio 
-las tortugas, lo cual se encuentra dentro del margen deñ $5 \%$ para evitar perturbar el comportamiento. La unidad de memoria almacena posición y hora 
+de las tortugas, lo cual se encuentra dentro del margen del $5 \%$ para evitar perturbar el comportamiento. La unidad de memoria almacena posición y hora 
 para cada dato adquirido, siendo accesible mediante conexión USB. 
 
 \begin{figure}
@@ -115,9 +114,7 @@ decisión se revirtió, tomando datos adicionales de 1am a 2am, con el objetivo 
 final contó con aproximadamente 3300 horas de rastreo por tortuga.
 
 
-
-
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "template"
-%%% End: 
+%%% End:

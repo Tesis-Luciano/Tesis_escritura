@@ -40,4 +40,21 @@ Hjelt, M.~M.
   interacción inspiradas en datos de campo.
 \newblock https://ricabib.cab.cnea.gov.ar/1239/, 2023.
 
+\bibitem{codling2008}
+Codling, E.~A., Plank, M.~J., Benhamou, S.
+\newblock Random walk models in biology.
+\newblock \emph{Journal of the Royal Society Interface}, \textbf{5}~(25),
+  813--834, 2008.
+
+\bibitem{bartumeus2005}
+Bartumeus, F., Da~Luz, M. G.~E., Viswanathan, G.~M., Catalan, J.
+\newblock Animal search strategies: a quantitative random-walk analysis.
+\newblock \emph{Ecology}, \textbf{86}~(11), 3078--3087, 2005.
+
+\bibitem{peruani2023stopandgo}
+Peruani, F., Chaudhuri, D.
+\newblock Active stop and go motion: a strategy to improve spatial exploration
+  and survival.
+\newblock \emph{arXiv preprint arXiv:2306.05647}, 2025.
+
 \end{thebibliography}
