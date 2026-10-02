@@ -10,10 +10,13 @@
 \contentsline {figure}{\numberline {1.4}{\ignorespaces Imagen del dispositivo i-gotU, utilizado para la adquisición de datos espaciotemporales de las tortugas.}}{5}{figure.caption.16}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Esquema de un caminante aleatorio correlacionado. En cada paso, el individuo cambia su dirección de movimiento en un ángulo $\eta _i$ sorteado de una distribución gaussiana de media nula y desviación estándar $\sigma _\theta $.}}{10}{figure.caption.18}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Distribución de desplazamientos cada 15 minutos para las tortugas en su habitat natural.}}{11}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Distribución de desplazamientos cada 15 minutos para las tortugas en su hábitat natural.}}{11}{figure.caption.20}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Distribución de desplazamiento para el primer modelo, con tiempo constante de caminata.}}{12}{figure.caption.22}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Distribución de desplazamiento para el segundo modelo, con tiempo constante de reposo.}}{13}{figure.caption.24}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces MSD para el segundo modelo, con tiempo constante de reposo.}}{13}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Distribución de desplazamientos a 15 minutos para el tercer modelo, con $\sigma _\theta = 0.2$, $\alpha _W = 1.75$ y distintos valores de $\alpha _S$.}}{14}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Distribución de desplazamientos a 15 minutos para $\sigma _\theta = 0.5$, $\alpha _S = 0.75$ y $\alpha _W = 1.6$ y $1.75$.}}{15}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces MSD para $\sigma _\theta = 0.5$, $\alpha _S = 0.75$ y $\alpha _W = 1.6$ y $1.75$. La línea gris indica el comportamiento difusivo.}}{15}{figure.caption.29}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -109,9 +109,9 @@ tipo ley de potencias, inspiradas en las distribuciones empíricas reportadas po
 
 \subsection*{Objetivos a replicar}
 
-En este trabajo, se buscará replicar las métricas obtenidas a partir de los datos de GPS de tortugas. En particular, se buscará reproducir la distribución de desplazamientos
+En este trabajo, buscamos replicar las métricas obtenidas a partir de los datos de GPS de tortugas. En particular, buscamos reproducir la distribución de desplazamientos
 cada 15 minutos, presente en la Figura \ref{fig:Desplazamientos_15_min}, medida empíricamente a partir de mediciones sobre tortugas en su hábitat natural. 
-Esta distribución presenta una forma tipo ley de potencias $\propto d^{-\alpha_e}$, con un exponente $\alpha_e \approx 2$. El otro objetivo a replicar es el 
+Esta distribución presenta una forma tipo ley de potencia $\propto d^{-\alpha_d}$, con un exponente $\alpha_d \approx 2$. El otro objetivo a replicar es el 
 comportamiento subdifusivo del desplazamiento cuadrático medio (MSD). Existen tres tipos de comportamiento del MSD, dependiendo de la relación con el tiempo:
 subdifusivo, difusivo y superdifusivo. Todos estos casos se pueden describir mediante la relación $MSD \propto t^{\beta}$, donde $\beta < 1$ indica un comportamiento 
 subdifusivo, $\beta = 1$ un comportamiento difusivo y $\beta > 1$ un comportamiento superdifusivo. 
@@ -119,18 +119,18 @@ subdifusivo, $\beta = 1$ un comportamiento difusivo y $\beta > 1$ un comportamie
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figs/distribucion_tamanio_paso_empirica.png}
-    \caption{Distribución de desplazamientos cada 15 minutos para las tortugas en su habitat natural.}
+    \caption{Distribución de desplazamientos cada 15 minutos para las tortugas en su hábitat natural.}
     \label{fig:Desplazamientos_15_min}
 \end{figure}
 
-Probamos tres configuraciones distintas del modelo, variando la función de distribución de los tiempos de permanencia en cada estado. En la primera, fijamos el tiempo de
+Probamos tres configuraciones distintas del modelo, variando la distribución de los tiempos de permanencia en cada estado. En la primera, fijamos el tiempo de
 caminata constante y el tiempo de reposo siguiendo una ley de potencia; en la segunda invertimos esta situación, fijando el tiempo de reposo y dejando que el tiempo de 
 caminata siga una ley de potencia; y en la tercera, dejamos que ambos tiempos sigan una ley de potencia. 
 
-\subsection*{Primer Configuración: tiempo de caminata constante}
+\subsection*{Primera Configuración: tiempo de caminata constante}
 
-A continuación, en la Figura \ref{fig:Distribucion_cteW}, mostramos distintas distribuciones de desplazamiento, en donde el $\sigma=0.2$ y el tiempo 
-constante de caminata $T_{\text{walk}}=10 \text{ p.t.}$ (pasos temporales, es decir 10 pasos de la simulación) para las tres curvas. Por otro lado, lo que varía entre
+A continuación, en la Figura \ref{fig:Distribucion_cteW}, mostramos distintas distribuciones de desplazamiento, en donde $\sigma_\theta=0.2$ y el tiempo 
+constante de caminata $T_{W}=10 \text{ p.t.}$ (pasos temporales, es decir 10 pasos de la simulación) para las tres curvas. Por otro lado, lo que varía entre
 las curvas es el exponente del tiempo de reposo.
 
 \begin{figure}[H]
@@ -140,20 +140,21 @@ las curvas es el exponente del tiempo de reposo.
     \label{fig:Distribucion_cteW}
 \end{figure}
 
-En esta figura, observamos que la distribuciones de desplazamiento presentan distancias características las cuales son aproximadamente múltiplos de $L*T_{\text{walk}}$. 
-Debido a que el modelo agrega un ruido gaussiano en la dirección de movimiento, los valores característicos se encuentran en valores ligeramente menores a los 
-múltiplos nombrados, ya que el valor exacto se da en el caso de que el individuo se mueva en línea recta. Estos picos corresponden a que hubo un cierto número de 
-procesos de caminatas, por lo que el primer pico corresponde a un único bloque de caminata y durante el resto de la ventana de 15 minutos pasó en reposo. Entonces, 
-que estas distancias características se difuminen a medida que el exponente negativo del tiempo de reposo incrementa, volviendo menos probable tiempos largo de reposo. 
+En esta figura, observamos que las distribuciones de desplazamiento presentan distancias características las cuales son aproximadamente múltiplos de $L\,T_{W}$. 
+Debido a que el modelo agrega un ruido gaussiano en la dirección de movimiento, los valores característicos se encuentran ligeramente por debajo de los 
+múltiplos nombrados, ya que el valor exacto se da en el caso de que el individuo se mueva en línea recta. Estos picos corresponden a un cierto número de 
+bloques de caminata completados durante la ventana de 15 minutos; por ejemplo, el primer pico corresponde a un único bloque de caminata, tras el cual el individuo 
+permaneció en reposo durante el resto de dicha ventana.
+Esto hace que estas distancias características se difuminen a medida que el exponente negativo del tiempo de reposo aumenta, volviendo menos probables los tiempos 
+largos de reposo.
 
 Debido a la discrepancia entre las distribuciones obtenidas y la distribución empírica, se puede concluir que este modelo no es capaz de reproducir el comportamiento 
-observado en las tortugas, por lo que se descarta como un modelo válido para este caso.
+observado en las tortugas, por lo que se descarta como modelo válido para este caso.
 
 \subsection*{Segunda Configuración: tiempo de reposo constante}
 
 Para esta segunda configuración, fijamos el tiempo de reposo constante y dejamos que el tiempo de caminata siga una ley de potencia. En la Figura \ref{fig:Distribucion_cteS},
-mostramos las figuras de distribución de desplazamiento para distintas distribuciones, variando el tiempo constante de reposo y dejando fijo el exponente del tiempo de 
-caminata y el $\sigma_\theta$.
+mostramos la distribución de desplazamiento para distintos valores del tiempo de reposo, dejando fijos el exponente del tiempo de caminata y $\sigma_\theta$.
 
 \begin{figure}[H]
     \centering
@@ -163,9 +164,9 @@ caminata y el $\sigma_\theta$.
 \end{figure}
 
 Lo importante a destacar de la figura es que, a diferencia del primer modelo, observamos distribuciones con un comportamiento tipo ley de potencia, las cuales convergen 
-a una distribución una vez se tiene tiempos de espera mayores a al tiempo de la ventana analizada (15 minutos). Esta configuración es capaz de reproducir el comportamiento 
-de ley de potencia con exponente $\alpha_e \approx 2$ observado en las tortugas, para curvas con tiempo de reposo mayores a 500 segundos. Habiendo logrado esto, pasamos a 
-analizar el MSD de este modelo, el cual se muestra en la Figura \ref{fig:MSD_cteS}.
+a una misma distribución una vez se tienen tiempos de espera mayores al tiempo de la ventana analizada (15 minutos). Esta configuración es capaz de reproducir el 
+comportamiento de ley de potencia con exponente $\alpha_d \approx 2$ observado en las tortugas, para curvas con tiempos de reposo mayores a 500 segundos. Habiendo 
+logrado esto, pasamos a analizar el MSD de este modelo, el cual se muestra en la Figura \ref{fig:MSD_cteS}.
 
 \begin{figure}[H]
     \centering
@@ -174,13 +175,56 @@ analizar el MSD de este modelo, el cual se muestra en la Figura \ref{fig:MSD_cte
     \label{fig:MSD_cteS}
 \end{figure}
 
-La figura muestra que el MSD para toda las simulaciones estudiadas, presenta un comportamiento inicialmente superdifusivo, el cual transiciona a uno difusivo, 
+La figura muestra que el MSD para todas las simulaciones estudiadas presenta un comportamiento inicialmente superdifusivo, el cual transiciona a uno difusivo 
 para tiempos largos. Finalmente, debido a la ausencia de un comportamiento subdifusivo, se puede descartar este modelo para reproducir el comportamiento de las tortugas.
 
-\subsection*{Tercera Configuración: Ambas distribuciones temporales tipo ley de potencia}
+\subsection*{Tercera configuración: ambas distribuciones temporales tipo ley de potencia}
 
-\section{Discusiones y conlcusiones}\label{P:Conclusiones_diario}
+La última configuración que probamos fue una en la que ambas distribuciones temporales siguen una ley de potencia, $f_S(t) \propto t^{-\alpha_S}$ para el reposo
+ y $f_W(t) \propto t^{-\alpha_W}$ para la caminata, con $\alpha_S, \alpha_W > 0$. Para explorar el espacio de parámetros realizamos un barrido en 
+ $\alpha_S \in [\dots]$, $\alpha_W \in [\dots]$ y $\sigma_\theta \in [\dots]$, calculando en cada caso la distribución de desplazamientos a 15 minutos, 
+ $P(d) \propto d^{-\alpha_d}$. A modo de ejemplo, en la Figura \ref{fig:Exponents} mostramos estas distribuciones para distintos valores de $\alpha_S$, 
+ con $\alpha_W = 1.75$ y $\sigma_\theta = 0.2$ fijos. En todo el barrido, el régimen de ley de potencia decreciente ($\alpha_d > 0$) aparece únicamente 
+ cuando la distribución de reposo decae más lento que la de caminata, es decir, cuando $\alpha_S < \alpha_W$.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/Exponents.png}
+    \caption{Distribución de desplazamientos a 15 minutos para el tercer modelo, con $\sigma_\theta = 0.2$, $\alpha_W = 1.75$ y distintos valores de $\alpha_S$.}
+    \label{fig:Exponents}
+\end{figure}
+
+Dentro de la región $\alpha_S < \alpha_W$, buscamos las combinaciones que reprodujeran el comportamiento observado empíricamente. En la Figura \ref{fig:DESPL_PL} 
+mostramos dos ejemplos, donde la configuración con $\sigma_\theta = 0.5$, $\alpha_W = 1.6$ y $\alpha_S = 0.75$ logra reproducir el exponente empírico, con 
+$\alpha_d \approx 2$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/DESPL_PL.png}
+    \caption{Distribución de desplazamientos a 15 minutos para $\sigma_\theta = 0.5$, $\alpha_S = 0.75$ y $\alpha_W = 1.6$ y $1.75$.}
+    \label{fig:DESPL_PL}
+\end{figure}
+
+Al igual que en el caso anterior, una vez reproducida la distribución de desplazamientos, analizamos el MSD de este modelo, que se muestra en la Figura 
+\ref{fig:MSD_PL}. El MSD presenta un comportamiento complejo: para escalas temporales cortas es balístico, para escalas intermedias es subdifusivo y, 
+finalmente, para escalas largas converge a un comportamiento difusivo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/MSD_PL.png}
+    \caption{MSD para $\sigma_\theta = 0.5$, $\alpha_S = 0.75$ y $\alpha_W = 1.6$ y $1.75$. La línea gris indica el comportamiento difusivo.}
+    \label{fig:MSD_PL}
+\end{figure}
+
+Si bien se pudo replicar un comportamiento subdifusivo y una distribución de desplazamientos tipo ley de potencia con el exponente empírico, es importante 
+destacar que esto se obtuvo a costa de llevar el exponente de la distribución de reposo a un valor mucho menor que los reportados empíricamente 
+($\alpha_S \approx 1.4$--$1.8$), mientras que el de caminata se mantiene dentro del rango medido.
+
+\section{Conlcusiones}\label{P:Conclusiones_diario}
+
+Para cerrar este capítulo, podemos concluir que el modelo de caminante aleatorio \textit{Stop and Go} es capaz de reproducir el comportamiento observado en las tortugas,
+utilizando distribuciones temporales tipo ley de potencia para ambos estados, encontrando que es necesario que la distribución de reposo decaiga más lento que la de 
+caminata, utilizando pasos de caminata constante y manteniendo una cierta perseverancia en la dirección de movimiento.
 
 
 
