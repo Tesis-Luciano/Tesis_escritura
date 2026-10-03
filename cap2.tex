@@ -31,16 +31,15 @@ estadísticas relevantes, como el desplazamiento cuadrático medio (MSD) y la di
 El modelo desarrollado en este capítulo describe el movimiento de cada tortuga como un caminante aleatorio de tipo \textit{Stop and Go} que se desplaza en 
 un espacio homogéneo continuo, es decir, sin refugios ni otras estructuras que introduzcan heterogeneidad espacial. Simulamos $N \approx 100.000$ individuos 
 de forma independiente, sin interacción alguna entre ellos, cada uno alternando entre dos estados: movimiento (\textit{Go}) y reposo (\textit{Stop}). 
-El ciclo día-noche se incorpora únicamente como una ventana horaria activa, la cual abarca desde las 8hs hasta las 20hs, fuera de este intervalo, 
-el individuo permanece inmóvil. En estas simulaciones tomamos los pasos temporales equivalentes a $1.7 s$ (tiempo entre mediciones de acelerómetro) y 
-se dejó evolucionar hasta llegar a un equivalente de 2 meses. La selección de la duración de la simulación fue inspirada en el comportamiento no brumativo de 
-las tortugas, que se detallará más adelante, en el Cápitulo \ref{Sim_año}, cuando se analice el comportamiento de esta especie a lo largo del año.
-
+El ciclo día-noche se incorpora únicamente como una ventana horaria activa que abarca desde las 8\,hs hasta las 20\,hs; fuera de este intervalo, 
+el individuo permanece inmóvil. Tomamos los pasos temporales equivalentes a $1.7\,s$ (tiempo entre mediciones del acelerómetro) y los dejamos evolucionar 
+hasta alcanzar un equivalente a 2 meses. Elegimos esta duración inspirándonos en el período en que las tortugas no están en brumación, que detallaremos 
+más adelante, en el Capítulo \ref{Sim_año}, al analizar el comportamiento de esta especie a lo largo del año.
 
 Para determinar cuánto tiempo permanece un individuo en cada uno de los dos estados, existen al menos dos estrategias posibles. La primera consiste en 
 definir una tasa de transición instantánea $\gamma(t)$, función del tiempo ya transcurrido en el estado actual, y evaluarla en cada paso de tiempo discreto 
 $\delta t$ de la simulación para decidir si el individuo cambia de estado. Si bien este enfoque permite incorporar naturalmente una tasa que varíe con el 
-tiempo, lo cual incrementa considerablemente el costo computacional al simular una gran cantidad de individuos.
+tiempo, optamos por una estrategia alternativa, más eficiente computacionalmente.
 
 La segunda estrategia, que es la que adoptamos en esta tesis, consiste en sortear directamente, al momento de ingresar a un estado, el tiempo total de 
 permanencia en él, utilizando la distribución empírica completa reportada por Callenbach \cite{callenbach2025}. Para esto empleamos el método de la 
@@ -56,10 +55,9 @@ Este método permite obtener, en una única operación, el tiempo completo que u
 de evaluar la probabilidad de transición paso a paso. Dado que trabajamos con simulaciones de una gran cantidad de individuos y de larga duración temporal, 
 esta reducción en el costo computacional resulta determinante para la viabilidad del trabajo.
 
-
 En el caso de querer realizar cálculos teóricos, puede ser de utilidad tener una ecuación para la tasa de transición $\gamma$ de un estado a otro, en función del 
-tiempo transcurrido en el estado actual, $t$, teniendo en consideración los pasos temporales discretos de la simulación, $\delta t$ y una distribución 
-temporal objetivo tipo ley de potencia $\propto t^{-\alpha}$. El desarrollo paraobtener esta expresión se puede encontrar en el apéndice \ref{A:transition rate PL}, 
+tiempo transcurrido en el estado actual, $t$, teniendo en consideración los pasos temporales discretos de la simulación, $\delta t$, y una distribución 
+temporal objetivo tipo ley de potencia $\propto t^{-\alpha}$. El desarrollo para obtener esta expresión se puede encontrar en el Apéndice \ref{A:transition_rate_PL}, 
 dando como resultado la ecuación:
 
 \begin{equation}
@@ -68,8 +66,8 @@ dando como resultado la ecuación:
 
 \subsection*{Stop and Go}
 
-Existen distintos métodos de implementación del modelo de caminante \textit{Stop and Go}. Ya vimos algunas variaciones respecto a los ratio de transición.
-Sin embargo, también se pueden variar cosas en funcionamiento del estado de \textit{Go}. El modelo utilizado se conoce en la bibliografía como 
+Existen distintos métodos de implementación del modelo de caminante \textit{Stop and Go}. Ya vimos algunas variaciones respecto a las tasas de transición.
+Sin embargo, también se pueden variar cosas en el funcionamiento del estado de \textit{Go}. El modelo utilizado se conoce en la bibliografía como 
 \textit{Correlated Random Walk}, en donde existe una correlación entre dos pasos consecutivos. En este caso, la correlación aparece al variar la dirección
 en cada paso temporal, donde el nuevo ángulo de orientación $\theta_{i+1}$ se obtiene a partir del ángulo del paso anterior $\theta_i$, 
 sumándole un ruido gaussiano de media nula y desviación estándar $\sigma_\theta$,
@@ -86,7 +84,7 @@ sumándole un ruido gaussiano de media nula y desviación estándar $\sigma_\the
     \label{fig:Correlated_Random_Walk}
 \end{figure}
 
-De esta manera, una vez tenida la nueva dirección, el individuo se desplaza en $L = 1 \, u.a.$ y la nueva posición del individuo queda definida como:
+De esta manera, una vez obtenida la nueva dirección, el individuo se desplaza una distancia $L = 1 \, u.a.$ y la nueva posición del individuo queda definida como:
 
 \begin{equation}
     x_{i+1} = x_i + L\cos(\theta_{i+1}), \qquad y_{i+1} = y_i + L\sin(\theta_{i+1}).
@@ -94,15 +92,15 @@ De esta manera, una vez tenida la nueva dirección, el individuo se desplaza en 
 
 Esta correlación angular introduce persistencia direccional en la trayectoria: a diferencia de un caminante aleatorio simple, en donde la dirección se 
 sortea de forma independiente en cada paso, el individuo tiende a mantener su rumbo a corto plazo, generando trayectorias localmente rectas que se 
-curvan gradualmente a medida que se acumulan las perturbaciones angulares. Estas persistencias son más fuertez cuanto menor sea el valor de $\sigma_\theta$, 
+curvan gradualmente a medida que se acumulan las perturbaciones angulares. Esta persistencia es más fuerte cuanto menor sea el valor de $\sigma_\theta$, 
 el cual es un parámetro del sistema. 
 
-En el estado de \textit{Stop}, por el contrario, la posición y orientación del individuo permanece fija: $x_{i+1}=x_i$, $y_{i+1}=y_i$, $\theta_{i+1}=\theta_i$, 
+En el estado de \textit{Stop}, por el contrario, la posición y orientación del individuo permanecen fijas: $x_{i+1}=x_i$, $y_{i+1}=y_i$, $\theta_{i+1}=\theta_i$, 
 y el único proceso que avanza es el conteo del tiempo.
 
-La duración de cada \textit{bout} (período temporal ininterrumpido que pasa en un estado), tanto de \textit{Go} como de \textit{Stop}, se sortea al momento 
-de ingresar al estado correspondiente. En el análisis de este trabajo se utilizaron tanto duraciones constantes en cada uno de los estados, como las distribuciones 
-tipo ley de potencias, inspiradas en las distribuciones empíricas reportadas por Callenbach \cite{callenbach2025} para cada uno de los dos estados.
+La duración de cada \textit{bout} (período temporal ininterrumpido que un individuo permanece en un estado), tanto de \textit{Go} como de \textit{Stop}, se sortea 
+al momento de ingresar al estado correspondiente. En el análisis de este trabajo se utilizaron tanto duraciones constantes en cada uno de los estados, como las 
+distribuciones tipo ley de potencia, inspiradas en las distribuciones empíricas reportadas por Callenbach \cite{callenbach2025} para cada uno de los dos estados.
 
 
 \section{Resultados del modelo}\label{P:Resultados_diario}
@@ -140,7 +138,7 @@ las curvas es el exponente del tiempo de reposo.
     \label{fig:Distribucion_cteW}
 \end{figure}
 
-En esta figura, observamos que las distribuciones de desplazamiento presentan distancias características las cuales son aproximadamente múltiplos de $L\,T_{W}$. 
+En esta figura, se observa que las distribuciones de desplazamiento presentan distancias características las cuales son aproximadamente múltiplos de $L\,T_{W}$. 
 Debido a que el modelo agrega un ruido gaussiano en la dirección de movimiento, los valores característicos se encuentran ligeramente por debajo de los 
 múltiplos nombrados, ya que el valor exacto se da en el caso de que el individuo se mueva en línea recta. Estos picos corresponden a un cierto número de 
 bloques de caminata completados durante la ventana de 15 minutos; por ejemplo, el primer pico corresponde a un único bloque de caminata, tras el cual el individuo 
@@ -163,10 +161,10 @@ mostramos la distribución de desplazamiento para distintos valores del tiempo d
     \label{fig:Distribucion_cteS}
 \end{figure}
 
-Lo importante a destacar de la figura es que, a diferencia del primer modelo, observamos distribuciones con un comportamiento tipo ley de potencia, las cuales convergen 
-a una misma distribución una vez se tienen tiempos de espera mayores al tiempo de la ventana analizada (15 minutos). Esta configuración es capaz de reproducir el 
-comportamiento de ley de potencia con exponente $\alpha_d \approx 2$ observado en las tortugas, para curvas con tiempos de reposo mayores a 500 segundos. Habiendo 
-logrado esto, pasamos a analizar el MSD de este modelo, el cual se muestra en la Figura \ref{fig:MSD_cteS}.
+Lo importante a destacar de la figura es que, a diferencia del primer modelo, se observan distribuciones con un comportamiento tipo ley de potencia, las cuales 
+convergen a una misma distribución una vez se tienen tiempos de espera mayores al tiempo de la ventana analizada (15 minutos). Esta configuración es capaz de 
+reproducir el comportamiento de ley de potencia con exponente $\alpha_d \approx 2$ observado en las tortugas, para curvas con tiempos de reposo mayores a 500 
+segundos. Habiendo logrado esto, pasamos a analizar el MSD de este modelo, el cual se muestra en la Figura \ref{fig:MSD_cteS}.
 
 \begin{figure}[H]
     \centering
@@ -182,7 +180,7 @@ para tiempos largos. Finalmente, debido a la ausencia de un comportamiento subdi
 
 La última configuración que probamos fue una en la que ambas distribuciones temporales siguen una ley de potencia, $f_S(t) \propto t^{-\alpha_S}$ para el reposo
  y $f_W(t) \propto t^{-\alpha_W}$ para la caminata, con $\alpha_S, \alpha_W > 0$. Para explorar el espacio de parámetros realizamos un barrido en 
- $\alpha_S \in [\dots]$, $\alpha_W \in [\dots]$ y $\sigma_\theta \in [\dots]$, calculando en cada caso la distribución de desplazamientos a 15 minutos, 
+ $\alpha_S \in [0.5, 2.0]$, $\alpha_W \in [1.0, 3.0]$ y $\sigma_\theta \in [0.2, 2.0]$, calculando en cada caso la distribución de desplazamientos a 15 minutos, 
  $P(d) \propto d^{-\alpha_d}$. A modo de ejemplo, en la Figura \ref{fig:Exponents} mostramos estas distribuciones para distintos valores de $\alpha_S$, 
  con $\alpha_W = 1.75$ y $\sigma_\theta = 0.2$ fijos. En todo el barrido, el régimen de ley de potencia decreciente ($\alpha_d > 0$) aparece únicamente 
  cuando la distribución de reposo decae más lento que la de caminata, es decir, cuando $\alpha_S < \alpha_W$.
@@ -220,15 +218,15 @@ Si bien se pudo replicar un comportamiento subdifusivo y una distribución de de
 destacar que esto se obtuvo a costa de llevar el exponente de la distribución de reposo a un valor mucho menor que los reportados empíricamente 
 ($\alpha_S \approx 1.4$--$1.8$), mientras que el de caminata se mantiene dentro del rango medido.
 
-\section{Conlcusiones}\label{P:Conclusiones_diario}
+\section{Conclusiones}\label{P:Conclusiones_diario}
 
 Para cerrar este capítulo, podemos concluir que el modelo de caminante aleatorio \textit{Stop and Go} es capaz de reproducir el comportamiento observado en las tortugas,
 utilizando distribuciones temporales tipo ley de potencia para ambos estados, encontrando que es necesario que la distribución de reposo decaiga más lento que la de 
-caminata, utilizando pasos de caminata constante y manteniendo una cierta perseverancia en la dirección de movimiento.
+caminata, utilizando pasos de caminata constante y manteniendo una cierta persistencia en la dirección de movimiento.
 
 
 
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "template"
-%%% End: 
+%%% End:

@@ -19,7 +19,7 @@
 \contentsline {section}{\numberline {2.1}Introducción}{7}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Nuestro modelo}{8}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Resultados del modelo}{11}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Conlcusiones}{16}{section.2.4}%
+\contentsline {section}{\numberline {2.4}Conclusiones}{16}{section.2.4}%
 \contentsline {chapter}{\numberline {3}Datos y mediciones a lo largo del año}{17}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Modelando y simulando patrones de movimiento a lo largo del año.}{19}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Introducción}{19}{section.4.1}%
