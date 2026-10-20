@@ -1,7 +1,68 @@
-\chapter{Datos y mediciones a lo largo del año}\label{Datos_año}
+\chapter{Datos y mediciones a lo largo del año}\label{Capitulo_3}
 \chapterquote{}{}
+\section{Introducción}\label{III:introduccion}
+
+Desde hace mucho tiempo se sabe que el comportamiento de las distintas especies animales varía con la sucesión de las estaciones. 
+Este conocimiento puede ser tan fundamental como comprender las migraciones de las presas, en épocas en las que el ser humano vivía 
+de la caza, o como saber que los osos hibernan durante los meses de bajas temperaturas. En el caso de la tortuga terrestre argentina, 
+esta variación estacional se manifiesta de forma marcada: durante el invierno los individuos reducen su actividad y entran en brumación, 
+resguardándose en refugios excavados en el suelo.
+
+Si bien estos conocimientos son más propios de las ciencias naturales, la biología y la ecología, la cuantificación de los cambios estacionales
+en el comportamiento de los animales es un tema que puede abordarse desde la perspectiva de la física o del análisis de datos. Por ello, en este
+capítulo vamos a presentar los datos obtenidos a lo largo de un año con las mediciones de GPS, nombradas en el capítulo \ref{Capitulo_1}, 
+para posteriormente ofrecer métricas cuantitativas que caractericen la evolución del comportamiento de esta especie. El objetivo de este capítulo, 
+será intentar observar el comportamiento de brumación a partir de las métricas evaluadas, como también brindar algún aporte que contribuyan al 
+entendimiento de los métodos de la selección de refugios nocturnos.
+
+\section{Datos de GPS}
+Tal como fue contado en el primer capítulo de la tesis, los datos de GPS corresponden a la experiencia de campo durante la realización tesis de la 
+tesis de maestría M. Madile \cite{madile2023} en 2022-2023. A estos datos se les tuvo que aplicar un filtrado para poder eliminar algunos saltos entre 
+mediciones continuas de ubicaciones, las cuales serían imposible de realizar por tortugas terrestre que tienen un desplazamiento lento. 
+
+La principal técnica que se utilizó para descartar mediciones inconsistentes, fue a partir de poner una cota máxima ($v_{\max}$) a la velocidad promedio entre mediciones.
+Por ello se tomaron dos mediciones consecutivas con una diferencia temporal $\delta t$ y a una distancia $\delta x$, entonces si $\frac{\delta x}{\delta t} \geq v_{\max}$ 
+se descartaba la última de las dos mediciones, dado que al hacer este proceso en orden cronológico, la primera ya fue validada. Fijamos este umbral en 
+$v_{\max}=0.1\,\mathrm{m/s}$, lo que equivale a un desplazamiento máximo de aproximadamente $90\,\mathrm{m}$ entre mediciones separadas por 15 minutos.
+La segunda técnica utilizada consistió en descartar mediciones por fuera del rango de latitudes correspondiente a la zona de estudio, $-40.60^\circ$ a 
+$-40.55^\circ$, descartando en torno al $ 8.6\% $ de los datos (Tabla \ref{tab:filtrado}).
 
 
+\begin{table}[ht]
+    \centering
+    \caption{Mediciones de GPS descartadas por el filtrado, para cada individuo.\label{tab:filtrado}}
+    \begin{tabular}{lrrrr}
+    \hline
+    Individuo & Mediciones & Descartadas & \% & Conservadas \\
+    \hline
+    T10 & 12\,321 & 2\,405 & 19.5 & 9\,916 \\
+    T12 & 13\,712 & 1\,753 & 12.8 & 11\,959 \\
+    T30 & 10\,699 & 56 & 0.5 & 10\,643 \\
+    T54 & 15\,094 & 1\,954 & 13.0 & 13\,140 \\
+    T6  & 15\,157 & 662 & 4.4 & 14\,495 \\
+    T79 & 13\,233 & 46 & 0.4 & 13\,187 \\
+    \hline
+    Total & 80\,216 & 6\,876 & 8.6 & 73\,340 \\
+    \hline
+    \end{tabular}
+\end{table}
+
+La proporción de mediciones descartadas varía considerablemente entre individuos (Tabla \ref{tab:filtrado}): mientras que en T30 y T79 el ruido es 
+prácticamente inexistente ($ < 0.6\%$), en T10 alcanza casi el $20\%$. Esta disparidad sugiere que el ruido depende principalmente del dispositivo 
+y no de la conducta del animal, lo cual permite descartar sin preocuparnos de estar sobreeliminando datos.
+
+
+\section{Detección de refugios}\label{G:refugios}
+
+También realizamos análisis sobre los refugios utilizados por los individuos, por lo que fue necesario definirlos a partir de las ubicaciones proporcionadas
+por los datos de GPS filtrados, como nombramos previamente. Dicho trabajo no fue trivial de realizar, ya que como mencionamos en el Capítulo \ref{Capitulo_1}, 
+hubo un largo período en el año donde no se midieron las posiciones durante las noches. Se sabe que las tortugas suelen pasar la noche en un mismo refugio 
+sin moverse, por ello optamos por descartar para la detección de refugios las mediciones nocturnas (20:00 a 6:00) cuya dispersión media sea $\sigma \geq 10\,\mathrm{m}$.
+Esta cota de $10\,\mathrm{m}$ es del orden del error de posicionamiento del GPS y permite distinguir un animal quieto de una medición dominada por ruido.
+En caso de que haya al menos 3 datos nocturnos cuya dispersión no supere el umbral, se registró la posición media y se la clasificó como un refugio. 
+Para las noches en las que no se dispone de ninguna medición en esa ventana, utilizamos como alternativa las mediciones diurnas entre las 10 y las 18 h, 
+aplicando el mismo criterio. Finalmente, agrupamos las posiciones de los refugios de cada individuo mediante DBSCAN con un radio de $10\,\mathrm{m}$ y 
+un mínimo de una medición, de modo que noches con posiciones a menos de esa distancia se asignan a un mismo refugio.
 
 %%% Local Variables: 
 %%% mode: latex

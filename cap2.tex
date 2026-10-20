@@ -1,6 +1,6 @@
-\chapter{De los datos al modelo y del modelo a los datos}\label{Sim_diarias}
+\chapter{De los datos al modelo y del modelo a los datos}\label{Capitulo_2}
 \chapterquote{}{}
-\section{Introducción}\label{P:introduccion}
+\section{Introducción}\label{II:introduccion}
 
 A lo largo de la historia, el ser humano ha intentado comprender el mundo que lo rodea. Para ello existen dos metodologías predominantes en el ámbito, la rama 
 cualitativa, predominante en la biología y la rama cuantitativa, predominante en la física. Ante esto, no es de extrañar la aparición de gente que busque 
@@ -34,7 +34,7 @@ de forma independiente, sin interacción alguna entre ellos, cada uno alternando
 El ciclo día-noche se incorpora únicamente como una ventana horaria activa que abarca desde las 8\,hs hasta las 20\,hs; fuera de este intervalo, 
 el individuo permanece inmóvil. Tomamos los pasos temporales equivalentes a $1.7\,s$ (tiempo entre mediciones del acelerómetro) y los dejamos evolucionar 
 hasta alcanzar un equivalente a 2 meses. Elegimos esta duración inspirándonos en el período en que las tortugas no están en brumación, que detallaremos 
-más adelante, en el Capítulo \ref{Sim_año}, al analizar el comportamiento de esta especie a lo largo del año.
+más adelante, en el Capítulo \ref{Capitulo_4}, al analizar el comportamiento de esta especie a lo largo del año.
 
 Para determinar cuánto tiempo permanece un individuo en cada uno de los dos estados, existen al menos dos estrategias posibles. La primera consiste en 
 definir una tasa de transición instantánea $\gamma(t)$, función del tiempo ya transcurrido en el estado actual, y evaluarla en cada paso de tiempo discreto 
@@ -180,7 +180,7 @@ para tiempos largos. Finalmente, debido a la ausencia de un comportamiento subdi
 
 La última configuración que probamos fue una en la que ambas distribuciones temporales siguen una ley de potencia, $f_S(t) \propto t^{-\alpha_S}$ para el reposo
  y $f_W(t) \propto t^{-\alpha_W}$ para la caminata, con $\alpha_S, \alpha_W > 0$. Para explorar el espacio de parámetros realizamos un barrido en 
- $\alpha_S \in [0.5, 2.0]$, $\alpha_W \in [1.0, 3.0]$ y $\sigma_\theta \in [0.2, 2.0]$, calculando en cada caso la distribución de desplazamientos a 15 minutos, 
+ $\alpha_S \in [0.5, 3.0]$, $\alpha_W \in [0.5, 3.0]$ y $\sigma_\theta \in [0.2, 2.0]$, calculando en cada caso la distribución de desplazamientos a 15 minutos, 
  $P(d) \propto d^{-\alpha_d}$. A modo de ejemplo, en la Figura \ref{fig:Exponents} mostramos estas distribuciones para distintos valores de $\alpha_S$, 
  con $\alpha_W = 1.75$ y $\sigma_\theta = 0.2$ fijos. En todo el barrido, el régimen de ley de potencia decreciente ($\alpha_d > 0$) aparece únicamente 
  cuando la distribución de reposo decae más lento que la de caminata, es decir, cuando $\alpha_S < \alpha_W$.
