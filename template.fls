@@ -302,6 +302,13 @@ OUTPUT cap2.aux
 INPUT .\cap2.tex
 INPUT .\cap2.tex
 INPUT cap2.tex
+INPUT .\figs\Ejemplo de trayectorias.png
+INPUT .\figs\Ejemplo de trayectorias.png
+INPUT .\figs\Ejemplo de trayectorias.png
+INPUT .\figs\Ejemplo de trayectorias.png
+INPUT .\figs\Ejemplo de trayectorias.png
+INPUT .\figs\Ejemplo de trayectorias.png
+INPUT .\figs\Ejemplo de trayectorias.png
 INPUT .\figs\Correlated_Random_Walk.png
 INPUT .\figs\Correlated_Random_Walk.png
 INPUT .\figs\Correlated_Random_Walk.png
@@ -381,6 +388,18 @@ INPUT .\figs\burrow_criteria_es.png
 INPUT .\figs\burrow_criteria_es.png
 INPUT .\figs\burrow_criteria_es.png
 INPUT .\figs\burrow_criteria_es.png
+INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
+INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
+INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
+INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
+INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
+INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
+INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
+INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
+INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
+INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
+INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
+INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
 INPUT .\cap4.tex
 INPUT .\cap4.tex
 OUTPUT cap4.aux

@@ -29,21 +29,32 @@ estadísticas relevantes, como el desplazamiento cuadrático medio (MSD) y la di
 
 Previo a la construcción del modelo, es necesario entender como es que se mueven las tortugas, para lo cual es necesario graficar algunos ejemplos de trayectorias diarias
 de las tortugas a partir de tener las mediciones de GPS. En la Figura \ref{fig:Trayectorias_diarias} se muestran algunas trayectorias diarias de distintos individuos, 
-donde se puede observar que el tipo de trayectoria varía considerablemente en función del individuo y del día. Sin embargo, podemos intentar clasificar estos tipos 
-de trayectorias en cuatro categorías: Descanso, Movimiento local, Exploración y Cambio de refugio.
-
+donde se puede observar que el tipo de trayectoria varía considerablemente en función del individuo y del día. Sin embargo, podemos intentar clasificar estos tipos de 
+trayectorias en tres categorías: Descanso, Exploración y retorno, y Cambio de refugio.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{figs/Ejemplo de trayectorias.png}
-    \caption{}
+    \caption{Trayectorias del día completo (6--22 h), relativas a la primera posición del día, en metros. La clasificación usa el desplazamiento entre las 8 y las 20 h 
+    y el refugio de la noche anterior y de la siguiente.}
     \label{fig:Trayectorias_diarias}
 \end{figure}
 
-En estos ejemplos se puede observar como los cuatro tipos de trayectorias se diferencian considerablemente entre sí. Mientras que en el caso de descanso, atribuido
-a una tortuga que no salió de su refugio o que si salió se quedó en un radio de 12 metros, se encuentra predominado por el ruido del GPS, por lo cual no se puede formular
-un modelo claro que caracterice este tipo de movimiento. En el caso de movimiento local, son pequeñas exploraciones en los alrededores del refugio, en donde no se supera
-la distancia máxima de 30 metros y al finalizar el día 
+Para clasificar cada día utilizamos las mediciones entre las 8 y las 20 h, junto con los refugios de la noche anterior y de la noche siguiente, cuya detección se 
+explica en la Sección \ref{G:refugios}. Como posición inicial del día tomamos la mediana de las tres primeras mediciones y, para calcular la distancia máxima a dicha 
+posición, utilizamos una mediana móvil de tres mediciones, de modo que un salto aislado del GPS no se cuente como un desplazamiento.
+
+En estos ejemplos se puede observar como los tres tipos de trayectorias se diferencian considerablemente entre sí. Llamamos Descanso al caso de una tortuga que no se 
+aleja $10\,\mathrm{m}$ o más de su posición inicial, ya sea porque no salió del refugio o porque salió y se mantuvo dentro de ese radio. Este tipo de movimiento se 
+encuentra dominado por el ruido del GPS, por lo cual no se puede formular un modelo claro que lo caracterice. En el caso de Exploración y retorno, la tortuga se 
+aleja $10\,\mathrm{m}$ o más pero duerme en el mismo refugio la noche anterior y la siguiente. Esta categoría es muy heterogénea, ya que incluye desde pequeños 
+lazos de unos $10\,\mathrm{m}$ hasta recorridos de más de $100\,\mathrm{m}$. Finalmente, en el caso de Cambio de refugio, la tortuga también se aleja 
+$10\,\mathrm{m}$ o más, pero el refugio de la noche siguiente es distinto al de la noche anterior. Por lo tanto, la clasificación no depende del tipo de caminata 
+realizada durante el día, sino de si la tortuga volvió al mismo refugio o no. Para los pocos días en los que no se dispone del refugio de alguna de las dos noches 
+(alrededor del 13\%), la decisión se toma comparando la posición final del día con la inicial, con el mismo umbral de $10\,\mathrm{m}$.
+
+Cabe destacar que el umbral de $10\,\mathrm{m}$ está cerca del error del GPS, por lo que algunos días de descanso real pueden clasificarse como exploración y retorno. Estimamos que esto ocurre entre el 6\% y el 17\% de los días de descanso, según se suponga que 
+el error de las mediciones es independiente o que está correlacionado en el tiempo, de modo que la frecuencia de descanso podría estar subestimada, especialmente durante la brumación. En cambio, el ruido casi no genera cambios de refugio falsos.
 
 \section{Nuestro modelo}\label{P:Mi_Modelo}
 

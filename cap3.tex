@@ -87,10 +87,43 @@ Los criterios se muestran en la Figura \ref{fig:criterios_refugio}. Con esta def
 Finalmente, agrupamos las posiciones de los refugios de cada individuo mediante DBSCAN con un radio de $10\,\mathrm{m}$ y 
 un mínimo de una medición, de modo que noches con posiciones a menos de esa distancia se asignan a un mismo refugio.
 
+\section{Evolución de los tipos de caminata}\label{III:Caminatas_ev}
+Previamente, en el Capítulo \ref{Capitulo_2} definimos tres tipos de caminata: Descanso, Exploración y retorno, y Cambio de refugio. Ahora, un concepto biológico
+muy conocido sobre los reptiles es que su actividad varía a lo largo del año, especiálmente durante los días fríos de invierno donde su actividad se reduce entrando en 
+brumación, simil a la hibernación de los mamíferos. Por ello, es de esperar que en esta etapa del año predomine el tipo de caminata de descanso, mientras que la frecuencia 
+de este comportamiento debiera disminuir con el incremento de temperaturas. A continuación, en la Figura \ref{fig:ev_comportamiento} vamos a
+ver como la frecuencia de los tipos de caminata varía a lo largo del año. Cabe destacar que en durante el mes de Junio, el rastreador de la tortuga T10 dejó de funcionar,
+de forma correcta, por lo que se tuvo que descartar dichos datos de la estadística mensual, la justificación de este descarte se puede hallar en el Apéndice \ref{A:Problemas_T10}.
 
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Evolucion mensual del tipo de caminata a lo largo del año.png}
+    \includegraphics[width=0.45\textwidth]{Evolucion del tipo de caminata a lo largo del año.png}
+    \caption{En la primer figura se muestra la evolución mensual de los tres tipos de caminata a lo largo del año, mientras que en la segunda figura se muestra el promedio
+    de los mismos separados por período de actividad reproductiva: Reprododucción (Noviembre a Enero), Puesta de Huevo (Febrero a Marzo) y Brumación (Abril a Octubre).
+    Los valores son el promedio entre individuos (n$=5$), y las barras corresponden a la desviación estándar entre ellos.}
+    \label{fig:ev_comportamiento}
+\end{figure}
 
+Podemos observar como durante los meses de brumación el descanso es el tipo de caminata más frecuente, aunque sin ser mayoritario 
+(44\% frente a 34\% de exploración y retorno y 22\% de cambio de refugio, en promedio entre individuos),
+siendo especialmente ruidosos los valores del mes de junio. Si bien se lo podemos atribuir a la escasa cantidad de datos de este mes 
+(25 días de tres individuos, luego de descartar a T10), mirando en profundidad se observa que la mayor parte del cambio de refugio 
+de junio proviene de días de T30 y T54 cuyas posiciones finales se encuentran entre 10 y 11 metros de la inicial, es decir, justo en el umbral, 
+por lo que son compatibles con ruido del GPS. Al no ser producidas por un mal funcionamiento del dispositivo, no se las descarta
+y se mantienen con la clasificación que les corresponde según la regla (cambio de refugio), pero los valores de este mes deben tomarse con cautela. 
+Además, en este mes T79 realizó un traslado real de unos 60 metros entre el 7 y el 9 de junio.
 
+Otra cosa a observar es que durante los meses de reproducción predomina ampliamente el cambio de refugio (65\%). Esto podría deberse a una mayor exploración 
+con el objetivo de encontrar alguna pareja para la copulación, aunque los datos por sí solos no permiten distinguirlo de otras causas. Finalmente, durante 
+los meses de puesta de huevos, la exploración y retorno (39\%) y el cambio de refugio (42\%) se suceden con frecuencias similares, superando ampliamente al 
+descanso (18\%). Una posible explicación es que las hembras recorran el terreno en busca de un lugar adecuado para depositar sus huevos. Sin embargo, este 
+promedio incluye tanto a hembras como a machos, por lo que no podemos atribuir este comportamiento únicamente a la puesta.
+
+Una última observación a hacer en estas épocas es que los meses de abril y octubre parecen meses de transición, por lo que las frecuencias de cada tipo de 
+caminata durante estos meses no son tan marcadas como en las tres etapas de actividad reproductiva. Una posible explicación es que no todos los individuos 
+de la población entran y salen de la brumación al mismo tiempo, lo cual podría verificarse analizando cada individuo por separado.
 
 
 
