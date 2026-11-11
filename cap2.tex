@@ -25,6 +25,25 @@ sus parámetros a partir de los datos de GPS descritos en el Capítulo \ref{Intr
 las distribuciones de tiempos de permanencia en cada estado (movimiento y reposo) reportadas por C. Callenbach \cite{callenbach2025}, así como otras métricas
 estadísticas relevantes, como el desplazamiento cuadrático medio (MSD) y la distribución de desplazamientos entre dos adquisiciones de ubicación del dispositivo de GPS.
 
+\section{Movimientos}\label{II:tipos_de_movs}
+
+Previo a la construcción del modelo, es necesario entender como es que se mueven las tortugas, para lo cual es necesario graficar algunos ejemplos de trayectorias diarias
+de las tortugas a partir de tener las mediciones de GPS. En la Figura \ref{fig:Trayectorias_diarias} se muestran algunas trayectorias diarias de distintos individuos, 
+donde se puede observar que el tipo de trayectoria varía considerablemente en función del individuo y del día. Sin embargo, podemos intentar clasificar estos tipos 
+de trayectorias en cuatro categorías: Descanso, Movimiento local, Exploración y Cambio de refugio.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figs/Ejemplo de trayectorias.png}
+    \caption{}
+    \label{fig:Trayectorias_diarias}
+\end{figure}
+
+En estos ejemplos se puede observar como los cuatro tipos de trayectorias se diferencian considerablemente entre sí. Mientras que en el caso de descanso, atribuido
+a una tortuga que no salió de su refugio o que si salió se quedó en un radio de 12 metros, se encuentra predominado por el ruido del GPS, por lo cual no se puede formular
+un modelo claro que caracterice este tipo de movimiento. En el caso de movimiento local, son pequeñas exploraciones en los alrededores del refugio, en donde no se supera
+la distancia máxima de 30 metros y al finalizar el día 
 
 \section{Nuestro modelo}\label{P:Mi_Modelo}
 

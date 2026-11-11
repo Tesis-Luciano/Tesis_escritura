@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
@@ -39,6 +39,23 @@ Hjelt, M.~M.
 \newblock Estudio del movimiento de poblaciones animales: redes complejas de
   interacción inspiradas en datos de campo.
 \newblock https://ricabib.cab.cnea.gov.ar/1239/, 2023.
+
+\bibitem{wensveen2015}
+Wensveen, P.~J., Thomas, L., Miller, P. J.~O.
+\newblock A path reconstruction method integrating dead-reckoning and position
+  fixes applied to humpback whales.
+\newblock \emph{Movement Ecology}, \textbf{3}, 31, 2015.
+
+\bibitem{jonsen2005}
+Jonsen, I.~D., Mills~Flemming, J., Myers, R.~A.
+\newblock Robust state-space modeling of animal movement data.
+\newblock \emph{Ecology}, \textbf{86}~(11), 2874--2880, 2005.
+
+\bibitem{lange1989}
+Lange, K.~L., Little, R. J.~A., Taylor, J. M.~G.
+\newblock Robust statistical modeling using the t distribution.
+\newblock \emph{Journal of the American Statistical Association},
+  \textbf{84}~(408), 881--896, 1989.
 
 \bibitem{codling2008}
 Codling, E.~A., Plank, M.~J., Benhamou, S.

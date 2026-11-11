@@ -52,17 +52,49 @@ prácticamente inexistente ($ < 0.6\%$), en T10 alcanza casi el $20\%$. Esta dis
 y no de la conducta del animal, lo cual permite descartar sin preocuparnos de estar sobreeliminando datos.
 
 
-\section{Detección de refugios}\label{G:refugios}
+\section{Detección de refugios}\label{III:refugios}
 
 También realizamos análisis sobre los refugios utilizados por los individuos, por lo que fue necesario definirlos a partir de las ubicaciones proporcionadas
 por los datos de GPS filtrados, como nombramos previamente. Dicho trabajo no fue trivial de realizar, ya que como mencionamos en el Capítulo \ref{Capitulo_1}, 
 hubo un largo período en el año donde no se midieron las posiciones durante las noches. Se sabe que las tortugas suelen pasar la noche en un mismo refugio 
-sin moverse, por ello optamos por descartar para la detección de refugios las mediciones nocturnas (20:00 a 6:00) cuya dispersión media sea $\sigma \geq 10\,\mathrm{m}$.
-Esta cota de $10\,\mathrm{m}$ es del orden del error de posicionamiento del GPS y permite distinguir un animal quieto de una medición dominada por ruido.
-En caso de que haya al menos 3 datos nocturnos cuya dispersión no supere el umbral, se registró la posición media y se la clasificó como un refugio. 
-Para las noches en las que no se dispone de ninguna medición en esa ventana, utilizamos como alternativa las mediciones diurnas entre las 10 y las 18 h, 
-aplicando el mismo criterio. Finalmente, agrupamos las posiciones de los refugios de cada individuo mediante DBSCAN con un radio de $10\,\mathrm{m}$ y 
+sin moverse, por lo que definimos como ventana nocturna estándar el período entre las 20:00 de un día $D$ y las 6:00 del día $D+1$, y le asignamos todas las mediciones de dicha ventana al día $D$.
+Para cada día calculamos la dispersión de las posiciones de la ventana como $\sigma=\sqrt{\sigma_{\rm lat}^2+\sigma_{\rm lon}^2}$, expresada en metros, y optamos por aceptar la noche como un refugio
+únicamente si $\sigma<10\,\mathrm{m}$ y se dispone de al menos 3 mediciones. Esta cota de $10\,\mathrm{m}$ es mayor al error típico del GPS caracterizado en la Sección \ref{I:ruido_noche}, 
+por lo que solo descarta las noches en las que el animal se movió o en las que hubo mediciones muy ruidosas, y no las noches con el ruido habitual del dispositivo. 
+En ese caso, se registró la posición media de las mediciones y se la clasificó como un refugio.
+
+Cuando una noche no cumple alguno de los dos criterios (hay menos de 3 mediciones o $\sigma\geq10\,\mathrm{m}$), ensanchamos progresivamente la ventana nocturna a $[20-n,\,6+n)$ h, con $n=1,2,3$, 
+y nos quedamos con el primer $n$ para el cual se cumplen ambos criterios. Elegimos $n\leq3$ por consistencia con el resto del análisis: para $n=3$ la ventana va de las 17 a las 9 h, 
+que es el complemento de la ventana diurna de 9 a 17 h con la que se calcula $P(d)$. De esta manera, ninguna medición se usa para la ubicación del refugio y para el movimiento diurno a la vez. 
+Optamos por aplicar el ensanchamiento también cuando falla el criterio de $\sigma$, ya que, aunque se pueden sumar mediciones de pequeñas paradas al principio o al final de la noche, 
+la ubicación del refugio sigue siendo mejor aproximada que si se la obtuviera de las mediciones diurnas. 
+
+Solo para los días en los que no se dispone de ninguna medición nocturna en la ventana estándar, como ocurre durante el período donde no se midieron las noches, 
+utilizamos como alternativa las mediciones diurnas entre las 9 y las 17 h, aplicando el mismo criterio de $\sigma<10\,\mathrm{m}$ y al menos 3 mediciones. 
+Los días con mediciones nocturnas que no cumplen los criterios para ningún $n\leq3$ se descartan, dado que en ellos las tortugas efectivamente se estaban desplazando. 
+Los criterios se muestran en la Figura \ref{fig:criterios_refugio}. Con esta definición se obtuvieron 1510 días con refugio asignado: 709 con la ventana estándar, 374 con la ventana ensanchada 
+(59 con $n=1$, 308 con $n=2$ y 7 con $n=3$) y 427 con la alternativa diurna.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.95\textwidth]{burrow_criteria_es.png}
+    \caption{Criterios para ubicar el refugio. (a) Ventanas horarias: la nocturna estándar ($n=0$, 20--6 h), sus ensanchamientos ($n=1,2,3$) y la ventana diurna de 9 a 17 h, sobre el histograma 
+    de la cantidad de mediciones por hora. (b) Ejemplos reales de la tortuga T54, con las posiciones respecto del centroide (``+'') y un círculo de referencia de $10\,\mathrm{m}$: 
+    una noche aceptada con la ventana estándar, una aceptada al ensanchar, una rechazada ($\sigma\geq10\,\mathrm{m}$ para todo $n\leq3$) y una aceptada con la alternativa diurna.}
+    \label{fig:criterios_refugio}
+\end{figure}
+
+Finalmente, agrupamos las posiciones de los refugios de cada individuo mediante DBSCAN con un radio de $10\,\mathrm{m}$ y 
 un mínimo de una medición, de modo que noches con posiciones a menos de esa distancia se asignan a un mismo refugio.
+
+
+
+
+
+
+
+
+
 
 %%% Local Variables: 
 %%% mode: latex

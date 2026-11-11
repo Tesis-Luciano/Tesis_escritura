@@ -99,7 +99,7 @@ software del fabricante. La batería del dispositivo tiene una autonomía de 7 d
 de las tortugas, lo cual se encuentra dentro del margen del $5 \%$ para evitar perturbar el comportamiento. La unidad de memoria almacena posición y hora 
 para cada dato adquirido, siendo accesible mediante conexión USB. 
 
-\begin{figure}
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.45\textwidth]{IgotU.png}
     \caption{Imagen del dispositivo i-gotU, utilizado para la adquisición de datos espaciotemporales de las tortugas.}
@@ -112,6 +112,53 @@ un dispositivo medía, su reemplazo se encontraba recargando la batería. Se pro
 15 minutos entre las 6 de la mañana y las 9 de la noche. Se evitó adquirir datos durante la noche para favorecer el ahorro de batería. Sin embargo, esta 
 decisión se revirtió, tomando datos adicionales de 1am a 2am, con el objetivo de poder determinar la posición de los refugios nocturnos. La base de datos
 final contó con aproximadamente 3300 horas de rastreo por tortuga.
+\subsection{Errores de GPS}\label{I:ruido_noche}
+
+Como en todo trabajo de materias de laboratorio de la facultad, lo primero que hay que hacer es caracterizar el dispositivo de medición. En este caso,
+estudiamos el error de posición del GPS, para lo cual se requería de tener mediciones en donde se supiera la posición real del dispositivo. Para ello,
+se usaron los pocos datos que se tenían de las mediciones nocturnas, dado que las tortugas no suelen moverse en dicho período, esto además había sido
+corroborado a durante la campaña de campo. En la Figura \ref{fig:distribucion_error} se muestra la distribución de las diferencias entre dos mediciones consecutivas
+del eje x y el eje y.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Ruido noche.png}
+    \caption{La figura de la izquierda muestra la frecuencia de variación de posiciones de los ejes x e y con los datos en bines logarítmicos y ajustando distintas distribuciones, 
+    mientras que a la derecha se muestra la dependencia de la probabilidad de medir una desplazamiento d en 15 minutos tanto como para los datos nocturnos como para las curvas ajustadas.}
+    \label{fig:distribucion_error}
+\end{figure}
+
+Se puede ver de la figura de la izquierda como no basta con un ajuste gaussiano para describir la distribución de errores, dado que los datos presentan colas más pesadas 
+de las que puede replicar la función. Por ello se ajustaron otras distribuciones, como la de Cauchy, La de t de Student y una consistente en una mezcla de dos gaussianas. 
+Las cuales se muestran como opciones relativamente factibles viendo dicho gráfico. Sin embargo, al ver la figura de la derecha, en donde se muestra la fracción de datos 
+por bin de la variación de posición por eje. Este análisis nos permite ver que la distribución de t de Student, con $\nu=2.07$ y $s=1.06 \text{m}$ es la que mejor ajusta a los
+datos. 
+
+Esta distribución tiene una justificación natural en el contexto de un GPS. La calidad de cada medición no es siempre la misma, 
+ya que depende de la cantidad y la geometría de los satélites visibles y de las reflexiones de la señal en la vegetación y el terreno. 
+Por lo tanto, podemos pensar que el error de una medición en particular es gaussiano, pero con una desviación estándar $\sigma_k$ propia, 
+que cambia de una medición a otra. Este comportamiento ya fue observado en otros dispositivos: para GPS de tipo Fastloc se encontró que el error por eje se describe bien con una t de Student cuyos grados de libertad aumentan con el número de satélites usados en cada medición \cite{wensveen2015}, y la t de Student también se ha usado para modelar errores de posición de otros sistemas, como Argos \cite{jonsen2005}. Como $\sigma_k$ no es fija, el error que observamos es una mezcla continua de gaussianas, y para describirla 
+hace falta proponer cómo se distribuye $\sigma_k$. Una elección natural es suponer que la precisión de cada medición, $1/\sigma_k^2$, es proporcional 
+a una variable $w$ que se distribuye como una $\chi^2_\nu$, es decir, como la suma de los cuadrados de $\nu$ variables gaussianas independientes de media cero y varianza uno. 
+Esta es una distribución positiva, con media $\nu$, que para $\nu=2$ se reduce a una exponencial, y que permite que haya muchas mediciones con 
+precisión alta y unas pocas con precisión muy baja. Con esta elección, la mezcla resulta exactamente una distribución t de Student con $\nu$ grados de libertad \cite{lange1989}. 
+Explícitamente, el vector de error de una medición es
+\begin{equation}
+    \boldsymbol{\epsilon}=\frac{s\,\mathbf{z}}{\sqrt{w/\nu}}, \qquad \mathbf{z}\sim\mathcal{N}(0,I_2), \qquad w\sim\chi^2_\nu ,
+    \label{eq:error_t}
+\end{equation}
+es decir, una gaussiana de varianza $\sigma_k^2=\nu s^2/w$ cuando se fija $w$. Cabe aclarar que la forma $\chi^2_\nu$ es un supuesto de modelado y no algo que 
+medimos directamente: no conocemos la distribución real de $\sigma_k$ de cada medición, y lo que respalda el supuesto es que la t de Student con $\nu\approx2$ describe los datos. 
+Se supone además que $x$ e $y$ comparten el mismo $w$, dado que una medición mala lo es en ambas coordenadas; 
+de hecho, los tamaños de $|\Delta x|$ y $|\Delta y|$ están correlacionados (coeficiente de correlación de $0.47$), cosa que no ocurriría con dos t independientes. 
+Bajo este supuesto, la distribución de la distancia $d=\sqrt{\Delta x^2+\Delta y^2}$ y su probabilidad acumulada complementaria son
+\begin{equation}
+    p(d)=\frac{d}{s^2}\left(1+\frac{d^2}{\nu s^2}\right)^{-(\nu/2+1)},
+    \label{eq:distancia_t}
+\end{equation}
+cuya cola decae como $p(d)\sim d^{-(\nu+1)}$. Una consecuencia importante es que, con $\nu\approx2$, la varianza 
+no está definida, por lo que no existe un único $\sigma$ que caracterice el error del GPS; este queda descrito por los parámetros $\nu$ y $s$. Así, la cola del error decae como $d^{-3}$.
+
 
 
 %%% Local Variables: 
