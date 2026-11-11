@@ -19,19 +19,22 @@
 \contentsline {chapter}{\numberline {2}De los datos al modelo y del modelo a los datos}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Introducción}{9}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Movimientos}{10}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Nuestro modelo}{12}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Resultados del modelo}{15}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Conclusiones}{20}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Datos y mediciones a lo largo del año}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introducción}{21}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Datos de GPS}{22}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Detección de refugios}{22}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Evolución de los tipos de caminata}{23}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Modelando y simulando patrones de movimiento a lo largo del año.}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introducción}{27}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{29}{chapter.5}%
-\contentsline {chapter}{\numberline {A}Tasa de transición con un tiempo máximo de comportamiento}{31}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Problemas con el rastreador T10}{33}{appendix.B}%
-\contentsline {chapter}{Bibliograf{\'{\i }}a}{35}{section*.36}%
-\contentsline {chapter}{Publicaciones asociadas}{37}{section*.38}%
-\contentsline {chapter}{Agradecimientos}{39}{section*.40}%
+\contentsline {subsection}{\numberline {2.2.1}Caracterizando movimientos}{12}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}Modelando el comportamiento de Reposo}{15}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Modelando el comportamiento de Exploración y retorno}{15}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Modelando el comportamiento de Nuevo Refugio}{15}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Resultados del modelo}{18}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}Conclusiones}{22}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Datos y mediciones a lo largo del año}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introducción}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Datos de GPS}{24}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Detección de refugios}{24}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Evolución de los tipos de caminata}{25}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Modelando y simulando patrones de movimiento a lo largo del año.}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introducción}{29}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{31}{chapter.5}%
+\contentsline {chapter}{\numberline {A}Tasa de transición con un tiempo máximo de comportamiento}{33}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Problemas con el rastreador T10}{35}{appendix.B}%
+\contentsline {chapter}{Bibliograf{\'{\i }}a}{37}{section*.36}%
+\contentsline {chapter}{Publicaciones asociadas}{39}{section*.38}%
+\contentsline {chapter}{Agradecimientos}{41}{section*.40}%

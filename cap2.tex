@@ -41,7 +41,7 @@ trayectorias en tres categorías: Descanso, Exploración y retorno, y Cambio de 
 \end{figure}
 
 Para clasificar cada día utilizamos las mediciones entre las 8 y las 20 h, junto con los refugios de la noche anterior y de la noche siguiente, cuya detección se 
-explica en la Sección \ref{G:refugios}. Como posición inicial del día tomamos la mediana de las tres primeras mediciones y, para calcular la distancia máxima a dicha 
+explica en la Sección \ref{III:refugios}. Como posición inicial del día tomamos la mediana de las tres primeras mediciones y, para calcular la distancia máxima a dicha 
 posición, utilizamos una mediana móvil de tres mediciones, de modo que un salto aislado del GPS no se cuente como un desplazamiento.
 
 En estos ejemplos se puede observar como los tres tipos de trayectorias se diferencian considerablemente entre sí. Llamamos Descanso al caso de una tortuga que no se 
@@ -53,10 +53,56 @@ $10\,\mathrm{m}$ o más, pero el refugio de la noche siguiente es distinto al de
 realizada durante el día, sino de si la tortuga volvió al mismo refugio o no. Para los pocos días en los que no se dispone del refugio de alguna de las dos noches 
 (alrededor del 13\%), la decisión se toma comparando la posición final del día con la inicial, con el mismo umbral de $10\,\mathrm{m}$.
 
-Cabe destacar que el umbral de $10\,\mathrm{m}$ está cerca del error del GPS, por lo que algunos días de descanso real pueden clasificarse como exploración y retorno. Estimamos que esto ocurre entre el 6\% y el 17\% de los días de descanso, según se suponga que 
-el error de las mediciones es independiente o que está correlacionado en el tiempo, de modo que la frecuencia de descanso podría estar subestimada, especialmente durante la brumación. En cambio, el ruido casi no genera cambios de refugio falsos.
+Cabe destacar que el umbral de $10\,\mathrm{m}$ está cerca del error del GPS, por lo que algunos días de descanso real pueden clasificarse como exploración y retorno. 
+Estimamos que esto ocurre entre el 6\% y el 17\% de los días de descanso, según se suponga que el error de las mediciones es independiente o que está correlacionado 
+en el tiempo, de modo que la frecuencia de descanso podría estar subestimada, especialmente durante la brumación. En cambio, el ruido casi no genera cambios de refugio falsos.
 
-\section{Nuestro modelo}\label{P:Mi_Modelo}
+Al clasificar las trayectorias de esta manera a lo largo del año, obtenemos que el $22.6\%$ de los días corresponden a descanso, combinando todos los días de todas 
+las tortugas. Por otro lado, este número es el $32.7\%$ para el comportamiento de exploración y retorno, y, finalmente, el $44.7\%$ de los días corresponden a 
+cambios de refugio.
+
+\subsection{Caracterizando movimientos}\label{II:Movimientos_caracterizacion}
+Una vez distinguido los tipos de trayectorias y sus frecuencias de aparición, toca caracterizarlos. Para ello, podemos analizar la distribución de desplazamientos
+cada 15 minutos, la cual se muestra en la Figura \ref{fig:Desplazamientos_15_min_dist_tray}, como el desplazamiento cuadrático medio medio($\text{MSD}_{\text{Diario}}$), que se 
+muestra en la Figura \ref{fig:MSD_diario_dist_tray}. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{P(d) por trayectoria anual.png}
+    \caption{Distribución de desplazamientos cada 15 minutos, para los tres tipos de trayectorias.}
+    \label{fig:Desplazamientos_15_min_dist_tray}
+\end{figure}
+En esta figura podemos observar como la distribución de desplazamientos se diferencian fuertemente entre sí. Especial es el caso de la de comportamiento de reposo, cuya 
+distribución es muy similar a la curva resultante del ruido de GPS analizado en la Sección \ref{I:ruido_noche}, lo cual indica que la mayoría de los días de descanso
+corresponden a tortugas que no se movieron lo suficiente como para superar el error del GPS. Por otro lado, las distribuciones de exploración y retorno y de cambio de
+refugio presentan curvas muy similares entre sí, siendo que la de cambio de refugio tiene una mayor probabilidad de desplazamientos largos, consistente con la definición
+de dichos movimientos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{MSD por tipo de trayectoria.png}
+    \caption{MSD para los tres tipos de trayectorias.}
+    \label{fig:MSD_diario_dist_tray}
+\end{figure}
+
+Si bien no existía mucha diferencia entre las trayectorias de exploración y retorno y de cambio de refugio en la distribución de desplazamientos, sí se observa una diferencia
+significativa en el MSD diario. En particular, el MSD de exploración y retorno presenta un comportamiento incial superdifusivo para tiempo menores a 60 minutos, que 
+transiciona a uno subdifusivo para tiempos mayores. Por otro lado, el MSD de cambio de refugio presenta un comportamiento superdifusivo para todo los tiempos, siendo 
+que dicho exponente es mayor para tiempos cortos. Esto se debe a que, al regresar al mismo refugio, el desplazamiento cuadrático medio se va a ver forzado disminuir, ya
+que el mismo es medido respecto a la primera posición del día, a la vez que el cambio de refugio se caracteriza por ser un movimiento muy balístico, al ir dirigido en una 
+dirección. Finalmente, las trayectorias de reposo tienen un comportamiento subdifusivo para todo tiempo. 
+
+Debido a las grandes diferencias entre los distintos tipos de trayectorias se vuelve imposible proponer un único modelo que explique el comportamiento el global de los
+movimientos. Ante esto optamos por proponer tres modelos distintos: para el reposo vamos a optar por simular únicamente el ruido de GPS, dejando fijo al individuo en el 
+refugio; para el comportamiento de Exploración y Retorno, \textbf{PENSAR EN ALGUN MODELO}; y para el cambio de refugio, optamos por un modelo conocido en la bibliografía 
+como \textit{Stop and Go} con mucha persistencia. Estos distintos modelos se explicaran con detenimiento a continuación
+
+\section{Modelando el comportamiento de Reposo}\label{II:Reposo_Modelo}
+
+
+\section{Modelando el comportamiento de Exploración y retorno}\label{II:Exploracion_Modelo}
+
+
+\section{Modelando el comportamiento de Nuevo Refugio}\label{II:NuevoRefugio_Modelo}
 
 El modelo desarrollado en este capítulo describe el movimiento de cada tortuga como un caminante aleatorio de tipo \textit{Stop and Go} que se desplaza en 
 un espacio homogéneo continuo, es decir, sin refugios ni otras estructuras que introduzcan heterogeneidad espacial. Simulamos $N \approx 100.000$ individuos 
@@ -133,27 +179,7 @@ al momento de ingresar al estado correspondiente. En el análisis de este trabaj
 distribuciones tipo ley de potencia, inspiradas en las distribuciones empíricas reportadas por Callenbach \cite{callenbach2025} para cada uno de los dos estados.
 
 
-\section{Resultados del modelo}\label{P:Resultados_diario}
-
-\subsection*{Objetivos a replicar}
-
-En este trabajo, buscamos replicar las métricas obtenidas a partir de los datos de GPS de tortugas. En particular, buscamos reproducir la distribución de desplazamientos
-cada 15 minutos, presente en la Figura \ref{fig:Desplazamientos_15_min}, medida empíricamente a partir de mediciones sobre tortugas en su hábitat natural. 
-Esta distribución presenta una forma tipo ley de potencia $\propto d^{-\alpha_d}$, con un exponente $\alpha_d \approx 2$. El otro objetivo a replicar es el 
-comportamiento subdifusivo del desplazamiento cuadrático medio (MSD). Existen tres tipos de comportamiento del MSD, dependiendo de la relación con el tiempo:
-subdifusivo, difusivo y superdifusivo. Todos estos casos se pueden describir mediante la relación $MSD \propto t^{\beta}$, donde $\beta < 1$ indica un comportamiento 
-subdifusivo, $\beta = 1$ un comportamiento difusivo y $\beta > 1$ un comportamiento superdifusivo. 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figs/distribucion_tamanio_paso_empirica.png}
-    \caption{Distribución de desplazamientos cada 15 minutos para las tortugas en su hábitat natural.}
-    \label{fig:Desplazamientos_15_min}
-\end{figure}
-
-Probamos tres configuraciones distintas del modelo, variando la distribución de los tiempos de permanencia en cada estado. En la primera, fijamos el tiempo de
-caminata constante y el tiempo de reposo siguiendo una ley de potencia; en la segunda invertimos esta situación, fijando el tiempo de reposo y dejando que el tiempo de 
-caminata siga una ley de potencia; y en la tercera, dejamos que ambos tiempos sigan una ley de potencia. 
+\subsection{Resultados del modelo}\label{I:Resultados_diario}
 
 \subsection*{Primera Configuración: tiempo de caminata constante}
 
