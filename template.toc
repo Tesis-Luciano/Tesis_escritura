@@ -31,6 +31,7 @@
 \contentsline {section}{\numberline {4.1}Introducción}{27}{section.4.1}%
 \contentsline {chapter}{\numberline {5}Conclusiones}{29}{chapter.5}%
 \contentsline {chapter}{\numberline {A}Tasa de transición con un tiempo máximo de comportamiento}{31}{appendix.A}%
-\contentsline {chapter}{Bibliograf{\'{\i }}a}{33}{section*.35}%
-\contentsline {chapter}{Publicaciones asociadas}{35}{section*.37}%
-\contentsline {chapter}{Agradecimientos}{37}{section*.39}%
+\contentsline {chapter}{\numberline {B}Problemas con el rastreador T10}{33}{appendix.B}%
+\contentsline {chapter}{Bibliograf{\'{\i }}a}{35}{section*.36}%
+\contentsline {chapter}{Publicaciones asociadas}{37}{section*.38}%
+\contentsline {chapter}{Agradecimientos}{39}{section*.40}%

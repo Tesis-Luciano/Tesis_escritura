@@ -17,6 +17,8 @@ Reallocating 'name_of_file' (item size: 1) to 9 items.
 A level-1 auxiliary file: cap5.aux
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 A level-1 auxiliary file: apend1.aux
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+A level-1 auxiliary file: apend2.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 Database file #1: mibib.bib
 Warning--entry type for "oliva2023" isn't style-file defined
@@ -25,7 +27,7 @@ Warning--entry type for "madile2023" isn't style-file defined
 --line 390 of file mibib.bib
 You've used 12 entries,
             2634 wiz_defined-function locations,
-            1105 strings with 11645 characters,
+            1106 strings with 11655 characters,
 and the built_in function-call counts, 3795 in all, are:
 = -- 262
 > -- 112

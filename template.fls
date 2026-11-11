@@ -185,6 +185,9 @@ INPUT cap5.aux
 INPUT .\apend1.aux
 INPUT .\apend1.aux
 INPUT apend1.aux
+INPUT .\apend2.aux
+INPUT .\apend2.aux
+INPUT apend2.aux
 OUTPUT template.aux
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -418,6 +421,18 @@ OUTPUT apend1.aux
 INPUT .\apend1.tex
 INPUT .\apend1.tex
 INPUT apend1.tex
+INPUT .\apend2.tex
+INPUT .\apend2.tex
+OUTPUT apend2.aux
+INPUT .\apend2.tex
+INPUT .\apend2.tex
+INPUT apend2.tex
+INPUT .\figs\t10_junio.png
+INPUT .\figs\t10_junio.png
+INPUT .\figs\t10_junio.png
+INPUT .\figs\t10_junio.png
+INPUT .\figs\t10_junio.png
+INPUT .\figs\t10_junio.png
 INPUT .\template.bbl
 INPUT .\template.bbl
 INPUT template.bbl
@@ -450,6 +465,9 @@ INPUT cap5.aux
 INPUT .\apend1.aux
 INPUT .\apend1.aux
 INPUT apend1.aux
+INPUT .\apend2.aux
+INPUT .\apend2.aux
+INPUT apend2.aux
 INPUT .\template.out
 INPUT .\template.out
 INPUT .\template.brf
