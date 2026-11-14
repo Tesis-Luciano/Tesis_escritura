@@ -24,46 +24,47 @@ Database file #1: mibib.bib
 Warning--entry type for "oliva2023" isn't style-file defined
 --line 33 of file mibib.bib
 Warning--entry type for "madile2023" isn't style-file defined
---line 390 of file mibib.bib
-You've used 12 entries,
+--line 407 of file mibib.bib
+Warning--I didn't find a database entry for "Madile"
+You've used 14 entries,
             2634 wiz_defined-function locations,
-            1106 strings with 11655 characters,
-and the built_in function-call counts, 3795 in all, are:
-= -- 262
-> -- 112
+            1122 strings with 12020 characters,
+and the built_in function-call counts, 4609 in all, are:
+= -- 318
+> -- 140
 < -- 0
-+ -- 56
-- -- 28
-* -- 180
-:= -- 445
-add.period$ -- 38
-call.type$ -- 12
-change.case$ -- 14
++ -- 70
+- -- 35
+* -- 230
+:= -- 536
+add.period$ -- 44
+call.type$ -- 14
+change.case$ -- 16
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 385
-empty$ -- 382
-format.name$ -- 36
-if$ -- 817
+cite$ -- 14
+duplicate$ -- 463
+empty$ -- 460
+format.name$ -- 45
+if$ -- 991
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 108
-newline$ -- 67
-num.names$ -- 12
-pop$ -- 172
+int.to.str$ -- 14
+missing$ -- 131
+newline$ -- 77
+num.names$ -- 14
+pop$ -- 205
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 72
+skip$ -- 87
 stack$ -- 0
-substring$ -- 143
-swap$ -- 257
+substring$ -- 192
+swap$ -- 311
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 22
-width$ -- 14
-write$ -- 136
-(There were 2 warnings)
+while$ -- 27
+width$ -- 16
+write$ -- 158
+(There were 3 warnings)

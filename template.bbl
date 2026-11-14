@@ -57,6 +57,18 @@ Lange, K.~L., Little, R. J.~A., Taylor, J. M.~G.
 \newblock \emph{Journal of the American Statistical Association},
   \textbf{84}~(408), 881--896, 1989.
 
+\bibitem{mao1999}
+Mao, A., Harrison, C. G.~A., Dixon, T.~H.
+\newblock Noise in {GPS} coordinate time series.
+\newblock \emph{Journal of Geophysical Research}, \textbf{104}~(B2),
+  2797--2816, 1999.
+
+\bibitem{choi2004}
+Choi, K., Bilich, A., Larson, K.~M., Axelrad, P.
+\newblock Modified sidereal filtering: Implications for high-rate {GPS}
+  positioning.
+\newblock \emph{Geophysical Research Letters}, \textbf{31}, L22608, 2004.
+
 \bibitem{codling2008}
 Codling, E.~A., Plank, M.~J., Benhamou, S.
 \newblock Random walk models in biology.

@@ -112,53 +112,109 @@ un dispositivo medía, su reemplazo se encontraba recargando la batería. Se pro
 15 minutos entre las 6 de la mañana y las 9 de la noche. Se evitó adquirir datos durante la noche para favorecer el ahorro de batería. Sin embargo, esta 
 decisión se revirtió, tomando datos adicionales de 1am a 2am, con el objetivo de poder determinar la posición de los refugios nocturnos. La base de datos
 final contó con aproximadamente 3300 horas de rastreo por tortuga.
+
 \subsection{Errores de GPS}\label{I:ruido_noche}
 
 Como en todo trabajo de materias de laboratorio de la facultad, lo primero que hay que hacer es caracterizar el dispositivo de medición. En este caso,
 estudiamos el error de posición del GPS, para lo cual se requería de tener mediciones en donde se supiera la posición real del dispositivo. Para ello,
-se usaron los pocos datos que se tenían de las mediciones nocturnas, dado que las tortugas no suelen moverse en dicho período, esto además había sido
-corroborado a durante la campaña de campo. En la Figura \ref{fig:distribucion_error} se muestra la distribución de las diferencias entre dos mediciones consecutivas
-del eje x y el eje y.
+se usaron los pocos datos que se tenían de las mediciones nocturnas, dado que las tortugas no suelen moverse en dicho período, como fue verificado por el equipo
+de campo \cite{madile2023}. Trabajamos con las posiciones sin filtrar entre las 22 y las 6 h, ya que el filtro de velocidad elimina justamente los errores grandes que queremos 
+caracterizar, y descartamos los pares con $d\geq90\,\mathrm{m}$, que es lo máximo que dejaría pasar dicho filtro. Excluimos además a T6, cuyo dispositivo presenta un 17\% de pares 
+nocturnos por encima de los $10\,\mathrm{m}$, contra un 0.6 a 3.9\% en el resto, por lo que no permite separar el movimiento del error. En la Figura \ref{fig:distribucion_error} se muestra la distribución 
+de las diferencias entre dos mediciones consecutivas del eje $x$ y el eje $y$.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.95\textwidth]{Ruido noche.png}
     \caption{La figura de la izquierda muestra la frecuencia de variación de posiciones de los ejes x e y con los datos en bines logarítmicos y ajustando distintas distribuciones, 
-    mientras que a la derecha se muestra la dependencia de la probabilidad de medir una desplazamiento d en 15 minutos tanto como para los datos nocturnos como para las curvas ajustadas.}
+    mientras que a la derecha se muestra la dependencia de la probabilidad de medir un desplazamiento d en 15 minutos tanto para los datos nocturnos como para las curvas ajustadas.}
     \label{fig:distribucion_error}
 \end{figure}
 
-Se puede ver de la figura de la izquierda como no basta con un ajuste gaussiano para describir la distribución de errores, dado que los datos presentan colas más pesadas 
-de las que puede replicar la función. Por ello se ajustaron otras distribuciones, como la de Cauchy, La de t de Student y una consistente en una mezcla de dos gaussianas. 
-Las cuales se muestran como opciones relativamente factibles viendo dicho gráfico. Sin embargo, al ver la figura de la derecha, en donde se muestra la fracción de datos 
-por bin de la variación de posición por eje. Este análisis nos permite ver que la distribución de t de Student, con $\nu=2.07$ y $s=1.06 \text{m}$ es la que mejor ajusta a los
-datos. 
+Se puede ver de la figura de la izquierda que no basta con un ajuste gaussiano para describir la distribución de errores, dado que los datos presentan colas más pesadas 
+de las que puede replicar la función. Por ello se ajustaron otras distribuciones, como la de Cauchy, la t de Student y una mezcla de dos gaussianas, que se muestran como opciones 
+relativamente factibles viendo dicho gráfico. Sin embargo, la figura de la derecha, que muestra la probabilidad de un desplazamiento $d$ en 15 minutos, permite ver que la distribución t de Student, 
+con $\nu=2.07$ y $s=1.06\,\mathrm{m}$, es la que mejor ajusta a los datos. Esto se confirma con el criterio de información de Akaike: tomando como referencia a la t de Student, 
+la mezcla de dos gaussianas, la Cauchy y la gaussiana tienen una diferencia de $205$, $301$ y $2391$, respectivamente.
 
 Esta distribución tiene una justificación natural en el contexto de un GPS. La calidad de cada medición no es siempre la misma, 
-ya que depende de la cantidad y la geometría de los satélites visibles y de las reflexiones de la señal en la vegetación y el terreno. 
-Por lo tanto, podemos pensar que el error de una medición en particular es gaussiano, pero con una desviación estándar $\sigma_k$ propia, 
-que cambia de una medición a otra. Este comportamiento ya fue observado en otros dispositivos: para GPS de tipo Fastloc se encontró que el error por eje se describe bien con una t de Student cuyos grados de libertad aumentan con el número de satélites usados en cada medición \cite{wensveen2015}, y la t de Student también se ha usado para modelar errores de posición de otros sistemas, como Argos \cite{jonsen2005}. Como $\sigma_k$ no es fija, el error que observamos es una mezcla continua de gaussianas, y para describirla 
-hace falta proponer cómo se distribuye $\sigma_k$. Una elección natural es suponer que la precisión de cada medición, $1/\sigma_k^2$, es proporcional 
-a una variable $w$ que se distribuye como una $\chi^2_\nu$, es decir, como la suma de los cuadrados de $\nu$ variables gaussianas independientes de media cero y varianza uno. 
-Esta es una distribución positiva, con media $\nu$, que para $\nu=2$ se reduce a una exponencial, y que permite que haya muchas mediciones con 
-precisión alta y unas pocas con precisión muy baja. Con esta elección, la mezcla resulta exactamente una distribución t de Student con $\nu$ grados de libertad \cite{lange1989}. 
-Explícitamente, el vector de error de una medición es
+ya que depende de la cantidad y la geometría de los satélites visibles y de las reflexiones de la señal en la vegetación y el terreno. Este comportamiento ya fue observado 
+en otros dispositivos: para GPS de tipo Fastloc se encontró que el error por eje se describe bien con una t de Student cuyos grados de libertad aumentan con el número de satélites 
+usados en cada medición \cite{wensveen2015}, y la t de Student también se ha usado para modelar errores de posición de otros sistemas, como Argos \cite{jonsen2005}. 
+Como no conocemos la posición real, lo que podemos medir es la diferencia $\boldsymbol{\epsilon}$ entre dos posiciones separadas 15 minutos, y aplicamos el argumento directamente a ella: 
+si la calidad cambia de una medición a otra, la escala de $\boldsymbol{\epsilon}$ cambia de un par de mediciones a otro, por lo que lo que observamos es una mezcla continua de gaussianas, 
+y para describirla hace falta proponer cómo se distribuye esa escala. Una elección natural es suponer que la precisión de cada par es proporcional a una variable $w$ que se distribuye como una $\chi^2_\nu$, 
+es decir, como la suma de los cuadrados de $\nu$ variables gaussianas independientes de media cero y varianza uno. Esta es una distribución positiva, con media $\nu$, que para $\nu=2$ se reduce 
+a una exponencial, y que permite que haya muchos pares con precisión alta y unos pocos con precisión muy baja. Con esta elección, la mezcla resulta exactamente una distribución t de Student 
+con $\nu$ grados de libertad \cite{lange1989}. Explícitamente,
 \begin{equation}
     \boldsymbol{\epsilon}=\frac{s\,\mathbf{z}}{\sqrt{w/\nu}}, \qquad \mathbf{z}\sim\mathcal{N}(0,I_2), \qquad w\sim\chi^2_\nu ,
     \label{eq:error_t}
 \end{equation}
-es decir, una gaussiana de varianza $\sigma_k^2=\nu s^2/w$ cuando se fija $w$. Cabe aclarar que la forma $\chi^2_\nu$ es un supuesto de modelado y no algo que 
-medimos directamente: no conocemos la distribución real de $\sigma_k$ de cada medición, y lo que respalda el supuesto es que la t de Student con $\nu\approx2$ describe los datos. 
-Se supone además que $x$ e $y$ comparten el mismo $w$, dado que una medición mala lo es en ambas coordenadas; 
-de hecho, los tamaños de $|\Delta x|$ y $|\Delta y|$ están correlacionados (coeficiente de correlación de $0.47$), cosa que no ocurriría con dos t independientes. 
-Bajo este supuesto, la distribución de la distancia $d=\sqrt{\Delta x^2+\Delta y^2}$ y su probabilidad acumulada complementaria son
+es decir, una gaussiana de varianza $\sigma^2=\nu s^2/w$ cuando se fija $w$, donde $\nu$ y $s$ describen la diferencia y $d=|\boldsymbol{\epsilon}|$ es su módulo. Cabe aclarar que la forma $\chi^2_\nu$ 
+es un supuesto de modelado y no algo que medimos directamente: no conocemos la distribución real de la escala de cada par, y lo que respalda el supuesto es que la t de Student con $\nu\approx2$ describe los datos. 
+Se supone además que $x$ e $y$ comparten el mismo $w$, dado que una medición mala lo es en ambas coordenadas; de hecho, los tamaños de $|\Delta x|$ y $|\Delta y|$ están correlacionados 
+(coeficiente de correlación de $0.47$), cosa que no ocurriría con dos t independientes. Bajo este supuesto, la distribución de la distancia $d=\sqrt{\Delta x^2+\Delta y^2}$ es
 \begin{equation}
     p(d)=\frac{d}{s^2}\left(1+\frac{d^2}{\nu s^2}\right)^{-(\nu/2+1)},
     \label{eq:distancia_t}
 \end{equation}
-cuya cola decae como $p(d)\sim d^{-(\nu+1)}$. Una consecuencia importante es que, con $\nu\approx2$, la varianza 
-no está definida, por lo que no existe un único $\sigma$ que caracterice el error del GPS; este queda descrito por los parámetros $\nu$ y $s$. Así, la cola del error decae como $d^{-3}$.
+cuya cola decae como $p(d)\sim d^{-(\nu+1)}$. Con $\nu\approx2$ la varianza es formalmente finita pero enorme ($\nu s^2/(\nu-2)\approx30\,s^2$) y queda dominada 
+por unos pocos valores extremos, por lo que el error queda descrito por $\nu$ y $s$.
 
+\subsection{Memoria del error del GPS}\label{I:corr_error}
+
+Si bien la distribución t de Student de la sección anterior describe el tamaño de la diferencia entre dos posiciones separadas 15 minutos, 
+no indica si el error de una posición se parece al de la siguiente, es decir, si el error del GPS tiene memoria. Esto es relevante porque, 
+si los errores fueran independientes, la diferencia entre dos posiciones tendría la misma escala sin importar el tiempo que las separa, 
+mientras que, si están correlacionados, dos posiciones cercanas en el tiempo se desplazan juntas y el error se cancela parcialmente al restarlas.
+
+Para estudiarlo necesitamos situaciones en las que la tortuga esté quieta, de modo que toda diferencia de posición sea error. Utilizamos dos subconjuntos de datos: 
+las noches (22 a 6 h), cuando la tortuga está en el refugio, y la brumación profunda (de mayo a agosto, entre las 11 y las 15:45 h), cuando está enterrada. 
+En estos meses el dispositivo registró principalmente cada 30 minutos, por lo que en este caso solo se usan separaciones que sean múltiplos de 30 minutos. 
+Trabajamos con las posiciones sin filtrar y excluimos a T6 y a T10 durante junio de 2022, cuando falló su GPS, cuya justificación se encuentra en el Apéndice \ref{A:Problemas_T10}.
+
+Para cada tiempo $\tau$ entre las dos posiciones (de 15 a 300 minutos, con una tolerancia de $\pm2$ minutos hasta 60 minutos y de $\pm8$ minutos para tiempos
+mayores) tomamos las diferencias $\Delta x$ y $\Delta y$ de todos los pares de posiciones de la misma noche o del mismo día separados $\tau$, descartando los 
+pares con $d\geq90\,\mathrm{m}$. Con ellas calculamos el desvío robusto por eje, $\sigma_{\rm dif}=1.4826\times\mathrm{mediana}(|v-\mathrm{mediana}(v)|)$, donde $v$ son las diferencias $\Delta x$ y $\Delta y$ de cada conjunto, 
+y su intervalo de confianza del 95\% mediante bootstrap, sorteando noches o días enteros, dado que los valores de una misma noche no son independientes. 
+Utilizamos el desvío robusto y no el desvío estándar porque, con una cola tan pesada como la de la t de Student ajustada ($\nu\approx2$), 
+la varianza queda dominada por unos pocos valores extremos. Si los errores de las dos posiciones fueran independientes, $\sigma_{\rm dif}$ sería el mismo para cualquier $\tau$; 
+por lo tanto, una dependencia con $\tau$ indica que el error tiene memoria.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{memoria_error_GPS_es.png}
+    \caption{Desvío robusto por eje de la diferencia entre dos posiciones de una tortuga quieta, en función del tiempo que las separa, en noches (22--6 h) y en brumación profunda (mayo--agosto, 11--15:45 h). 
+    Barras: intervalo del 95\% por bootstrap sobre noches o días. Franjas: nivel de 30--60 min y de 90--240 min, calculado sobre las mismas noches o días, con su intervalo del 95\%. 
+    En brumación solo se muestran separaciones múltiplos de 30 min, el intervalo de registro en esos meses.}
+    \label{fig:memoria_error}
+\end{figure}
+
+En la Figura \ref{fig:memoria_error} se observan dos escalas. La primera es una escala rápida: a 15 minutos la diferencia es de $1.24\,\mathrm{m}$, alrededor del 60\% 
+de los $1.9$ a $2.1\,\mathrm{m}$ que se obtienen entre 30 y 45 minutos. Dos posiciones cercanas en el tiempo comparten buena parte del error y este se cancela al restarlas. 
+Esta conclusión no depende de ninguna referencia externa ni de suponer nada sobre la distribución del error, ya que con errores independientes ambos valores serían iguales. 
+La memoria de esta parte es de unos 30 minutos.
+
+La segunda es una escala lenta: después de la primera hora la diferencia sube a un segundo nivel, de unos $2.7\,\mathrm{m}$, que se mantiene hasta las 5 horas. 
+En la brumación este segundo nivel se alcanza ya a los 60 minutos. Como la mayoría de las noches tiene registros solo entre la 1 y las 2 h (Sección \ref{I:unidad_navegacion}), las separaciones de 60 minutos o más 
+provienen de pocas noches con un registro más extenso, lo que explica que sus intervalos de confianza sean más anchos. Si este aumento se debe a una componente adicional, independiente de la rápida, 
+equivale a sumar un error lento de unos $1.3\,\mathrm{m}$ por eje, aproximadamente. La evidencia más firme es la comparación dentro de las mismas noches o días, que no depende de qué noches entran 
+en cada punto: en ambos conjuntos, la diferencia es mayor entre 90 y 240 minutos que entre 30 y 60 minutos, con un aumento de entre $0.6$ y $0.8\,\mathrm{m}$.
+
+Con respecto al origen de estas escalas, el error de posición del GPS suele describirse como una suma de procesos con distintos tiempos de correlación, 
+por ejemplo procesos de Gauss--Markov de primer orden, y en series largas de estaciones fijas el error de las coordenadas tiene un espectro de ley de potencias \cite{mao1999}. 
+Una hipótesis es que la parte rápida se deba al multicamino, es decir, a reflexiones de la señal en el suelo, en la cueva o en la vegetación que cambian a medida 
+que se mueven los satélites, y que la parte lenta se deba a cambios en la geometría de los satélites visibles y en los retardos atmosféricos. 
+
+Una referencia posible para estimar errores independientes son las posiciones separadas 24 horas (noches consecutivas en el mismo refugio y a la misma hora). 
+Sin embargo, estas difieren en $2.23\,\mathrm{m}$, menos que el segundo nivel, y también menos que los pares separados $24$ horas $\pm\,30$ a $120$ minutos ($2.4$ a $2.6\,\mathrm{m}$). 
+Esto es compatible con que la geometría de los satélites se repite aproximadamente cada $23$ h $56$ min, de modo que a la misma hora de noches consecutivas parte del error se repetiría \cite{choi2004}. 
+Por esta razón no usamos esa referencia como nivel de errores independientes.
+
+En resumen, el error del GPS queda descrito por tres elementos: la distribución t de Student de la diferencia a 15 minutos (sección anterior), una componente correlacionada 
+con una memoria de unos 30 minutos y una componente lenta que suma unos $1.3\,\mathrm{m}$ por eje en una a dos horas. Esta caracterización se 
+utiliza más adelante en el modelo de Reposo (Sección \ref{II:Reposo_Modelo}).
 
 
 %%% Local Variables: 

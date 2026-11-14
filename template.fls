@@ -299,6 +299,23 @@ INPUT .\figs\Ruido noche.png
 INPUT .\figs\Ruido noche.png
 INPUT .\figs\Ruido noche.png
 INPUT .\figs\Ruido noche.png
+INPUT .\figs\memoria_error_GPS_es.png
+INPUT .\figs\memoria_error_GPS_es.png
+INPUT .\figs\memoria_error_GPS_es.png
+INPUT .\figs\memoria_error_GPS_es.png
+INPUT .\figs\memoria_error_GPS_es.png
+INPUT .\figs\memoria_error_GPS_es.png
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx5.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib5.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy5.tfm
 INPUT .\cap2.tex
 INPUT .\cap2.tex
 OUTPUT cap2.aux
@@ -331,17 +348,6 @@ INPUT .\figs\Correlated_Random_Walk.png
 INPUT .\figs\Correlated_Random_Walk.png
 INPUT .\figs\Correlated_Random_Walk.png
 INPUT .\figs\Correlated_Random_Walk.png
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx7.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx5.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib7.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib5.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy7.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy5.tfm
 INPUT .\figs\Despl_CteW.png
 INPUT .\figs\Despl_CteW.png
 INPUT .\figs\Despl_CteW.png

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.22)  11 NOV 2026 18:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.22)  13 NOV 2026 23:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -544,7 +544,7 @@ LaTeX Info: Redefining \% on input line 5.
 
 
 ]
-Overfull \hbox (10.83797pt too wide) in paragraph at lines 24--24
+Overfull \hbox (10.83797pt too wide) in paragraph at lines 25--25
  [][] [][][]\OT1/cmr/m/n/12 Criterios pa-ra ubi-car el re-fu-gio. (a) Ven-ta-nas ho-ra-rias: la noc-tur-na est^^Sandar 
  []
 
@@ -615,7 +615,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-<figs/mapa.png, id=340, 396.39pt x 454.425pt>
+<figs/mapa.png, id=353, 396.39pt x 454.425pt>
 File: figs/mapa.png Graphic file (type png)
 <use figs/mapa.png>
 Package pdftex.def Info: figs/mapa.png  used on input line 28.
@@ -623,7 +623,7 @@ Package pdftex.def Info: figs/mapa.png  used on input line 28.
 LaTeX Info: Redefining \. on input line 38.
 LaTeX Info: Redefining \% on input line 38.
  [2 <./figs/mapa.png>]
-<figs/dispositivo_navegacion.png, id=356, 348.55219pt x 227.34938pt>
+<figs/dispositivo_navegacion.png, id=369, 348.55219pt x 227.34938pt>
 File: figs/dispositivo_navegacion.png Graphic file (type png)
 <use figs/dispositivo_navegacion.png>
 Package pdftex.def Info: figs/dispositivo_navegacion.png  used on input line 62.
@@ -631,12 +631,12 @@ Package pdftex.def Info: figs/dispositivo_navegacion.png  used on input line 62.
 LaTeX Info: Redefining \. on input line 75.
 LaTeX Info: Redefining \% on input line 75.
  [3]
-<figs/distribucion_actividad_T405.png, id=367, 570.2103pt x 426.393pt>
+<figs/distribucion_actividad_T405.png, id=380, 570.2103pt x 426.393pt>
 File: figs/distribucion_actividad_T405.png Graphic file (type png)
 <use figs/distribucion_actividad_T405.png>
 Package pdftex.def Info: figs/distribucion_actividad_T405.png  used on input line 78.
 (pdftex.def)             Requested size: 198.45662pt x 148.40048pt.
-<figs/distribucion_quietud_T405.png, id=368, 570.2103pt x 426.393pt>
+<figs/distribucion_quietud_T405.png, id=381, 570.2103pt x 426.393pt>
 File: figs/distribucion_quietud_T405.png Graphic file (type png)
 <use figs/distribucion_quietud_T405.png>
 Package pdftex.def Info: figs/distribucion_quietud_T405.png  used on input line 79.
@@ -644,7 +644,7 @@ Package pdftex.def Info: figs/distribucion_quietud_T405.png  used on input line 
 LaTeX Info: Redefining \. on input line 93.
 LaTeX Info: Redefining \% on input line 93.
  [4 <./figs/dispositivo_navegacion.png> <./figs/distribucion_actividad_T405.png> <./figs/distribucion_quietud_T405.png>]
-<figs/IgotU.png, id=380, 501.875pt x 440.64626pt>
+<figs/IgotU.png, id=393, 501.875pt x 440.64626pt>
 File: figs/IgotU.png Graphic file (type png)
 <use figs/IgotU.png>
 Package pdftex.def Info: figs/IgotU.png  used on input line 104.
@@ -652,31 +652,45 @@ Package pdftex.def Info: figs/IgotU.png  used on input line 104.
 LaTeX Info: Redefining \. on input line 115.
 LaTeX Info: Redefining \% on input line 115.
  [5 <./figs/IgotU.png (PNG copy)>]
-<figs/Ruido noche.png, id=387, 860.013pt x 303.534pt>
+
+Package natbib Warning: Citation `Madile' on page 6 undefined on input line 121.
+
+<figs/Ruido noche.png, id=400, 860.013pt x 303.534pt>
 File: figs/Ruido noche.png Graphic file (type png)
 <use figs/Ruido noche.png>
-Package pdftex.def Info: figs/Ruido noche.png  used on input line 125.
+Package pdftex.def Info: figs/Ruido noche.png  used on input line 126.
 (pdftex.def)             Requested size: 418.96547pt x 147.87149pt.
-LaTeX Info: Redefining \. on input line 146.
-LaTeX Info: Redefining \% on input line 146.
- [6 <./figs/Ruido noche.png>])
+LaTeX Info: Redefining \. on input line 148.
+LaTeX Info: Redefining \% on input line 148.
+[6 <./figs/Ruido noche.png>]
+LaTeX Info: Redefining \. on input line 175.
+LaTeX Info: Redefining \% on input line 175.
+ [7]
+<figs/memoria_error_GPS_es.png, id=423, 1957.3125pt x 1229.59375pt>
+File: figs/memoria_error_GPS_es.png Graphic file (type png)
+<use figs/memoria_error_GPS_es.png>
+Package pdftex.def Info: figs/memoria_error_GPS_es.png  used on input line 192.
+(pdftex.def)             Requested size: 352.8155pt x 221.63628pt.
+LaTeX Info: Redefining \. on input line 214.
+LaTeX Info: Redefining \% on input line 214.
+ [8])
 LaTeX Info: Redefining \. on input line 71.
 LaTeX Info: Redefining \% on input line 71.
- [7]
+ [9 <./figs/memoria_error_GPS_es.png (PNG copy)>]
 \openout2 = `cap2.aux'.
 
- (cap2.tex [8
+ (cap2.tex [10
 
 
 
 
 ]
 Cap\'{\i }tulo 2.
-[9]
+[11]
 
-LaTeX Warning: Reference `Introduccion' on page 10 undefined on input line 24.
+LaTeX Warning: Reference `Introduccion' on page 12 undefined on input line 24.
 
-<figs/Ejemplo de trayectorias.png, id=427, 737.154pt x 693.792pt>
+<figs/Ejemplo de trayectorias.png, id=456, 737.154pt x 693.792pt>
 File: figs/Ejemplo de trayectorias.png Graphic file (type png)
 <use figs/Ejemplo de trayectorias.png>
 Package pdftex.def Info: figs/Ejemplo de trayectorias.png  used on input line 37.
@@ -686,11 +700,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 42.
 LaTeX Info: Redefining \% on input line 42.
- [10]
+ [12]
 LaTeX Info: Redefining \. on input line 55.
 LaTeX Info: Redefining \% on input line 55.
- [11 <./figs/Ejemplo de trayectorias.png>]
-<figs/P(d) por trayectoria anual.png, id=440, 540.711pt x 396.828pt>
+ [13 <./figs/Ejemplo de trayectorias.png>]
+<figs/P(d) por trayectoria anual.png, id=469, 540.711pt x 396.828pt>
 File: figs/P(d) por trayectoria anual.png Graphic file (type png)
 <use figs/P(d) por trayectoria anual.png>
 Package pdftex.def Info: figs/P(d) por trayectoria anual.png  used on input line 70.
@@ -700,8 +714,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 74.
 LaTeX Info: Redefining \% on input line 74.
- [12]
-<figs/MSD por tipo de trayectoria.png, id=446, 527.571pt x 375.804pt>
+ [14]
+<figs/MSD por tipo de trayectoria.png, id=475, 527.571pt x 375.804pt>
 File: figs/MSD por tipo de trayectoria.png Graphic file (type png)
 <use figs/MSD por tipo de trayectoria.png>
 Package pdftex.def Info: figs/MSD por tipo de trayectoria.png  used on input line 82.
@@ -711,21 +725,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 86.
 LaTeX Info: Redefining \% on input line 86.
- [13 <./figs/P(d) por trayectoria anual.png>]
+ [15 <./figs/P(d) por trayectoria anual.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 114.
 LaTeX Info: Redefining \% on input line 114.
- [14 <./figs/MSD por tipo de trayectoria.png>]
+ [16 <./figs/MSD por tipo de trayectoria.png>]
 Underfull \vbox (badness 1009) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 133.
 LaTeX Info: Redefining \% on input line 133.
- [15]
+ [17]
 
-LaTeX Warning: Reference `A:transition_rate_PL' on page 16 undefined on input line 136.
+LaTeX Warning: Reference `A:transition_rate_PL' on page 18 undefined on input line 136.
 
-<figs/Correlated_Random_Walk.png, id=468, 201.8742pt x 206.2104pt>
+<figs/Correlated_Random_Walk.png, id=497, 201.8742pt x 206.2104pt>
 File: figs/Correlated_Random_Walk.png Graphic file (type png)
 <use figs/Correlated_Random_Walk.png>
 Package pdftex.def Info: figs/Correlated_Random_Walk.png  used on input line 157.
@@ -735,13 +749,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 162.
 LaTeX Info: Redefining \% on input line 162.
- [16]
+ [18]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 189.
 LaTeX Info: Redefining \% on input line 189.
- [17 <./figs/Correlated_Random_Walk.png>]
-<figs/Despl_CteW.png, id=486, 538.1706pt x 357.0138pt>
+ [19 <./figs/Correlated_Random_Walk.png>]
+<figs/Despl_CteW.png, id=515, 538.1706pt x 357.0138pt>
 File: figs/Despl_CteW.png Graphic file (type png)
 <use figs/Despl_CteW.png>
 Package pdftex.def Info: figs/Despl_CteW.png  used on input line 192.
@@ -751,26 +765,26 @@ Underfull \vbox (badness 5817) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 212.
 LaTeX Info: Redefining \% on input line 212.
- [18 <./figs/Despl_CteW.png>]
-<figs/Despl_CteS.png, id=494, 567.0786pt x 347.3778pt>
+ [20 <./figs/Despl_CteW.png>]
+<figs/Despl_CteS.png, id=523, 567.0786pt x 347.3778pt>
 File: figs/Despl_CteS.png Graphic file (type png)
 <use figs/Despl_CteS.png>
 Package pdftex.def Info: figs/Despl_CteS.png  used on input line 215.
 (pdftex.def)             Requested size: 308.71104pt x 189.11307pt.
-<figs/MSD_CteS.png, id=496, 566.5968pt x 336.2964pt>
+<figs/MSD_CteS.png, id=525, 566.5968pt x 336.2964pt>
 File: figs/MSD_CteS.png Graphic file (type png)
 <use figs/MSD_CteS.png>
 Package pdftex.def Info: figs/MSD_CteS.png  used on input line 227.
 (pdftex.def)             Requested size: 308.71104pt x 183.22916pt.
 LaTeX Info: Redefining \. on input line 234.
 LaTeX Info: Redefining \% on input line 234.
- [19 <./figs/Despl_CteS.png> <./figs/MSD_CteS.png>]
-<figs/Exponents.png, id=505, 553.5882pt x 368.0952pt>
+ [21 <./figs/Despl_CteS.png> <./figs/MSD_CteS.png>]
+<figs/Exponents.png, id=535, 553.5882pt x 368.0952pt>
 File: figs/Exponents.png Graphic file (type png)
 <use figs/Exponents.png>
 Package pdftex.def Info: figs/Exponents.png  used on input line 246.
 (pdftex.def)             Requested size: 308.71104pt x 205.27815pt.
-<figs/DESPL_PL.png, id=507, 465.4188pt x 308.352pt>
+<figs/DESPL_PL.png, id=537, 465.4188pt x 308.352pt>
 File: figs/DESPL_PL.png Graphic file (type png)
 <use figs/DESPL_PL.png>
 Package pdftex.def Info: figs/DESPL_PL.png  used on input line 257.
@@ -780,18 +794,18 @@ Underfull \vbox (badness 3954) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 261.
 LaTeX Info: Redefining \% on input line 261.
- [20 <./figs/Exponents.png>]
-<figs/MSD_PL.png, id=515, 465.4188pt x 276.0714pt>
+ [22 <./figs/Exponents.png>]
+<figs/MSD_PL.png, id=545, 465.4188pt x 276.0714pt>
 File: figs/MSD_PL.png Graphic file (type png)
 <use figs/MSD_PL.png>
 Package pdftex.def Info: figs/MSD_PL.png  used on input line 268.
 (pdftex.def)             Requested size: 308.71104pt x 183.12178pt.
 LaTeX Info: Redefining \. on input line 282.
 LaTeX Info: Redefining \% on input line 282.
- [21 <./figs/DESPL_PL.png> <./figs/MSD_PL.png>])
+ [23 <./figs/DESPL_PL.png> <./figs/MSD_PL.png>])
 LaTeX Info: Redefining \. on input line 72.
 LaTeX Info: Redefining \% on input line 72.
- [22]
+ [24]
 \openout2 = `cap3.aux'.
 
  (cap3.tex
@@ -799,7 +813,7 @@ Cap\'{\i }tulo 3.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23
+ [25
 
 
 
@@ -807,21 +821,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 LaTeX Info: Redefining \. on input line 65.
 LaTeX Info: Redefining \% on input line 65.
- [24]
-<figs/burrow_criteria_es.png, id=542, 750.6444pt x 486.8589pt>
+ [26]
+<figs/burrow_criteria_es.png, id=571, 750.6444pt x 486.8589pt>
 File: figs/burrow_criteria_es.png Graphic file (type png)
 <use figs/burrow_criteria_es.png>
 Package pdftex.def Info: figs/burrow_criteria_es.png  used on input line 80.
 (pdftex.def)             Requested size: 418.96547pt x 271.74023pt.
 LaTeX Info: Redefining \. on input line 97.
 LaTeX Info: Redefining \% on input line 97.
- [25]
-<figs/Evolucion mensual del tipo de caminata a lo largo del año.png, id=550, 718.758pt x 348.21pt>
+ [27]
+<figs/Evolucion mensual del tipo de caminata a lo largo del año.png, id=580, 718.758pt x 348.21pt>
 File: figs/Evolucion mensual del tipo de caminata a lo largo del año.png Graphic file (type png)
 <use figs/Evolucion mensual del tipo de caminata a lo largo del año.png>
 Package pdftex.def Info: figs/Evolucion mensual del tipo de caminata a lo largo del año.png  used on input line 101.
 (pdftex.def)             Requested size: 418.96547pt x 202.97145pt.
-<figs/Evolucion del tipo de caminata a lo largo del año.png, id=551, 866.583pt x 252.945pt>
+<figs/Evolucion del tipo de caminata a lo largo del año.png, id=581, 866.583pt x 252.945pt>
 File: figs/Evolucion del tipo de caminata a lo largo del año.png Graphic file (type png)
 <use figs/Evolucion del tipo de caminata a lo largo del año.png>
 Package pdftex.def Info: figs/Evolucion del tipo de caminata a lo largo del año.png  used on input line 102.
@@ -831,20 +845,20 @@ Underfull \vbox (badness 1132) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 117.
 LaTeX Info: Redefining \% on input line 117.
- [26 <./figs/burrow_criteria_es.png>])
+ [28 <./figs/burrow_criteria_es.png>])
 Underfull \vbox (badness 3492) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 73.
 LaTeX Info: Redefining \% on input line 73.
- [27 <./figs/Evolucion mensual del tipo de caminata a lo largo del año.png> <./figs/Evolucion del tipo de caminata a lo largo del año.png>]
+ [29 <./figs/Evolucion mensual del tipo de caminata a lo largo del año.png> <./figs/Evolucion del tipo de caminata a lo largo del año.png>]
 LaTeX Info: Redefining \. on input line 73.
 LaTeX Info: Redefining \% on input line 73.
- [28]
+ [30]
 \openout2 = `cap4.aux'.
 
  (cap4.tex
 Cap\'{\i }tulo 4.
-) [29
+) [31
 
 
 
@@ -852,42 +866,42 @@ Cap\'{\i }tulo 4.
 ]
 \openout2 = `cap5.aux'.
 
- (cap5.tex [30
+ (cap5.tex [32
 
 
 
 
 ]
 Cap\'{\i }tulo 5.
-) [31]
+) [33]
 \openout2 = `apend1.aux'.
 
- (apend1.tex [32
+ (apend1.tex [34
 
 
 
 
 ]
 Ap\'{e}ndice A.
-[33])
+[35])
 LaTeX Info: Redefining \. on input line 78.
 LaTeX Info: Redefining \% on input line 78.
- [34]
+ [36]
 \openout2 = `apend2.aux'.
 
  (apend2.tex
 Ap\'{e}ndice B.
-<figs/t10_junio.png, id=600, 839.5365pt x 346.6551pt>
+<figs/t10_junio.png, id=629, 839.5365pt x 346.6551pt>
 File: figs/t10_junio.png Graphic file (type png)
 <use figs/t10_junio.png>
 Package pdftex.def Info: figs/t10_junio.png  used on input line 9.
 (pdftex.def)             Requested size: 418.96547pt x 172.99388pt.
-) [35
+) [37
 
 
 
 
- <./figs/t10_junio.png>] [36
+ <./figs/t10_junio.png>] [38
 
 
 
@@ -895,24 +909,28 @@ Package pdftex.def Info: figs/t10_junio.png  used on input line 9.
 \tf@brf=\write7
 \openout7 = `template.brf'.
 
- [37
+ [39
 
 ])
 LaTeX Info: Redefining \. on input line 83.
 LaTeX Info: Redefining \% on input line 83.
- [38] [39
+ [40] [41
 
 
-
-
-] [40
-
-] [41
 
 
 ] [42
 
-] (template.aux
+] [43
+
+
+] [44
+
+]
+
+Package natbib Warning: There were undefined citations.
+
+(template.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
  (resumen.aux
@@ -931,22 +949,22 @@ L3 programming layer <2026-08-10>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `template.out' has not changed.
-(rerunfilecheck)             Checksum: A6535C9E899F0A949CB24761F17D8D68;6608.
+(rerunfilecheck)             Checksum: A00E8DA635897AA2EB1FB86DCA6ECAC2;6807.
 Package rerunfilecheck Info: File `template.brf' has not changed.
-(rerunfilecheck)             Checksum: 47F6E268F9B1CB25CEFBD67D88B2114A;1095.
+(rerunfilecheck)             Checksum: 6DA637429FAFA20231570B6C914C669F;1201.
  ) 
 Here is how much of TeX's memory you used:
- 16304 strings out of 467441
- 267883 string characters out of 5417700
- 704908 words of memory out of 5000000
- 45182 multiletter control sequences out of 15000+600000
+ 16339 strings out of 467441
+ 268542 string characters out of 5417700
+ 706509 words of memory out of 5000000
+ 45211 multiletter control sequences out of 15000+600000
  641058 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 104i,13n,107p,754b,1006s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 104i,12n,107p,754b,1006s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on template.pdf (58 pages, 4541278 bytes).
+Output written on template.pdf (60 pages, 4698120 bytes).
 PDF statistics:
- 770 PDF objects out of 1000 (max. 8388607)
- 150 named destinations out of 1000 (max. 500000)
- 381 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 800 PDF objects out of 1000 (max. 8388607)
+ 156 named destinations out of 1000 (max. 500000)
+ 394 words of extra memory for PDF output out of 10000 (max. 10000000)
 
