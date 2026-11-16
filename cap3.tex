@@ -10,7 +10,7 @@ resguardándose en refugios excavados en el suelo.
 
 Si bien estos conocimientos son más propios de las ciencias naturales, la biología y la ecología, la cuantificación de los cambios estacionales
 en el comportamiento de los animales es un tema que puede abordarse desde la perspectiva de la física o del análisis de datos. Por ello, en este
-capítulo vamos a presentar los datos obtenidos a lo largo de un año con las mediciones de GPS, nombradas en el capítulo \ref{Capitulo_1}, 
+capítulo vamos a presentar los datos obtenidos a lo largo de un año con las mediciones de GPS, nombradas en el capítulo~\ref{Capitulo_1}, 
 para posteriormente ofrecer métricas cuantitativas que caractericen la evolución del comportamiento de esta especie. El objetivo de este capítulo, 
 será intentar observar el comportamiento de brumación a partir de las métricas evaluadas, como también brindar algún aporte que contribuyan al 
 entendimiento de los métodos de la selección de refugios nocturnos.
@@ -25,7 +25,7 @@ Por ello se tomaron dos mediciones consecutivas con una diferencia temporal $\de
 se descartaba la última de las dos mediciones, dado que al hacer este proceso en orden cronológico, la primera ya fue validada. Fijamos este umbral en 
 $v_{\max}=0.1\,\mathrm{m/s}$, lo que equivale a un desplazamiento máximo de aproximadamente $90\,\mathrm{m}$ entre mediciones separadas por 15 minutos.
 La segunda técnica utilizada consistió en descartar mediciones por fuera del rango de latitudes correspondiente a la zona de estudio, $-40.60^\circ$ a 
-$-40.55^\circ$, descartando en torno al $ 8.6\% $ de los datos (Tabla \ref{tab:filtrado}).
+$-40.55^\circ$, descartando en torno al $ 8.6\% $ de los datos (Tabla~\ref{tab:filtrado}).
 
 
 \begin{table}[ht]
@@ -47,7 +47,7 @@ $-40.55^\circ$, descartando en torno al $ 8.6\% $ de los datos (Tabla \ref{tab:f
     \end{tabular}
 \end{table}
 
-La proporción de mediciones descartadas varía considerablemente entre individuos (Tabla \ref{tab:filtrado}): mientras que en T30 y T79 el ruido es 
+La proporción de mediciones descartadas varía considerablemente entre individuos (Tabla~\ref{tab:filtrado}): mientras que en T30 y T79 el ruido es 
 prácticamente inexistente ($ < 0.6\%$), en T10 alcanza casi el $20\%$. Esta disparidad sugiere que el ruido depende principalmente del dispositivo 
 y no de la conducta del animal, lo cual permite descartar sin preocuparnos de estar sobreeliminando datos.
 
@@ -55,11 +55,11 @@ y no de la conducta del animal, lo cual permite descartar sin preocuparnos de es
 \section{Detección de refugios}\label{III:refugios}
 
 También realizamos análisis sobre los refugios utilizados por los individuos, por lo que fue necesario definirlos a partir de las ubicaciones proporcionadas
-por los datos de GPS filtrados, como nombramos previamente. Dicho trabajo no fue trivial de realizar, ya que como mencionamos en el Capítulo \ref{Capitulo_1}, 
+por los datos de GPS filtrados, como nombramos previamente. Dicho trabajo no fue trivial de realizar, ya que como mencionamos en el Capítulo~\ref{Capitulo_1}, 
 hubo un largo período en el año donde no se midieron las posiciones durante las noches. Se sabe que las tortugas suelen pasar la noche en un mismo refugio 
 sin moverse, por lo que definimos como ventana nocturna estándar el período entre las 20:00 de un día $D$ y las 6:00 del día $D+1$, y le asignamos todas las mediciones de dicha ventana al día $D$.
 Para cada día calculamos la dispersión de las posiciones de la ventana como $\sigma=\sqrt{\sigma_{\rm lat}^2+\sigma_{\rm lon}^2}$, expresada en metros, y optamos por aceptar la noche como un refugio
-únicamente si $\sigma<10\,\mathrm{m}$ y se dispone de al menos 3 mediciones. Esta cota de $10\,\mathrm{m}$ es mayor al error típico del GPS caracterizado en la Sección \ref{I:ruido_noche}, 
+únicamente si $\sigma<10\,\mathrm{m}$ y se dispone de al menos 3 mediciones. Esta cota de $10\,\mathrm{m}$ es mayor al error típico del GPS caracterizado en la Sección~\ref{I:ruido_noche}, 
 por lo que solo descarta las noches en las que el animal se movió o en las que hubo mediciones muy ruidosas, y no las noches con el ruido habitual del dispositivo. 
 En ese caso, se registró la posición media de las mediciones y se la clasificó como un refugio.
 
@@ -72,7 +72,7 @@ la ubicación del refugio sigue siendo mejor aproximada que si se la obtuviera d
 Solo para los días en los que no se dispone de ninguna medición nocturna en la ventana estándar, como ocurre durante el período donde no se midieron las noches, 
 utilizamos como alternativa las mediciones diurnas entre las 9 y las 17 h, aplicando el mismo criterio de $\sigma<10\,\mathrm{m}$ y al menos 3 mediciones. 
 Los días con mediciones nocturnas que no cumplen los criterios para ningún $n\leq3$ se descartan, dado que en ellos las tortugas efectivamente se estaban desplazando. 
-Los criterios se muestran en la Figura \ref{fig:criterios_refugio}. Con esta definición se obtuvieron 1510 días con refugio asignado: 709 con la ventana estándar, 374 con la ventana ensanchada 
+Los criterios se muestran en la Figura~\ref{fig:criterios_refugio}. Con esta definición se obtuvieron 1510 días con refugio asignado: 709 con la ventana estándar, 374 con la ventana ensanchada 
 (59 con $n=1$, 308 con $n=2$ y 7 con $n=3$) y 427 con la alternativa diurna.
 
 \begin{figure}[ht]
@@ -88,12 +88,12 @@ Finalmente, agrupamos las posiciones de los refugios de cada individuo mediante 
 un mínimo de una medición, de modo que noches con posiciones a menos de esa distancia se asignan a un mismo refugio.
 
 \section{Evolución de los tipos de caminata}\label{III:Caminatas_ev}
-Previamente, en el Capítulo \ref{Capitulo_2} definimos tres tipos de caminata: Descanso, Exploración y retorno, y Cambio de refugio. Ahora, un concepto biológico
+Previamente, en el Capítulo~\ref{Capitulo_2} definimos tres tipos de caminata: Descanso, Exploración y retorno, y Cambio de refugio. Ahora, un concepto biológico
 muy conocido sobre los reptiles es que su actividad varía a lo largo del año, especiálmente durante los días fríos de invierno donde su actividad se reduce entrando en 
 brumación, simil a la hibernación de los mamíferos. Por ello, es de esperar que en esta etapa del año predomine el tipo de caminata de descanso, mientras que la frecuencia 
-de este comportamiento debiera disminuir con el incremento de temperaturas. A continuación, en la Figura \ref{fig:ev_comportamiento} vamos a
+de este comportamiento debiera disminuir con el incremento de temperaturas. A continuación, en la Figura~\ref{fig:ev_comportamiento} vamos a
 ver como la frecuencia de los tipos de caminata varía a lo largo del año. Cabe destacar que en durante el mes de Junio, el rastreador de la tortuga T10 dejó de funcionar,
-de forma correcta, por lo que se tuvo que descartar dichos datos de la estadística mensual, la justificación de este descarte se puede hallar en el Apéndice \ref{A:Problemas_T10}.
+de forma correcta, por lo que se tuvo que descartar dichos datos de la estadística mensual, la justificación de este descarte se puede hallar en el Apéndice~\ref{A:Problemas_T10}.
 
 
 \begin{figure}[ht]

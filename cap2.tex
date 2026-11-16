@@ -21,14 +21,14 @@ reorientación del individuo ocurre durante esta fase, en el Stop and Go el indi
 acción más allá de definir si permanece en ese estado o cambia al de movimiento.
 
 Nuestro objetivo en este capítulo es construir un modelo de tipo \textit{Stop and Go} capaz de reproducir el comportamiento diario de las tortugas, calibrando 
-sus parámetros a partir de los datos de GPS descritos en el Capítulo \ref{Introduccion}. En particular, buscamos que las trayectorias simuladas reproduzcan 
+sus parámetros a partir de los datos de GPS descritos en el Capítulo~\ref{Introduccion}. En particular, buscamos que las trayectorias simuladas reproduzcan 
 las distribuciones de tiempos de permanencia en cada estado (movimiento y reposo) reportadas por C. Callenbach \cite{callenbach2025}, así como otras métricas
 estadísticas relevantes, como el desplazamiento cuadrático medio (MSD) y la distribución de desplazamientos entre dos adquisiciones de ubicación del dispositivo de GPS.
 
 \section{Movimientos}\label{II:tipos_de_movs}
 
 Previo a la construcción del modelo, es necesario entender como es que se mueven las tortugas, para lo cual es necesario graficar algunos ejemplos de trayectorias diarias
-de las tortugas a partir de tener las mediciones de GPS. En la Figura \ref{fig:Trayectorias_diarias} se muestran algunas trayectorias diarias de distintos individuos, 
+de las tortugas a partir de tener las mediciones de GPS. En la Figura~\ref{fig:Trayectorias_diarias} se muestran algunas trayectorias diarias de distintos individuos, 
 donde se puede observar que el tipo de trayectoria varía considerablemente en función del individuo y del día. Sin embargo, podemos intentar clasificar estos tipos de 
 trayectorias en tres categorías: Descanso, Exploración y retorno, y Cambio de refugio.
 
@@ -41,7 +41,7 @@ trayectorias en tres categorías: Descanso, Exploración y retorno, y Cambio de 
 \end{figure}
 
 Para clasificar cada día utilizamos las mediciones entre las 8 y las 20 h, junto con los refugios de la noche anterior y de la noche siguiente, cuya detección se 
-explica en la Sección \ref{III:refugios}. Como posición inicial del día tomamos la mediana de las tres primeras mediciones y, para calcular la distancia máxima a dicha 
+explica en la Sección~\ref{III:refugios}. Como posición inicial del día tomamos la mediana de las tres primeras mediciones y, para calcular la distancia máxima a dicha 
 posición, utilizamos una mediana móvil de tres mediciones, de modo que un salto aislado del GPS no se cuente como un desplazamiento.
 
 En estos ejemplos se puede observar como los tres tipos de trayectorias se diferencian considerablemente entre sí. Llamamos Descanso al caso de una tortuga que no se 
@@ -63,8 +63,8 @@ cambios de refugio.
 
 \subsection{Caracterizando movimientos}\label{II:Movimientos_caracterizacion}
 Una vez distinguido los tipos de trayectorias y sus frecuencias de aparición, toca caracterizarlos. Para ello, podemos analizar la distribución de desplazamientos
-cada 15 minutos, la cual se muestra en la Figura \ref{fig:Desplazamientos_15_min_dist_tray}, como el desplazamiento cuadrático medio medio($\text{MSD}_{\text{Diario}}$), que se 
-muestra en la Figura \ref{fig:MSD_diario_dist_tray}. 
+cada 15 minutos, la cual se muestra en la Figura~\ref{fig:Desplazamientos_15_min_dist_tray}, como el desplazamiento cuadrático medio medio($\text{MSD}_{\text{Diario}}$), que se 
+muestra en la Figura~\ref{fig:MSD_diario_dist_tray}. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{P(d) por trayectoria anual.png}
@@ -72,7 +72,7 @@ muestra en la Figura \ref{fig:MSD_diario_dist_tray}.
     \label{fig:Desplazamientos_15_min_dist_tray}
 \end{figure}
 En esta figura podemos observar como la distribución de desplazamientos se diferencian fuertemente entre sí. Especial es el caso de la de comportamiento de reposo, cuya 
-distribución es muy similar a la curva resultante del ruido de GPS analizado en la Sección \ref{I:ruido_noche}, lo cual indica que la mayoría de los días de descanso
+distribución es muy similar a la curva resultante del ruido de GPS analizado en la Sección~\ref{I:ruido_noche}, lo cual indica que la mayoría de los días de descanso
 corresponden a tortugas que no se movieron lo suficiente como para superar el error del GPS. Por otro lado, las distribuciones de exploración y retorno y de cambio de
 refugio presentan curvas muy similares entre sí, siendo que la de cambio de refugio tiene una mayor probabilidad de desplazamientos largos, consistente con la definición
 de dichos movimientos.
@@ -98,6 +98,159 @@ como \textit{Stop and Go} con mucha persistencia. Estos distintos modelos se exp
 
 \section{Modelando el comportamiento de Reposo}\label{II:Reposo_Modelo}
 
+En las secciones~\ref{I:ruido_noche} y~\ref{I:corr_error} se analizó la dinámica del ruido del dispositivo de GPS en donde la distribución de errores sigue t de Student de la diferencia a 15 minutos, 
+tiene una componente correlacionada con una memoria de unos 30 minutos y una componente lenta que suma unos $1.3\,\mathrm{m}$ por eje en una a dos horas. Esta 
+caracterización nos es de gran importancia, ya que el modelo para el comportamiento de reposo consta únicamente de mediciones probocadas exclusivamente por el ruido, 
+dejando fija la posición del individuo, en la posición inicial del día.
+
+\subsection{Construcción del error}\label{II:error_construccion}
+
+La posición medida en el modelo de Reposo es la posición real de la tortuga, que es fija, más un error de GPS construido en tres partes. Cada una reproduce una propiedad
+ que se midió en el Capítulo~\ref{Capitulo_1}: el tamaño del error, su memoria rápida y su memoria lenta.
+
+\paragraph{Tamaño del error.} Para cada posición $k$ sorteamos una escala
+
+\begin{equation}
+    \sigma_k=\frac{a}{\sqrt{-\ln u_k}}, \qquad u_k\sim\mathcal{U}(0,1),
+    \label{eq:sigma_k}
+\end{equation}
+
+y el error de esa posición es $\sigma_k\,(z_x,z_y)$, con $z_x$ y $z_y$ gaussianas de media cero y varianza uno. Esta construcción es la de la Ecuación~\eqref{eq:error_t}
+con $\nu=2$, para la cual la variable $\chi^2_\nu$ es una exponencial, de modo que $w/2$ se distribuye como $-\ln u$ y entonces $\sigma_k=a/\sqrt{-\ln u_k}$ equivale a 
+$s/\sqrt{w/\nu}$. Como en el capítulo anterior, $x$ e $y$ comparten la misma escala. Los errores cuyo módulo supera los $45\,\mathrm{m}$ se vuelven a sortear; es un corte técnico que afecta
+a menos del $0.1\%$ de los sorteos. La escala $a$ no se obtiene de una fórmula, sino que se calibra por simulación para que la
+diferencia entre dos posiciones separadas $15$ minutos tenga $s\approx1.06\,\mathrm{m}$, como en las noches, de la subsección~\ref{I:ruido_noche}. 
+El valor resultante es $a=0.93\,\mathrm{m}$, el cual cabe aclarar que describe el error de una posición, mientras que la t de Student del capítulo anterior 
+se ajustó a la diferencia entre dos posiciones, por lo que ambos valores no tienen por qué coincidir.
+
+\paragraph{Memoria rápida.} Para que posiciones cercanas en el tiempo compartan parte de su error, el error de cada posición es un promedio pesado de los sorteos vecinos,
+
+\begin{equation}
+    \boldsymbol{e}_k=\sum_{j} h_j\,\sigma_{k+j}\,(z_{x,k+j},z_{y,k+j}),
+    \label{eq:suavizado}
+\end{equation}
+
+donde los pesos $h_j$ son los de una gaussiana de desvío $\tau_c/2$ evaluada cada $\Delta t=15\,\mathrm{min}$,
+
+\begin{equation}
+    h_j\propto\exp\!\left(-\frac{2\,(j\,\Delta t)^2}{\tau_c^2}\right),\qquad \sum_j h_j^2=1 .
+\end{equation}
+
+El parámetro $\tau_c$ es el tiempo de correlación del modelo, y la normalización $\sum_j h_j^2=1$ hace que el suavizado cambie cuánto se parecen dos posiciones 
+vecinas pero no el tamaño típico del error. Tomamos $\tau_c=24.6\,\mathrm{min}$, con pesos 
+$h_0=0.83$ para la propia posición y $h_{\pm1}=0.39$ para la anterior y la siguiente; los de posiciones más lejanas son despreciables ($h_{\pm2}=0.04$). Con este valor, 
+la curva del modelo reproduce $\sigma_{\rm dif}$ a $15$, $30$ y $45$ minutos ($1.22$, $1.85$ y $2.18\,\mathrm{m}$, frente a $1.24$, $1.94$ y $2.14\,\mathrm{m}$ medidos en las noches; 
+Figura~\ref{fig:ajuste_deriva}), es decir, la memoria de unos $30$ minutos de la Sección~\ref{I:corr_error}. Después de ese tiempo la curva se aplana en $\sim2.2\,\mathrm{m}$.
+
+\paragraph{Memoria lenta.} A cada eje se le suma además una deriva de Ornstein-Uhlenbeck,
+
+\begin{equation}
+    o_{k+1}=\phi\,o_k+\sigma_l\sqrt{1-\phi^2}\,\xi_k, \qquad \phi=e^{-\Delta t/\tau_l},
+    \label{eq:deriva}
+\end{equation}
+
+con $\Delta t=15\,\mathrm{min}$ y $\xi_k$ gaussiana de media cero y varianza uno. Es la versión discreta de un proceso de Gauss-Markov de primer orden, del tipo que 
+se menciona en la Sección~\ref{I:corr_error}, y es estacionaria con desvío $\sigma_l$ desde la primera posición. La posición medida resulta entonces
+
+\begin{equation}
+    \mathbf{x}^{\rm med}_k=\mathbf{x}^{\rm real}+e_k+o_k .
+\end{equation}
+
+\paragraph{Calibración de la deriva.} Los parámetros $\sigma_l$ y $\tau_l$ se ajustaron por barrido: para cada par $(\sigma_l,\tau_l)$ de una grilla simulamos 
+el modelo y calculamos $\sigma_{\rm dif}(\tau)$ a las mismas separaciones que los datos, es decir, los $15$ puntos de la Figura~\ref{fig:memoria_error} 
+($9$ de las noches y $6$ de la brumación profunda). Elegimos el par que minimiza la suma de los cuadrados de las diferencias entre modelo y datos, ponderadas por 
+el ancho del intervalo de confianza de cada punto, haciendo el tratamiento de las simulaciones igual que con los datos. Resultan $\sigma_l=1.75\,\mathrm{m}$ y 
+$\tau_l=8\,\mathrm{h}$, con un $\chi^2$ por punto de $3.8$ con deriva y de $10.8$ sin ella. Este $\chi^2$ solo sirve para ordenar los modelos, porque los puntos se 
+dispersan más que sus intervalos. En la Figura~\ref{fig:ajuste_deriva} se observa que, sin deriva, el modelo se aplana en unos $2.2\,\text{m}$ a partir de los $45$ 
+minutos, mientras que con deriva sigue a los datos hasta las $5$ horas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{GPS_error_drift.png}
+    \caption{Desvío robusto por eje de la diferencia entre dos posiciones de una tortuga quieta, en función del tiempo que las separa, para noches (22--6 h) y 
+    brumación profunda (mayo-agosto, 11--15:45 h), junto con el modelo sin deriva (discontinuo) y con deriva (continuo).}
+    \label{fig:ajuste_deriva}
+\end{figure}
+
+El tiempo de la deriva no queda determinado: pares desde $\sigma_l\approx1\,\mathrm{m}$ y $\tau_l=2\,\mathrm{h}$ hasta $1.75$--$2\,\mathrm{m}$ y $8\,\mathrm{h}$ ajustan 
+casi igual, de modo que los datos fijan cuánto suma la deriva en unas horas y no su escala de tiempo. Por la misma razón, el $\sigma_l=1.75\,\mathrm{m}$, que es el desvío 
+estacionario de un proceso con $\tau_l=8\,\mathrm{h}$, no debe compararse directamente con los $1.3\,\mathrm{m}$ de la Sección~\ref{I:corr_error}, que se calcularon 
+suponiendo errores lentos independientes entre las dos posiciones.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Parámetro & Valor & Origen \\
+        \hline
+        escala del sorteo $a$ & $0.93\,\mathrm{m}$ & $s=1.06\,\mathrm{m}$ de la diferencia a 15 min (noches) \\
+        $\nu$ de cada sorteo & $2$ & t de Student con $\nu\approx2$ (Cap.~\ref{I:ruido_noche}) \\
+        error máximo & $45\,\mathrm{m}$ & corte técnico (rara vez actúa) \\
+        $\tau_c$ (memoria rápida) & $24.6\,\mathrm{min}$ & $\sigma_{\rm dif}$ entre 15 y 45 min \\
+        $\sigma_l$, $\tau_l$ (deriva) & $1.75\,\mathrm{m}$, $8\,\mathrm{h}$ & ajuste a noches y brumación \\
+        \hline
+    \end{tabular}
+    \caption{Parámetros del error de GPS en el modelo de Reposo y su origen.}
+    \label{tab:parametros_error}
+\end{table}
+
+\subsection{Simulación, clasificación y comparación con los datos}
+
+Una vez habiendo armado el modelo toca ponerlo a andar y observar los resultados obtenidos. Se realizaron 20.000 días de simulaciones, en donde cada uno consiste en 
+49 datos medidos (equivalentes a datos adquiridos de 8 a 20 horas cada 15 minutos). Clasificamos cada uno de estos días siguiendo los criterios establecidos para los datos
+empíricos de las tortugas salvajes, con la salvedad que al no tener una tabla de refugios en las simulaciones se comparan posicion inicial con final, para determinar si 
+volvió al refugio de donde partió. Es importante aclarar, que todo análisis comparativo de este modelo se realizó entre los días clasificados como reposo de la simulación 
+con los de la naturaleza. A continuación, en la Figura \ref{fig:sim_vs_datos_reposo} se muestran ejemplos de las trayectorias de reposo de los datos comparado con los 
+obtenidos de la simulación.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{ejemplos_reposo_vs_datos.png}
+    \caption{Ejemplos de trayectorias de los datos clasificados como de reposo en la parte superior, comparados con trayectorias simuladas presentes en la parte inferior. 
+    El círculo naranja, de $10\,\mathrm{m}$ de radio alrededor de la posición inicial, marca el umbral de la clasificación: si la mediana de 3 posiciones 
+    consecutivas lo supera, el día deja de clasificarse como de Reposo.}
+    \label{fig:sim_vs_datos_reposo}
+\end{figure}
+
+Si bien a simple vista el modelo parece replicar bastante bien los datos, la comparación tiene que hacerse a través de las mismas métricas que usamos para 
+caracterizar los datos. En la Figura \ref{fig:analisis_cuantitativo_reposo}, analizamos que tan bueno es el modelo para replicar las métricas de MSD a lo largo de un día (respecto del comienzo del mismo),
+de la distribución de desplazamientos cada 15 minutos y analizando la distancia máxima recorrida en el día.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{Chequeo metricas de reposo.png}
+    \caption{Análisis de las métricas de desplazamientos cada 15 minutos (a), el MSD diario (b) y la distancia máxima en el día (c). En estos gráficos comparamos los datos
+    con errores independientes, correlacionados y correlacionados con deriva lenta.}
+    \label{fig:analisis_cuantitativo_reposo}
+\end{figure}
+
+Se puede observar como el modelo con errores correlacionados con deriva lenta es el que mejor ajusta a los datos empíricos; seguido de los errores correlacionados, la cual 
+ajusta a la curva de los deplazamientos cada 15 minutos y la primera hora del MSD, pero falla en tiempos más largos y en la distancia máxima del día; finalmente, el modelo
+de errores independientes falla en todas las metricas observadas, sobreestima distancias largas en el P(d), tiene un MSD diario constante y la distancia máxima es muy 
+inferior respecto a los datos. Además, como en el modelo la tortuga nunca se mueve, permite medir qué tan bien funciona la clasificación: todo día simulado que no sale como Reposo es 
+error del GPS tomado por movimiento. Los porcentajes de las clasificaciones se encuentran en la Tabla~\ref{tab:Clasif_reposo_err}. Con el error correlacionado 
+con deriva, el más realista, el $23.3\%$ de los días de una tortuga quieta se clasifica como movimiento, casi siempre como Exploración y retorno, ya que el error 
+vuelve a la posición inicial al final del día. No se trata de un defecto del modelo, sino de una propiedad de la clasificación: cuanto más realista es el error, 
+más días quietos superan el umbral de $10\,\mathrm{m}$.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Error & $\%$ Reposo & $\%$ Exploración & $\%$ Cambio de refugio \\
+        \hline
+        Independiente & $98.7\%$ & $1.3\%$ & $0.0\%$ \\
+        Correlacionado & $82.1\%$ & $16.2\%$ & $1.7\%$ \\
+        Correlacionado + deriva & $76.7\%$ & $20.7\%$ & $2.7\%$ \\
+        \hline
+    \end{tabular}
+    \caption{Porcentajes de clasificación de los días simulados según el modelo de error.}
+    \label{tab:Clasif_reposo_err}
+\end{table}
+
+Si lo mismo ocurre con los datos, el $22.6\%$ de días clasificados como Reposo subestima la fracción real, que sería de aproximadamente $22.6\%/0.77\approx29\%$, 
+y alrededor de una de cada cinco Exploraciones y retorno, las de menor alcance, correspondería a error del GPS y no a movimiento.
 
 \section{Modelando el comportamiento de Exploración y retorno}\label{II:Exploracion_Modelo}
 
@@ -110,7 +263,7 @@ de forma independiente, sin interacción alguna entre ellos, cada uno alternando
 El ciclo día-noche se incorpora únicamente como una ventana horaria activa que abarca desde las 8\,hs hasta las 20\,hs; fuera de este intervalo, 
 el individuo permanece inmóvil. Tomamos los pasos temporales equivalentes a $1.7\,s$ (tiempo entre mediciones del acelerómetro) y los dejamos evolucionar 
 hasta alcanzar un equivalente a 2 meses. Elegimos esta duración inspirándonos en el período en que las tortugas no están en brumación, que detallaremos 
-más adelante, en el Capítulo \ref{Capitulo_4}, al analizar el comportamiento de esta especie a lo largo del año.
+más adelante, en el Capítulo~\ref{Capitulo_4}, al analizar el comportamiento de esta especie a lo largo del año.
 
 Para determinar cuánto tiempo permanece un individuo en cada uno de los dos estados, existen al menos dos estrategias posibles. La primera consiste en 
 definir una tasa de transición instantánea $\gamma(t)$, función del tiempo ya transcurrido en el estado actual, y evaluarla en cada paso de tiempo discreto 
@@ -133,7 +286,7 @@ esta reducción en el costo computacional resulta determinante para la viabilida
 
 En el caso de querer realizar cálculos teóricos, puede ser de utilidad tener una ecuación para la tasa de transición $\gamma$ de un estado a otro, en función del 
 tiempo transcurrido en el estado actual, $t$, teniendo en consideración los pasos temporales discretos de la simulación, $\delta t$, y una distribución 
-temporal objetivo tipo ley de potencia $\propto t^{-\alpha}$. El desarrollo para obtener esta expresión se puede encontrar en el Apéndice \ref{A:transition_rate_PL}, 
+temporal objetivo tipo ley de potencia $\propto t^{-\alpha}$. El desarrollo para obtener esta expresión se puede encontrar en el Apéndice~\ref{A:transition_rate_PL}, 
 dando como resultado la ecuación:
 
 \begin{equation}
@@ -183,7 +336,7 @@ distribuciones tipo ley de potencia, inspiradas en las distribuciones empíricas
 
 \subsection*{Primera Configuración: tiempo de caminata constante}
 
-A continuación, en la Figura \ref{fig:Distribucion_cteW}, mostramos distintas distribuciones de desplazamiento, en donde $\sigma_\theta=0.2$ y el tiempo 
+A continuación, en la Figura~\ref{fig:Distribucion_cteW}, mostramos distintas distribuciones de desplazamiento, en donde $\sigma_\theta=0.2$ y el tiempo 
 constante de caminata $T_{W}=10 \text{ p.t.}$ (pasos temporales, es decir 10 pasos de la simulación) para las tres curvas. Por otro lado, lo que varía entre
 las curvas es el exponente del tiempo de reposo.
 
@@ -207,7 +360,7 @@ observado en las tortugas, por lo que se descarta como modelo válido para este 
 
 \subsection*{Segunda Configuración: tiempo de reposo constante}
 
-Para esta segunda configuración, fijamos el tiempo de reposo constante y dejamos que el tiempo de caminata siga una ley de potencia. En la Figura \ref{fig:Distribucion_cteS},
+Para esta segunda configuración, fijamos el tiempo de reposo constante y dejamos que el tiempo de caminata siga una ley de potencia. En la Figura~\ref{fig:Distribucion_cteS},
 mostramos la distribución de desplazamiento para distintos valores del tiempo de reposo, dejando fijos el exponente del tiempo de caminata y $\sigma_\theta$.
 
 \begin{figure}[H]
@@ -220,7 +373,7 @@ mostramos la distribución de desplazamiento para distintos valores del tiempo d
 Lo importante a destacar de la figura es que, a diferencia del primer modelo, se observan distribuciones con un comportamiento tipo ley de potencia, las cuales 
 convergen a una misma distribución una vez se tienen tiempos de espera mayores al tiempo de la ventana analizada (15 minutos). Esta configuración es capaz de 
 reproducir el comportamiento de ley de potencia con exponente $\alpha_d \approx 2$ observado en las tortugas, para curvas con tiempos de reposo mayores a 500 
-segundos. Habiendo logrado esto, pasamos a analizar el MSD de este modelo, el cual se muestra en la Figura \ref{fig:MSD_cteS}.
+segundos. Habiendo logrado esto, pasamos a analizar el MSD de este modelo, el cual se muestra en la Figura~\ref{fig:MSD_cteS}.
 
 \begin{figure}[H]
     \centering
@@ -237,7 +390,7 @@ para tiempos largos. Finalmente, debido a la ausencia de un comportamiento subdi
 La última configuración que probamos fue una en la que ambas distribuciones temporales siguen una ley de potencia, $f_S(t) \propto t^{-\alpha_S}$ para el reposo
  y $f_W(t) \propto t^{-\alpha_W}$ para la caminata, con $\alpha_S, \alpha_W > 0$. Para explorar el espacio de parámetros realizamos un barrido en 
  $\alpha_S \in [0.5, 3.0]$, $\alpha_W \in [0.5, 3.0]$ y $\sigma_\theta \in [0.2, 2.0]$, calculando en cada caso la distribución de desplazamientos a 15 minutos, 
- $P(d) \propto d^{-\alpha_d}$. A modo de ejemplo, en la Figura \ref{fig:Exponents} mostramos estas distribuciones para distintos valores de $\alpha_S$, 
+ $P(d) \propto d^{-\alpha_d}$. A modo de ejemplo, en la Figura~\ref{fig:Exponents} mostramos estas distribuciones para distintos valores de $\alpha_S$, 
  con $\alpha_W = 1.75$ y $\sigma_\theta = 0.2$ fijos. En todo el barrido, el régimen de ley de potencia decreciente ($\alpha_d > 0$) aparece únicamente 
  cuando la distribución de reposo decae más lento que la de caminata, es decir, cuando $\alpha_S < \alpha_W$.
 
@@ -248,7 +401,7 @@ La última configuración que probamos fue una en la que ambas distribuciones te
     \label{fig:Exponents}
 \end{figure}
 
-Dentro de la región $\alpha_S < \alpha_W$, buscamos las combinaciones que reprodujeran el comportamiento observado empíricamente. En la Figura \ref{fig:DESPL_PL} 
+Dentro de la región $\alpha_S < \alpha_W$, buscamos las combinaciones que reprodujeran el comportamiento observado empíricamente. En la Figura~\ref{fig:DESPL_PL} 
 mostramos dos ejemplos, donde la configuración con $\sigma_\theta = 0.5$, $\alpha_W = 1.6$ y $\alpha_S = 0.75$ logra reproducir el exponente empírico, con 
 $\alpha_d \approx 2$.
 

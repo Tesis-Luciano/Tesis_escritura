@@ -2,9 +2,9 @@
 \contentsline {chapter}{\'{I}ndice de s{\'{\i }}mbolos}{\es@scroman {v}}{section*.1}%
 \contentsline {chapter}{\'{I}ndice de contenidos}{\es@scroman {vii}}{section*.3}%
 \contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman {ix}}{section*.5}%
-\contentsline {chapter}{\'{I}ndice de tablas}{\es@scroman {xi}}{section*.7}%
-\contentsline {chapter}{Resumen}{\es@scroman {xiii}}{section*.9}%
-\contentsline {chapter}{Abstract}{\es@scroman {xv}}{section*.11}%
+\contentsline {chapter}{\'{I}ndice de tablas}{\es@scroman {xiii}}{section*.7}%
+\contentsline {chapter}{Resumen}{\es@scroman {xv}}{section*.9}%
+\contentsline {chapter}{Abstract}{\es@scroman {xvii}}{section*.11}%
 \babel@toc {english}{}\relax 
 \babel@toc {spanish}{}\relax 
 \babel@toc {english}{}\relax 
@@ -16,26 +16,32 @@
 \contentsline {section}{\numberline {1.4}Datos espaciotemporales a partir de dispositivos de GPS}{4}{section.1.4}%
 \contentsline {subsection}{\numberline {1.4.1}Unidad de navegación}{5}{subsection.1.4.1}%
 \contentsline {subsection}{\numberline {1.4.2}Errores de GPS}{6}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}Memoria del error del GPS}{7}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.3}Memoria del error del GPS}{8}{subsection.1.4.3}%
 \contentsline {chapter}{\numberline {2}De los datos al modelo y del modelo a los datos}{11}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Introducción}{11}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Movimientos}{12}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Caracterizando movimientos}{14}{subsection.2.2.1}%
 \contentsline {section}{\numberline {2.3}Modelando el comportamiento de Reposo}{17}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Modelando el comportamiento de Exploración y retorno}{17}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Modelando el comportamiento de Nuevo Refugio}{17}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Resultados del modelo}{20}{subsection.2.5.1}%
-\contentsline {section}{\numberline {2.6}Conclusiones}{24}{section.2.6}%
-\contentsline {chapter}{\numberline {3}Datos y mediciones a lo largo del año}{25}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introducción}{25}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Datos de GPS}{26}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Detección de refugios}{26}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Evolución de los tipos de caminata}{27}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Modelando y simulando patrones de movimiento a lo largo del año.}{31}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introducción}{31}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{33}{chapter.5}%
-\contentsline {chapter}{\numberline {A}Tasa de transición con un tiempo máximo de comportamiento}{35}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Problemas con el rastreador T10}{37}{appendix.B}%
-\contentsline {chapter}{Bibliograf{\'{\i }}a}{39}{section*.37}%
-\contentsline {chapter}{Publicaciones asociadas}{41}{section*.39}%
-\contentsline {chapter}{Agradecimientos}{43}{section*.41}%
+\contentsline {subsection}{\numberline {2.3.1}Construcción del error}{17}{subsection.2.3.1}%
+\contentsline {paragraph}{Tamaño del error.}{17}{section*.22}%
+\contentsline {paragraph}{Memoria rápida.}{17}{section*.23}%
+\contentsline {paragraph}{Memoria lenta.}{18}{section*.24}%
+\contentsline {paragraph}{Calibración de la deriva.}{18}{section*.25}%
+\contentsline {subsection}{\numberline {2.3.2}Simulación, clasificación y comparación con los datos}{19}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Modelando el comportamiento de Exploración y retorno}{22}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Modelando el comportamiento de Nuevo Refugio}{22}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Resultados del modelo}{25}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}Conclusiones}{29}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Datos y mediciones a lo largo del año}{31}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introducción}{31}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Datos de GPS}{32}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Detección de refugios}{32}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Evolución de los tipos de caminata}{33}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Modelando y simulando patrones de movimiento a lo largo del año.}{37}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introducción}{37}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{39}{chapter.5}%
+\contentsline {chapter}{\numberline {A}Tasa de transición con un tiempo máximo de comportamiento}{41}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Problemas con el rastreador T10}{43}{appendix.B}%
+\contentsline {chapter}{Bibliograf{\'{\i }}a}{45}{section*.46}%
+\contentsline {chapter}{Publicaciones asociadas}{47}{section*.48}%
+\contentsline {chapter}{Agradecimientos}{49}{section*.50}%

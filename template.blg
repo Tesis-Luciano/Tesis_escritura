@@ -25,10 +25,9 @@ Warning--entry type for "oliva2023" isn't style-file defined
 --line 33 of file mibib.bib
 Warning--entry type for "madile2023" isn't style-file defined
 --line 407 of file mibib.bib
-Warning--I didn't find a database entry for "Madile"
 You've used 14 entries,
             2634 wiz_defined-function locations,
-            1122 strings with 12020 characters,
+            1120 strings with 12008 characters,
 and the built_in function-call counts, 4609 in all, are:
 = -- 318
 > -- 140
@@ -67,4 +66,4 @@ warning$ -- 0
 while$ -- 27
 width$ -- 16
 write$ -- 158
-(There were 3 warnings)
+(There were 2 warnings)

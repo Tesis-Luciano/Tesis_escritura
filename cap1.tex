@@ -21,7 +21,7 @@ El objeto de estudio de esta tesis es la tortuga terrestre argentina, \textit{Ch
 en la lista roja de la \textit{International Union for Conservation of Nature} (IUCN) \cite{kubisch2023chelonoidis}. Esta clasificación se ve impulsada especialmente 
 por la expansión ganadera, que se encarga de segmentar y deteriorar su hábitat, y por la captura y venta ilegal de los individuos. En adición, la 
 introducción de nuevos depredadores como el jabalí (\textit{Sus scrofa}) \cite{kubisch2014} pone en tensión la ya de por sí delicada población de tortugas. 
-Estos reptiles son nativos de Sudamérica, abarcando gran parte de Argentina, el sur de Bolivia y el norte de Paraguay, como se observa en la Figura \ref{fig:mapa}. 
+Estos reptiles son nativos de Sudamérica, abarcando gran parte de Argentina, el sur de Bolivia y el norte de Paraguay, como se observa en la Figura~\ref{fig:mapa}. 
 
 \begin{figure}[ht]
     \centering
@@ -54,7 +54,7 @@ Previamente mencionamos que una parte considerable de esta tesis se basa en el t
 el año 2025. En dicho trabajo se trabajó utilizando un dispositivo de navegación construido por el equipo de investigación del Centro Atómico Bariloche, 
 el cual permitía tomar mediciones de aceleración y velocidad angular, a partir de la utilización de un acelerómetro y de un giróscopo, las cuales eran 
 almacenadas en una tarjeta de memoria SD. Para evitar que el dispositivo adherido a los animales afecte su comportamiento, se suele tomar como regla 
-que el mismo no debe pesar más que un $5\%$ del peso total del individuo. El dispositivo, el cual se muestra en la Figura \ref{fig:dispositivo_navegacion},
+que el mismo no debe pesar más que un $5\%$ del peso total del individuo. El dispositivo, el cual se muestra en la Figura~\ref{fig:dispositivo_navegacion},
 poseía un tamaño de $5 \times 8 \times 1$ cm y un peso de 44.9 g, el cual, al compararlo con el peso promedio de las tortugas de 1.5 kg, representa un $3\%$ de la masa \cite{oliva2023}.
 
 \begin{figure}[ht]
@@ -71,7 +71,7 @@ En su trabajo logró, a partir de la utilización de herramientas de aprendizaje
 de las tortugas en dos grupos (movimiento y quietud). Una vez clasificados los movimientos tiempo a tiempo, encontró que el tiempo que pasaba 
 en cada uno de los estados de forma ininterrumpida seguía una distribución de ley de potencia con exponentes negativos en un rango entre $-1$ y $-2$. 
 Salvo contadas excepciones para un mismo individuo, la distribución de tiempos de caminata caía de forma más abrupta que la de los tiempos de espera.
-Un ejemplo de estas distribuciones se muestra en la Figura \ref{fig:distribuciones}.
+Un ejemplo de estas distribuciones se muestra en la Figura~\ref{fig:distribuciones}.
 
 \begin{figure}[ht]
     \centering
@@ -94,7 +94,7 @@ explicaremos el dispositivo utilizado, que sirve para el trabajo desarrollado en
 \subsection{Unidad de navegación}
 
 La unidad de navegación utilizada durante la campaña para la obtención de registros espaciotemporales de la ubicación de los individuos fue el dispositivo 
-comercial i-gotU GT120, mostrado en la Figura \ref{fig:igotU}. Este dispositivo posee un receptor de GPS, cuya frecuencia es ajustable mediante el 
+comercial i-gotU GT120, mostrado en la Figura~\ref{fig:igotU}. Este dispositivo posee un receptor de GPS, cuya frecuencia es ajustable mediante el 
 software del fabricante. La batería del dispositivo tiene una autonomía de 7 días y su peso es de $21 g$, dicho peso representa un $1.5 \%$ del peso promedio 
 de las tortugas, lo cual se encuentra dentro del margen del $5 \%$ para evitar perturbar el comportamiento. La unidad de memoria almacena posición y hora 
 para cada dato adquirido, siendo accesible mediante conexión USB. 
@@ -120,7 +120,7 @@ estudiamos el error de posición del GPS, para lo cual se requería de tener med
 se usaron los pocos datos que se tenían de las mediciones nocturnas, dado que las tortugas no suelen moverse en dicho período, como fue verificado por el equipo
 de campo \cite{madile2023}. Trabajamos con las posiciones sin filtrar entre las 22 y las 6 h, ya que el filtro de velocidad elimina justamente los errores grandes que queremos 
 caracterizar, y descartamos los pares con $d\geq90\,\mathrm{m}$, que es lo máximo que dejaría pasar dicho filtro. Excluimos además a T6, cuyo dispositivo presenta un 17\% de pares 
-nocturnos por encima de los $10\,\mathrm{m}$, contra un 0.6 a 3.9\% en el resto, por lo que no permite separar el movimiento del error. En la Figura \ref{fig:distribucion_error} se muestra la distribución 
+nocturnos por encima de los $10\,\mathrm{m}$, contra un 0.6 a 3.9\% en el resto, por lo que no permite separar el movimiento del error. En la Figura~\ref{fig:distribucion_error} se muestra la distribución 
 de las diferencias entre dos mediciones consecutivas del eje $x$ y el eje $y$.
 
 \begin{figure}[ht]
@@ -172,7 +172,7 @@ mientras que, si están correlacionados, dos posiciones cercanas en el tiempo se
 Para estudiarlo necesitamos situaciones en las que la tortuga esté quieta, de modo que toda diferencia de posición sea error. Utilizamos dos subconjuntos de datos: 
 las noches (22 a 6 h), cuando la tortuga está en el refugio, y la brumación profunda (de mayo a agosto, entre las 11 y las 15:45 h), cuando está enterrada. 
 En estos meses el dispositivo registró principalmente cada 30 minutos, por lo que en este caso solo se usan separaciones que sean múltiplos de 30 minutos. 
-Trabajamos con las posiciones sin filtrar y excluimos a T6 y a T10 durante junio de 2022, cuando falló su GPS, cuya justificación se encuentra en el Apéndice \ref{A:Problemas_T10}.
+Trabajamos con las posiciones sin filtrar y excluimos a T6 y a T10 durante junio de 2022, cuando falló su GPS, cuya justificación se encuentra en el Apéndice~\ref{A:Problemas_T10}.
 
 Para cada tiempo $\tau$ entre las dos posiciones (de 15 a 300 minutos, con una tolerancia de $\pm2$ minutos hasta 60 minutos y de $\pm8$ minutos para tiempos
 mayores) tomamos las diferencias $\Delta x$ y $\Delta y$ de todos los pares de posiciones de la misma noche o del mismo día separados $\tau$, descartando los 
@@ -191,13 +191,13 @@ por lo tanto, una dependencia con $\tau$ indica que el error tiene memoria.
     \label{fig:memoria_error}
 \end{figure}
 
-En la Figura \ref{fig:memoria_error} se observan dos escalas. La primera es una escala rápida: a 15 minutos la diferencia es de $1.24\,\mathrm{m}$, alrededor del 60\% 
+En la Figura~\ref{fig:memoria_error} se observan dos escalas. La primera es una escala rápida: a 15 minutos la diferencia es de $1.24\,\mathrm{m}$, alrededor del 60\% 
 de los $1.9$ a $2.1\,\mathrm{m}$ que se obtienen entre 30 y 45 minutos. Dos posiciones cercanas en el tiempo comparten buena parte del error y este se cancela al restarlas. 
 Esta conclusión no depende de ninguna referencia externa ni de suponer nada sobre la distribución del error, ya que con errores independientes ambos valores serían iguales. 
 La memoria de esta parte es de unos 30 minutos.
 
 La segunda es una escala lenta: después de la primera hora la diferencia sube a un segundo nivel, de unos $2.7\,\mathrm{m}$, que se mantiene hasta las 5 horas. 
-En la brumación este segundo nivel se alcanza ya a los 60 minutos. Como la mayoría de las noches tiene registros solo entre la 1 y las 2 h (Sección \ref{I:unidad_navegacion}), las separaciones de 60 minutos o más 
+En la brumación este segundo nivel se alcanza ya a los 60 minutos. Como la mayoría de las noches tiene registros solo entre la 1 y las 2 h (Sección~\ref{I:unidad_navegacion}), las separaciones de 60 minutos o más 
 provienen de pocas noches con un registro más extenso, lo que explica que sus intervalos de confianza sean más anchos. Si este aumento se debe a una componente adicional, independiente de la rápida, 
 equivale a sumar un error lento de unos $1.3\,\mathrm{m}$ por eje, aproximadamente. La evidencia más firme es la comparación dentro de las mismas noches o días, que no depende de qué noches entran 
 en cada punto: en ambos conjuntos, la diferencia es mayor entre 90 y 240 minutos que entre 30 y 60 minutos, con un aumento de entre $0.6$ y $0.8\,\mathrm{m}$.
@@ -214,7 +214,7 @@ Por esta razón no usamos esa referencia como nivel de errores independientes.
 
 En resumen, el error del GPS queda descrito por tres elementos: la distribución t de Student de la diferencia a 15 minutos (sección anterior), una componente correlacionada 
 con una memoria de unos 30 minutos y una componente lenta que suma unos $1.3\,\mathrm{m}$ por eje en una a dos horas. Esta caracterización se 
-utiliza más adelante en el modelo de Reposo (Sección \ref{II:Reposo_Modelo}).
+utiliza más adelante en el modelo de Reposo (Sección~\ref{II:Reposo_Modelo}).
 
 
 %%% Local Variables: 
