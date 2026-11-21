@@ -252,10 +252,18 @@ más días quietos superan el umbral de $10\,\mathrm{m}$.
 Si lo mismo ocurre con los datos, el $22.6\%$ de días clasificados como Reposo subestima la fracción real, que sería de aproximadamente $22.6\%/0.77\approx29\%$, 
 y alrededor de una de cada cinco Exploraciones y retorno, las de menor alcance, correspondería a error del GPS y no a movimiento.
 
-\section{Modelando el comportamiento de Exploración y retorno}\label{II:Exploracion_Modelo}
-
 
 \section{Modelando el comportamiento de Nuevo Refugio}\label{II:NuevoRefugio_Modelo}
+
+Por cuestión de simplicidad y un poco de orden cronológico de desarrollo, a continuación explicamos el modelo correspondiente al tipo de trayectoria diario que denominamos
+``Nuevo Refugio´´. Esto se debe a que en un principio se buscó usar un único modelo que pueda describir todo el comportamiento de las tortugas, desconociendo que esto 
+fue intentado previamente para otro tipos de animales con resultados adversos~\cite{BUSCAREJEMPLO} y~\cite{BUSCAREJEMPLO}.
+
+Para el tipo de caminata en donde el individuo cambia de refugio se optó por usar un modelo de caminante aleatorio conocido en la bibliografía como \textit{Stop and Go},
+el cual explicaremos más adelante. Las simulaciones realizadas constan de $N \approx \text{ESPERAR A SIMULACION FINAL}$ individuos de forma independiente, sin interacciones 
+entre ellos. 
+
+
 
 El modelo desarrollado en este capítulo describe el movimiento de cada tortuga como un caminante aleatorio de tipo \textit{Stop and Go} que se desplaza en 
 un espacio homogéneo continuo, es decir, sin refugios ni otras estructuras que introduzcan heterogeneidad espacial. Simulamos $N \approx 100.000$ individuos 
@@ -432,6 +440,8 @@ destacar que esto se obtuvo a costa de llevar el exponente de la distribución d
 Para cerrar este capítulo, podemos concluir que el modelo de caminante aleatorio \textit{Stop and Go} es capaz de reproducir el comportamiento observado en las tortugas,
 utilizando distribuciones temporales tipo ley de potencia para ambos estados, encontrando que es necesario que la distribución de reposo decaiga más lento que la de 
 caminata, utilizando pasos de caminata constante y manteniendo una cierta persistencia en la dirección de movimiento.
+
+\section{Modelando el comportamiento de Exploración y retorno}\label{II:Exploracion_Modelo}
 
 
 

@@ -188,6 +188,15 @@ INPUT apend1.aux
 INPUT .\apend2.aux
 INPUT .\apend2.aux
 INPUT apend2.aux
+INPUT .\apend3.aux
+INPUT .\apend3.aux
+INPUT apend3.aux
+INPUT .\apend4.aux
+INPUT .\apend4.aux
+INPUT apend4.aux
+INPUT .\apend5.aux
+INPUT .\apend5.aux
+INPUT apend5.aux
 OUTPUT template.aux
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -316,6 +325,12 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib5.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy5.tfm
+INPUT .\figs\burrow_criteria_es.png
+INPUT .\figs\burrow_criteria_es.png
+INPUT .\figs\burrow_criteria_es.png
+INPUT .\figs\burrow_criteria_es.png
+INPUT .\figs\burrow_criteria_es.png
+INPUT .\figs\burrow_criteria_es.png
 INPUT .\cap2.tex
 INPUT .\cap2.tex
 OUTPUT cap2.aux
@@ -359,6 +374,7 @@ INPUT .\figs\Chequeo metricas de reposo.png
 INPUT .\figs\Chequeo metricas de reposo.png
 INPUT .\figs\Chequeo metricas de reposo.png
 INPUT .\figs\Chequeo metricas de reposo.png
+INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT .\figs\Correlated_Random_Walk.png
 INPUT .\figs\Correlated_Random_Walk.png
 INPUT .\figs\Correlated_Random_Walk.png
@@ -414,12 +430,6 @@ OUTPUT cap3.aux
 INPUT .\cap3.tex
 INPUT .\cap3.tex
 INPUT cap3.tex
-INPUT .\figs\burrow_criteria_es.png
-INPUT .\figs\burrow_criteria_es.png
-INPUT .\figs\burrow_criteria_es.png
-INPUT .\figs\burrow_criteria_es.png
-INPUT .\figs\burrow_criteria_es.png
-INPUT .\figs\burrow_criteria_es.png
 INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
 INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
 INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
@@ -450,18 +460,36 @@ OUTPUT apend1.aux
 INPUT .\apend1.tex
 INPUT .\apend1.tex
 INPUT apend1.tex
+INPUT .\figs\t10_junio.png
+INPUT .\figs\t10_junio.png
+INPUT .\figs\t10_junio.png
+INPUT .\figs\t10_junio.png
+INPUT .\figs\t10_junio.png
+INPUT .\figs\t10_junio.png
 INPUT .\apend2.tex
 INPUT .\apend2.tex
 OUTPUT apend2.aux
 INPUT .\apend2.tex
 INPUT .\apend2.tex
 INPUT apend2.tex
-INPUT .\figs\t10_junio.png
-INPUT .\figs\t10_junio.png
-INPUT .\figs\t10_junio.png
-INPUT .\figs\t10_junio.png
-INPUT .\figs\t10_junio.png
-INPUT .\figs\t10_junio.png
+INPUT .\apend3.tex
+INPUT .\apend3.tex
+OUTPUT apend3.aux
+INPUT .\apend3.tex
+INPUT .\apend3.tex
+INPUT apend3.tex
+INPUT .\apend4.tex
+INPUT .\apend4.tex
+OUTPUT apend4.aux
+INPUT .\apend4.tex
+INPUT .\apend4.tex
+INPUT apend4.tex
+INPUT .\apend5.tex
+INPUT .\apend5.tex
+OUTPUT apend5.aux
+INPUT .\apend5.tex
+INPUT .\apend5.tex
+INPUT apend5.tex
 INPUT .\template.bbl
 INPUT .\template.bbl
 INPUT template.bbl
@@ -497,10 +525,21 @@ INPUT apend1.aux
 INPUT .\apend2.aux
 INPUT .\apend2.aux
 INPUT apend2.aux
+INPUT .\apend3.aux
+INPUT .\apend3.aux
+INPUT apend3.aux
+INPUT .\apend4.aux
+INPUT .\apend4.aux
+INPUT apend4.aux
+INPUT .\apend5.aux
+INPUT .\apend5.aux
+INPUT apend5.aux
 INPUT .\template.out
 INPUT .\template.out
 INPUT .\template.brf
 INPUT .\template.brf
+INPUT C:\Users\lucia\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
+INPUT C:\Users\lucia\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
