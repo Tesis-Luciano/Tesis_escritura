@@ -86,4 +86,18 @@ Peruani, F., Chaudhuri, D.
   and survival.
 \newblock \emph{arXiv preprint arXiv:2306.05647}, 2025.
 
+\bibitem{morales2004extracting}
+Morales, J.~M., Haydon, D.~T., Frair, J., Holsinger, K.~E., Fryxell, J.~M.
+\newblock Extracting more out of relocation data: building movement models as
+  mixtures of random walks.
+\newblock \emph{Ecology}, \textbf{85}~(9), 2436--2445, 2004.
+
+\bibitem{fryxell2008multiple}
+Fryxell, J.~M., Hazell, M., B{\"o}rger, L., Dalziel, B.~D., Haydon, D.~T.,
+  Morales, J.~M., McIntosh, T., Rosatte, R.~C.
+\newblock Multiple movement modes by large herbivores at multiple
+  spatiotemporal scales.
+\newblock \emph{Proceedings of the National Academy of Sciences},
+  \textbf{105}~(49), 19114--19119, 2008.
+
 \end{thebibliography}

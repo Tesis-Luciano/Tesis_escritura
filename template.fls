@@ -387,6 +387,24 @@ INPUT .\figs\Resultados_Modelo_Salida.png
 INPUT .\figs\Resultados_Modelo_Salida.png
 INPUT .\figs\Resultados_Modelo_Salida.png
 INPUT .\figs\Resultados_Modelo_Salida.png
+INPUT .\figs\Resultados_Modelo_SoloVelVar.png
+INPUT .\figs\Resultados_Modelo_SoloVelVar.png
+INPUT .\figs\Resultados_Modelo_SoloVelVar.png
+INPUT .\figs\Resultados_Modelo_SoloVelVar.png
+INPUT .\figs\Resultados_Modelo_SoloVelVar.png
+INPUT .\figs\Resultados_Modelo_SoloVelVar.png
+INPUT .\figs\Resultados_Modelo_VelVar.png
+INPUT .\figs\Resultados_Modelo_VelVar.png
+INPUT .\figs\Resultados_Modelo_VelVar.png
+INPUT .\figs\Resultados_Modelo_VelVar.png
+INPUT .\figs\Resultados_Modelo_VelVar.png
+INPUT .\figs\Resultados_Modelo_VelVar.png
+INPUT .\figs\hora_salida_sigmoide_adelantada.png
+INPUT .\figs\hora_salida_sigmoide_adelantada.png
+INPUT .\figs\hora_salida_sigmoide_adelantada.png
+INPUT .\figs\hora_salida_sigmoide_adelantada.png
+INPUT .\figs\hora_salida_sigmoide_adelantada.png
+INPUT .\figs\hora_salida_sigmoide_adelantada.png
 INPUT .\figs\Ejemplo de trayectorias.png
 INPUT .\figs\Ejemplo de trayectorias.png
 INPUT .\figs\Ejemplo de trayectorias.png
@@ -418,7 +436,48 @@ INPUT .\figs\Chequeo metricas de reposo.png
 INPUT .\figs\Chequeo metricas de reposo.png
 INPUT .\figs\Chequeo metricas de reposo.png
 INPUT .\figs\Chequeo metricas de reposo.png
-INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
+INPUT .\figs\Chequeo metricas de cambio de refugio.png
+INPUT .\figs\Chequeo metricas de cambio de refugio.png
+INPUT .\figs\Chequeo metricas de cambio de refugio.png
+INPUT .\figs\Chequeo metricas de cambio de refugio.png
+INPUT .\figs\Chequeo metricas de cambio de refugio.png
+INPUT .\figs\Chequeo metricas de cambio de refugio.png
+INPUT .\figs\salida_cambio_de_refugio.png
+INPUT .\figs\salida_cambio_de_refugio.png
+INPUT .\figs\salida_cambio_de_refugio.png
+INPUT .\figs\salida_cambio_de_refugio.png
+INPUT .\figs\salida_cambio_de_refugio.png
+INPUT .\figs\salida_cambio_de_refugio.png
+INPUT .\figs\Tiempo de exploración.png
+INPUT .\figs\Tiempo de exploración.png
+INPUT .\figs\Tiempo de exploración.png
+INPUT .\figs\Tiempo de exploración.png
+INPUT .\figs\Tiempo de exploración.png
+INPUT .\figs\Tiempo de exploración.png
+INPUT .\figs\Chequeo metricas de exploracion y retorno.png
+INPUT .\figs\Chequeo metricas de exploracion y retorno.png
+INPUT .\figs\Chequeo metricas de exploracion y retorno.png
+INPUT .\figs\Chequeo metricas de exploracion y retorno.png
+INPUT .\figs\Chequeo metricas de exploracion y retorno.png
+INPUT .\figs\Chequeo metricas de exploracion y retorno.png
+INPUT .\figs\salida_exploracion_y_retorno.png
+INPUT .\figs\salida_exploracion_y_retorno.png
+INPUT .\figs\salida_exploracion_y_retorno.png
+INPUT .\figs\salida_exploracion_y_retorno.png
+INPUT .\figs\salida_exploracion_y_retorno.png
+INPUT .\figs\salida_exploracion_y_retorno.png
+INPUT .\figs\Resultado_semifinal.png
+INPUT .\figs\Resultado_semifinal.png
+INPUT .\figs\Resultado_semifinal.png
+INPUT .\figs\Resultado_semifinal.png
+INPUT .\figs\Resultado_semifinal.png
+INPUT .\figs\Resultado_semifinal.png
+INPUT .\figs\distribucion_de_mediciones_mensual.png
+INPUT .\figs\distribucion_de_mediciones_mensual.png
+INPUT .\figs\distribucion_de_mediciones_mensual.png
+INPUT .\figs\distribucion_de_mediciones_mensual.png
+INPUT .\figs\distribucion_de_mediciones_mensual.png
+INPUT .\figs\distribucion_de_mediciones_mensual.png
 INPUT .\cap3.tex
 INPUT .\cap3.tex
 OUTPUT cap3.aux
@@ -502,6 +561,12 @@ OUTPUT apend5.aux
 INPUT .\apend5.tex
 INPUT .\apend5.tex
 INPUT apend5.tex
+INPUT .\figs\comparacion_umbral_10_11_13.png
+INPUT .\figs\comparacion_umbral_10_11_13.png
+INPUT .\figs\comparacion_umbral_10_11_13.png
+INPUT .\figs\comparacion_umbral_10_11_13.png
+INPUT .\figs\comparacion_umbral_10_11_13.png
+INPUT .\figs\comparacion_umbral_10_11_13.png
 INPUT .\template.bbl
 INPUT .\template.bbl
 INPUT template.bbl
@@ -550,8 +615,6 @@ INPUT .\template.out
 INPUT .\template.out
 INPUT .\template.brf
 INPUT .\template.brf
-INPUT C:\Users\lucia\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
-INPUT C:\Users\lucia\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb

@@ -38,23 +38,27 @@
 \contentsline {section}{\numberline {2.4}Horario de empezar a caminar}{23}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Incorporación al modelo}{24}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Resultados}{25}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}Movimientos}{26}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Caracterizando movimientos}{28}{subsection.2.5.1}%
-\contentsline {section}{\numberline {2.6}Modelando el comportamiento de Reposo}{31}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Simulación, clasificación y comparación con los datos}{31}{subsection.2.6.1}%
-\contentsline {section}{\numberline {2.7}Modelando el comportamiento de Nuevo Refugio}{33}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Modelando el comportamiento de Exploración y retorno}{34}{section.2.8}%
-\contentsline {chapter}{\numberline {3}Modelando y simulando patrones de movimiento a lo largo del año.}{35}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introducción}{35}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Evolución de los tipos de caminata}{36}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Mediciones y métricas para posibles futuras incorporaciones}{39}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introducción}{39}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Conclusiones}{41}{chapter.5}%
-\contentsline {chapter}{\numberline {A}Problemas con el rastreador T10}{43}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Implementación numérica}{45}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Análisis de duracion de tiempos constantes de los estados}{49}{appendix.C}%
-\contentsline {chapter}{\numberline {D}Run and Tumble frente a tiempos con ley de potencia}{53}{appendix.D}%
-\contentsline {chapter}{\numberline {E}Sensibilidad al umbral de 10 m}{55}{appendix.E}%
-\contentsline {chapter}{Bibliograf{\'{\i }}a}{57}{section*.57}%
-\contentsline {chapter}{Publicaciones asociadas}{59}{section*.59}%
-\contentsline {chapter}{Agradecimientos}{61}{section*.61}%
+\contentsline {subsection}{\numberline {2.4.3}Conclusión}{26}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Variabilidad en las Velocidades}{26}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Movimientos}{28}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Caracterizando movimientos}{30}{subsection.2.6.1}%
+\contentsline {section}{\numberline {2.7}Modelando el comportamiento de Reposo}{33}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Simulación, clasificación y comparación con los datos}{33}{subsection.2.7.1}%
+\contentsline {section}{\numberline {2.8}Modelando el comportamiento de Cambio de Refugio}{35}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Modelando el comportamiento de Exploración y retorno}{37}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Juntamos los tipos de caminatas}{38}{section.2.10}%
+\contentsline {section}{\numberline {2.11}Conclusión}{40}{section.2.11}%
+\contentsline {chapter}{\numberline {3}Modelando y simulando patrones de movimiento a lo largo del año.}{43}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introducción}{43}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Evolución de los tipos de caminata}{44}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Mediciones y métricas para posibles futuras incorporaciones}{47}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introducción}{47}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{49}{chapter.5}%
+\contentsline {chapter}{\numberline {A}Problemas con el rastreador T10}{51}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Implementación numérica}{53}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Análisis de duracion de tiempos constantes de los estados}{57}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Run and Tumble frente a tiempos con ley de potencia}{61}{appendix.D}%
+\contentsline {chapter}{\numberline {E}Sensibilidad al umbral de 10 m}{63}{appendix.E}%
+\contentsline {chapter}{Bibliograf{\'{\i }}a}{65}{section*.70}%
+\contentsline {chapter}{Publicaciones asociadas}{67}{section*.72}%
+\contentsline {chapter}{Agradecimientos}{69}{section*.74}%
