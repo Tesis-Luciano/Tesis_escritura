@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.22)  24 NOV 2026 16:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.9.22)  24 NOV 2026 16:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -996,15 +996,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <figs/Evolucion mensual del tipo de caminata a lo largo del año.png, id=914, 718.758pt x 348.21pt>
 File: figs/Evolucion mensual del tipo de caminata a lo largo del año.png Graphic file (type png)
 <use figs/Evolucion mensual del tipo de caminata a lo largo del año.png>
-Package pdftex.def Info: figs/Evolucion mensual del tipo de caminata a lo largo del año.png  used on input line 30.
+Package pdftex.def Info: figs/Evolucion mensual del tipo de caminata a lo largo del año.png  used on input line 32.
 (pdftex.def)             Requested size: 418.96547pt x 202.97145pt.
 <figs/Evolucion del tipo de caminata a lo largo del año.png, id=915, 866.583pt x 252.945pt>
 File: figs/Evolucion del tipo de caminata a lo largo del año.png Graphic file (type png)
 <use figs/Evolucion del tipo de caminata a lo largo del año.png>
-Package pdftex.def Info: figs/Evolucion del tipo de caminata a lo largo del año.png  used on input line 31.
+Package pdftex.def Info: figs/Evolucion del tipo de caminata a lo largo del año.png  used on input line 33.
 (pdftex.def)             Requested size: 374.86774pt x 109.42036pt.
-LaTeX Info: Redefining \. on input line 46.
-LaTeX Info: Redefining \% on input line 46.
+LaTeX Info: Redefining \. on input line 48.
+LaTeX Info: Redefining \% on input line 48.
  [44 <./figs/Evolucion mensual del tipo de caminata a lo largo del año.png> <./figs/Evolucion del tipo de caminata a lo largo del año.png>])
 LaTeX Info: Redefining \. on input line 78.
 LaTeX Info: Redefining \% on input line 78.
