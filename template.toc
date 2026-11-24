@@ -24,30 +24,37 @@
 \contentsline {subsection}{\numberline {1.6.2}Desplazamiento cuadrático medio diario}{13}{subsection.1.6.2}%
 \contentsline {chapter}{\numberline {2}De los datos al modelo y del modelo a los datos}{15}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Introducción}{15}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Movimientos}{16}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Caracterizando movimientos}{18}{subsection.2.2.1}%
-\contentsline {section}{\numberline {2.3}Modelando el comportamiento de Reposo}{21}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Construcción del error}{21}{subsection.2.3.1}%
-\contentsline {paragraph}{Tamaño del error.}{21}{section*.25}%
-\contentsline {paragraph}{Memoria rápida.}{21}{section*.26}%
-\contentsline {paragraph}{Memoria lenta.}{22}{section*.27}%
-\contentsline {paragraph}{Calibración de la deriva.}{22}{section*.28}%
-\contentsline {subsection}{\numberline {2.3.2}Simulación, clasificación y comparación con los datos}{23}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Modelando el comportamiento de Nuevo Refugio}{26}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Resultados del modelo}{29}{subsection.2.4.1}%
-\contentsline {section}{\numberline {2.5}Conclusiones}{33}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Modelando el comportamiento de Exploración y retorno}{33}{section.2.6}%
-\contentsline {chapter}{\numberline {3}Datos y mediciones a lo largo del año}{35}{chapter.3}%
+\contentsline {section}{\numberline {2.2}Evolución del modelo único para todo el año}{16}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Modelo Stop and Go pelado}{18}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Conclusiones}{19}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Ruido de GPS}{19}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Construcción del error}{20}{subsection.2.3.1}%
+\contentsline {paragraph}{Tamaño del error.}{20}{section*.26}%
+\contentsline {paragraph}{Memoria rápida.}{20}{section*.27}%
+\contentsline {paragraph}{Memoria lenta.}{20}{section*.28}%
+\contentsline {paragraph}{Calibración de la deriva.}{21}{section*.29}%
+\contentsline {subsection}{\numberline {2.3.2}Resultados}{22}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Conclusiones}{23}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Horario de empezar a caminar}{23}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Incorporación al modelo}{24}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Resultados}{25}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Movimientos}{26}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Caracterizando movimientos}{28}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}Modelando el comportamiento de Reposo}{31}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Simulación, clasificación y comparación con los datos}{31}{subsection.2.6.1}%
+\contentsline {section}{\numberline {2.7}Modelando el comportamiento de Nuevo Refugio}{33}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Modelando el comportamiento de Exploración y retorno}{34}{section.2.8}%
+\contentsline {chapter}{\numberline {3}Modelando y simulando patrones de movimiento a lo largo del año.}{35}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Introducción}{35}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Evolución de los tipos de caminata}{36}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Modelando y simulando patrones de movimiento a lo largo del año.}{39}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Mediciones y métricas para posibles futuras incorporaciones}{39}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Introducción}{39}{section.4.1}%
 \contentsline {chapter}{\numberline {5}Conclusiones}{41}{chapter.5}%
 \contentsline {chapter}{\numberline {A}Problemas con el rastreador T10}{43}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Implementación numérica}{45}{appendix.B}%
-\contentsline {chapter}{\numberline {C}Tasa de transición con un tiempo máximo de comportamiento}{47}{appendix.C}%
-\contentsline {chapter}{\numberline {D}Run and Tumble frente a tiempos con ley de potencia}{49}{appendix.D}%
-\contentsline {chapter}{\numberline {E}Sensibilidad al umbral de 10 m}{51}{appendix.E}%
-\contentsline {chapter}{Bibliograf{\'{\i }}a}{53}{section*.47}%
-\contentsline {chapter}{Publicaciones asociadas}{55}{section*.49}%
-\contentsline {chapter}{Agradecimientos}{57}{section*.51}%
+\contentsline {chapter}{\numberline {C}Análisis de duracion de tiempos constantes de los estados}{49}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Run and Tumble frente a tiempos con ley de potencia}{53}{appendix.D}%
+\contentsline {chapter}{\numberline {E}Sensibilidad al umbral de 10 m}{55}{appendix.E}%
+\contentsline {chapter}{Bibliograf{\'{\i }}a}{57}{section*.57}%
+\contentsline {chapter}{Publicaciones asociadas}{59}{section*.59}%
+\contentsline {chapter}{Agradecimientos}{61}{section*.61}%

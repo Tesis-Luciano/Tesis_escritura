@@ -221,9 +221,6 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\lucia\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT .\template.toc
-INPUT .\template.toc
-INPUT template.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
@@ -243,6 +240,9 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmmib6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy6.tfm
+INPUT .\template.toc
+INPUT .\template.toc
+INPUT template.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 OUTPUT template.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmss12.tfm
@@ -337,6 +337,56 @@ OUTPUT cap2.aux
 INPUT .\cap2.tex
 INPUT .\cap2.tex
 INPUT cap2.tex
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT .\figs\Correlated_Random_Walk.png
+INPUT .\figs\Exponents.png
+INPUT .\figs\Exponents.png
+INPUT .\figs\Exponents.png
+INPUT .\figs\Exponents.png
+INPUT .\figs\Exponents.png
+INPUT .\figs\Exponents.png
+INPUT .\figs\Exponents.png
+INPUT .\figs\Resultados_Modelo_Base.png
+INPUT .\figs\Resultados_Modelo_Base.png
+INPUT .\figs\Resultados_Modelo_Base.png
+INPUT .\figs\Resultados_Modelo_Base.png
+INPUT .\figs\Resultados_Modelo_Base.png
+INPUT .\figs\Resultados_Modelo_Base.png
+INPUT .\figs\GPS_error_drift.png
+INPUT .\figs\GPS_error_drift.png
+INPUT .\figs\GPS_error_drift.png
+INPUT .\figs\GPS_error_drift.png
+INPUT .\figs\GPS_error_drift.png
+INPUT .\figs\GPS_error_drift.png
+INPUT .\figs\Resultados_Modelo_Error.png
+INPUT .\figs\Resultados_Modelo_Error.png
+INPUT .\figs\Resultados_Modelo_Error.png
+INPUT .\figs\Resultados_Modelo_Error.png
+INPUT .\figs\Resultados_Modelo_Error.png
+INPUT .\figs\Resultados_Modelo_Error.png
+INPUT .\figs\Modelo_err_aw_emp.png
+INPUT .\figs\Modelo_err_aw_emp.png
+INPUT .\figs\Modelo_err_aw_emp.png
+INPUT .\figs\Modelo_err_aw_emp.png
+INPUT .\figs\Modelo_err_aw_emp.png
+INPUT .\figs\Modelo_err_aw_emp.png
+INPUT .\figs\Motivación hora de salida.png
+INPUT .\figs\Motivación hora de salida.png
+INPUT .\figs\Motivación hora de salida.png
+INPUT .\figs\Motivación hora de salida.png
+INPUT .\figs\Motivación hora de salida.png
+INPUT .\figs\Motivación hora de salida.png
+INPUT .\figs\Resultados_Modelo_Salida.png
+INPUT .\figs\Resultados_Modelo_Salida.png
+INPUT .\figs\Resultados_Modelo_Salida.png
+INPUT .\figs\Resultados_Modelo_Salida.png
+INPUT .\figs\Resultados_Modelo_Salida.png
+INPUT .\figs\Resultados_Modelo_Salida.png
 INPUT .\figs\Ejemplo de trayectorias.png
 INPUT .\figs\Ejemplo de trayectorias.png
 INPUT .\figs\Ejemplo de trayectorias.png
@@ -356,12 +406,6 @@ INPUT .\figs\MSD por tipo de trayectoria.png
 INPUT .\figs\MSD por tipo de trayectoria.png
 INPUT .\figs\MSD por tipo de trayectoria.png
 INPUT .\figs\MSD por tipo de trayectoria.png
-INPUT .\figs\GPS_error_drift.png
-INPUT .\figs\GPS_error_drift.png
-INPUT .\figs\GPS_error_drift.png
-INPUT .\figs\GPS_error_drift.png
-INPUT .\figs\GPS_error_drift.png
-INPUT .\figs\GPS_error_drift.png
 INPUT .\figs\ejemplos_reposo_vs_datos.png
 INPUT .\figs\ejemplos_reposo_vs_datos.png
 INPUT .\figs\ejemplos_reposo_vs_datos.png
@@ -375,55 +419,6 @@ INPUT .\figs\Chequeo metricas de reposo.png
 INPUT .\figs\Chequeo metricas de reposo.png
 INPUT .\figs\Chequeo metricas de reposo.png
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
-INPUT .\figs\Correlated_Random_Walk.png
-INPUT .\figs\Correlated_Random_Walk.png
-INPUT .\figs\Correlated_Random_Walk.png
-INPUT .\figs\Correlated_Random_Walk.png
-INPUT .\figs\Correlated_Random_Walk.png
-INPUT .\figs\Correlated_Random_Walk.png
-INPUT .\figs\Correlated_Random_Walk.png
-INPUT .\figs\Despl_CteW.png
-INPUT .\figs\Despl_CteW.png
-INPUT .\figs\Despl_CteW.png
-INPUT .\figs\Despl_CteW.png
-INPUT .\figs\Despl_CteW.png
-INPUT .\figs\Despl_CteW.png
-INPUT .\figs\Despl_CteW.png
-INPUT .\figs\Despl_CteS.png
-INPUT .\figs\Despl_CteS.png
-INPUT .\figs\Despl_CteS.png
-INPUT .\figs\Despl_CteS.png
-INPUT .\figs\Despl_CteS.png
-INPUT .\figs\Despl_CteS.png
-INPUT .\figs\Despl_CteS.png
-INPUT .\figs\MSD_CteS.png
-INPUT .\figs\MSD_CteS.png
-INPUT .\figs\MSD_CteS.png
-INPUT .\figs\MSD_CteS.png
-INPUT .\figs\MSD_CteS.png
-INPUT .\figs\MSD_CteS.png
-INPUT .\figs\MSD_CteS.png
-INPUT .\figs\Exponents.png
-INPUT .\figs\Exponents.png
-INPUT .\figs\Exponents.png
-INPUT .\figs\Exponents.png
-INPUT .\figs\Exponents.png
-INPUT .\figs\Exponents.png
-INPUT .\figs\Exponents.png
-INPUT .\figs\DESPL_PL.png
-INPUT .\figs\DESPL_PL.png
-INPUT .\figs\DESPL_PL.png
-INPUT .\figs\DESPL_PL.png
-INPUT .\figs\DESPL_PL.png
-INPUT .\figs\DESPL_PL.png
-INPUT .\figs\DESPL_PL.png
-INPUT .\figs\MSD_PL.png
-INPUT .\figs\MSD_PL.png
-INPUT .\figs\MSD_PL.png
-INPUT .\figs\MSD_PL.png
-INPUT .\figs\MSD_PL.png
-INPUT .\figs\MSD_PL.png
-INPUT .\figs\MSD_PL.png
 INPUT .\cap3.tex
 INPUT .\cap3.tex
 OUTPUT cap3.aux
@@ -478,6 +473,23 @@ OUTPUT apend3.aux
 INPUT .\apend3.tex
 INPUT .\apend3.tex
 INPUT apend3.tex
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmib10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
+INPUT .\figs\CteW.png
+INPUT .\figs\CteW.png
+INPUT .\figs\CteW.png
+INPUT .\figs\CteW.png
+INPUT .\figs\CteW.png
+INPUT .\figs\CteW.png
+INPUT .\figs\CteS.png
+INPUT .\figs\CteS.png
+INPUT .\figs\CteS.png
+INPUT .\figs\CteS.png
+INPUT .\figs\CteS.png
+INPUT .\figs\CteS.png
 INPUT .\apend4.tex
 INPUT .\apend4.tex
 OUTPUT apend4.aux

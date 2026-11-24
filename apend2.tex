@@ -1,8 +1,125 @@
 \chapter{Implementación numérica}\label{A:implementacio_num}
 
+\section*{Paso temporal y movimiento}
+
+Las simulaciones avanzan en pasos de $\Delta t = 1{,}7$~s, el intervalo de muestreo del acelerómetro. Entre dos posiciones GPS consecutivas hay 530 
+pasos ($530\,\Delta t \simeq 15$~min), de modo que un día de 8 a 20~h tiene 49 posiciones, igual que los datos. En cada paso de caminata la orientación 
+cambia en $\delta\theta = \sigma\,\xi$, con $\xi \sim \mathcal{N}(0,1)$, y la tortuga avanza una distancia $v_k\,\Delta t$ en esa dirección. Durante el 
+reposo no cambian ni la posición ni la orientación. La orientación inicial se sortea uniforme en $[0, 2\pi)$.
+
+Cuando la velocidad es variable, cada caminata $k$ sortea su velocidad al empezar y la mantiene hasta el reposo siguiente:
+\begin{equation}
+    v_k = v\,\exp\!\left(\sigma_v\,\eta_k - \frac{\sigma_v^2}{2}\right), \qquad \eta_k \sim \mathcal{N}(0,1),
+\end{equation}
+una distribución lognormal cuya media es $v$ para cualquier $\sigma_v$, de modo que $\sigma_v$ cambia la dispersión de las velocidades sin cambiar la velocidad media.
+
+\section*{Sorteo de tiempo en cada estado}
+
+Para determinar cuánto tiempo permanece un individuo en cada uno de los dos estados, existen al menos dos estrategias posibles. La primera consiste en 
+definir una tasa de transición instantánea $\gamma(t)$, función del tiempo ya transcurrido en el estado actual, y evaluarla en cada paso de tiempo discreto 
+$\delta t$ de la simulación para decidir si el individuo cambia de estado. Si bien este enfoque permite incorporar naturalmente una tasa que varíe con el 
+tiempo, optamos por una estrategia alternativa, más eficiente computacionalmente.
+
+La segunda estrategia, que es la que adoptamos en esta tesis, consiste en sortear directamente, al momento de ingresar a un estado, el tiempo total de 
+permanencia en él, utilizando la distribución empírica completa reportada por Callenbach~\cite{callenbach2025}. Para esto empleamos el método de la 
+transformada inversa (\textit{inverse-CDF sampling}): dada una densidad de probabilidad $f(t)\sim t^{-\alpha}$ truncada entre un tiempo mínimo $t_{\min}$ 
+y un tiempo máximo $t_{\max}$, es posible invertir su función de distribución acumulada y obtener una expresión cerrada que, a partir de un número aleatorio 
+$u$ uniformemente distribuido en $[0,1]$, entrega directamente el tiempo sorteado:
+
+\begin{equation}
+    t = \left[(t_{\max}^{\,1-\alpha} - t_{\min}^{\,1-\alpha})\,u + t_{\min}^{\,1-\alpha}\right]^{\frac{1}{1-\alpha}}
+\end{equation}
+
+Este método permite obtener, en una única operación, el tiempo completo que un individuo permanecerá en el estado de movimiento o de reposo, sin necesidad 
+de evaluar la probabilidad de transición paso a paso. Dado que trabajamos con simulaciones de una gran cantidad de individuos y de larga duración temporal, 
+esta reducción en el costo computacional resulta determinante para la viabilidad del trabajo.
+
+En el caso de querer realizar cálculos teóricos, puede ser de utilidad tener una ecuación para la tasa de transición $\gamma$ de un estado a otro, en función del 
+tiempo transcurrido en el estado actual, $t$, teniendo en consideración los pasos temporales discretos de la simulación, $\delta t$, y una distribución 
+temporal objetivo tipo ley de potencia $\propto t^{-\alpha}$.
+
+\begin{equation}
+    \gamma (t) = 1 - P(f(t+\delta t)|f(t))
+\end{equation}
+
+Donde $P(f(t+\delta t)|f(t))$ es la probabilidad condicional de permanecer en el mismo estado en el tiempo $t+\delta t$, dado que se encontraba en dicho 
+estado en el tiempo $t$. Esta probabilidad condicional puede expresarse como:
+
+\begin{equation}
+    P(f(t+\delta t)|f(t)) = P(f(t)|f(t+\delta t))\frac{P(f(t+\delta t))}{P(f(t))}
+\end{equation}
+
+en donde $P(f(t)|f(t+\delta t))=1$ y $f(t)=A t^{-\alpha}$, con $A$ una constante de normalización. $P(f(t))$ puede calcularse de la siguiente manera:
+
+\begin{equation}
+    P(f(t))=\int_{t}^{t_{\text{max}}}f(t')\,dt'=\frac{A\left(t_{\text{max}}^{1-\alpha}-t^{1-\alpha}\right)}{1-\alpha}
+\end{equation}
+
+En esta ecuación estamos asumiendo que el estado comenzó en el tiempo $t=0$, por lo que, si aplicamos esto a la probabilidad condicional, obtenemos:
+
+\begin{equation}
+    P(f(t+\delta t)|f(t)) = \frac{t_{\text{max}}^{1-\alpha}-(t+\delta t)^{1-\alpha}}{t_{\text{max}}^{1-\alpha}-t^{1-\alpha}} 
+\end{equation}
+
+Finalmente, podemos expresar la tasa de transición como:
+
+\begin{equation}
+    \gamma (t)=\frac{(t+\delta t)^{1-\alpha}-t^{1-\alpha}}{t_{\text{max}}^{1-\alpha}-t^{1-\alpha}} 
+\end{equation}
+
+\section*{Comienzo del día y hora de salida}
+
+Sin hora de salida, cada día empieza a las 8:00 caminando con probabilidad $p_W = \langle T_W \rangle / (\langle T_W \rangle + \langle T_S \rangle)$, la fracción 
+del tiempo que se pasa caminando, y en reposo en caso contrario.
+
+Con hora de salida, la simulación empieza a las 6:00 con la tortuga en reposo en el refugio. La hora de salida se sortea de la sigmoide ajustada a los datos 
+(sección~\ref{sec:salida}) por la inversa de su función de distribución: con $u$ uniforme en $(0,1]$,
+
+\begin{equation}
+    t_s = c + w\,\ln\!\left(\frac{1 + e^{-c/w}}{u} - 1\right),
+\end{equation}
+
+que va de $t_s = 0$ (para $u = 1$) a infinito (para $u \to 0$). En $t_s$ empieza la primera caminata. Si $t_s$ cae después de las 20~h, la tortuga no sale ese día. 
+De cada día simulado se guardan solo las 49 posiciones de 8 a 20~h.
 
 
+\section*{Fin del día}
 
+En los días de cambio de refugio la tortuga se queda a las 20~h donde está, y esa es la posición en la que pasa la noche. En los de exploración y retorno, 
+la vuelta sigue después de las 20~h hasta que la tortuga llega al refugio o hasta las 8:00 del día siguiente. Con la posición de la noche se clasifica el día y
+empieza el día siguiente.
+
+\section*{Error GPS y observación}
+
+El error GPS (sección~\ref{I:corr_error}) se suma después de simular, solo a las 49 posiciones de 8 a 20~h. Sobre las posiciones con error se calculan las métricas
+con las mismas definiciones que en los datos (sección~\ref{I:metricas}): el P(d) con los pasos entre posiciones de 9 a 17~h, el MSD diario con todos los pares del 
+día y el NSD desde la posición de las 8:00. Como las posiciones simuladas están equiespaciadas, cada bin del MSD contiene exactamente los pares separados por ese 
+múltiplo de 15~min. Cada día simulado se clasifica con la misma regla que los datos (sección~\ref{sec:clasificacion}). La única diferencia es que el refugio de 
+cada noche se compara con las posiciones reales, que el modelo conoce.
+
+\section*{Ajuste de los parámetros}
+
+En el modelo único (sección~\ref{II:modelo_unico}) los exponentes $\alpha_W$ y $\alpha_S$ quedan fijos, porque son medidos, y se ajustan $v$, $\sigma$ y, 
+cuando corresponde, $\sigma_v$. El ajuste es un barrido en una grilla ($v$ de 1 a 4~m/min cada 0{,}25~m/min; $\sigma$ entre 0{,}03 y 0{,}3; $\sigma_v$ 
+entre 0{,}3 y 1{,}1) que minimiza la distancia
+\begin{equation}
+    D = \frac{1}{2}\left[\frac{1}{N_P}\sum_{j}\frac{|P_{\rm mod}(d_j) - P(d_j)|}{\varepsilon_P(d_j)} + \frac{1}{N_M}\sum_{k}\frac{|M_{\rm mod}(\tau_k) - M(\tau_k)|}{\varepsilon_M(\tau_k)}\right],
+\end{equation}
+el promedio de las diferencias entre modelo y datos medidas en errores estándar, sobre los $N_P$ bines del P(d) y los $N_M$ puntos del MSD diario con 
+$\tau \le 600$~min, con el mismo peso para las dos métricas. Cada punto de la grilla se evalúa con 3000 días simulados, y los 8 mejores se vuelven a evaluar 
+con 40\,000 días. El NSD no entra en el ajuste.
+
+\section*{El año simulado}
+
+Para el año (capítulo~\ref{Capitulo_3}), cada modelo se simula con 20\,000 días por época y se clasifica con la regla de los datos. Así se obtiene la matriz 
+de derrame $M$, cuya fila $i$ es la fracción de los días del modelo $i$ que se clasifican en cada tipo. Las probabilidades $q$ de sortear cada modelo en cada 
+mes son las que, pasadas por $M$, reproducen los porcentajes de cada tipo de día medidos ese mes. Se obtienen por mínimos cuadrados no negativos, imponiendo 
+$\sum_i q_i = 1$. Se simulan 600 tortugas durante 365 días, y cada día empieza en la posición donde la tortuga pasó la noche anterior.
+
+\section*{Cálculo}
+
+Los simuladores están escritos en Python y compilados con Numba, con el bucle sobre los días en paralelo, ya que los días son independientes entre sí. Las curvas 
+de cada modelo se calculan con al menos 20\,000 días simulados, con lo que su ruido de Monte Carlo queda muy por debajo de la banda de error de los datos. 
 
 %%% Local Variables: 
 %%% mode: latex

@@ -1,39 +1,44 @@
-\chapter{Tasa de transición con un tiempo máximo de comportamiento}\label{A:transition_rate_PL}
+\chapter{Análisis de duracion de tiempos constantes de los estados}\label{A:T_cte}
 
-Se ha demostrado que el comportamiento de las tortugas puede clasificarse en dos grupos, cada uno de los cuales sigue una distribución de ley de potencia 
-$f(t)$ de exponente $\alpha$, con un tiempo máximo de comportamiento $t_{max}$ \cite{callenbach2025}. Con el fin de facilitar el análisis teórico, podemos 
-inferir una tasa de transición de un estado a otro, en función del tiempo transcurrido en el estado actual, $t$. Otra cuestión a tener en cuenta es que, 
-en nuestra simulación, contamos con pasos de tiempo discretos, $\delta t$. Obtenemos la tasa de transición a través de la siguiente relación:
+Para poder realizar una comparación justa con el modelo con ley de potencia en el tiempo que pasa en ambos estados, es necesario mostrar las métricas a medida que se agregan 
+los mismos condimentos que en el modelo troncal de la tesis. Las capas se agregan en el siguiente orden: Primero el ruido del GPS, luego se utiliza la variación en la hora 
+en la que comienza a caminar, para finalmente agregar una variación en la velocidad constante del día.
 
-\begin{equation}
-    \gamma (t) = 1 - P(f(t+\delta t)|f(t))
-\end{equation}
+\section*{$1^{\text{era}}$ Configuración: tiempo de caminata constante}
 
-Donde $P(f(t+\delta t)|f(t))$ es la probabilidad condicional de permanecer en el mismo estado en el tiempo $t+\delta t$, dado que se encontraba en dicho 
-estado en el tiempo $t$. Esta probabilidad condicional puede expresarse como:
 
-\begin{equation}
-    P(f(t+\delta t)|f(t)) = P(f(t)|f(t+\delta t))\frac{P(f(t+\delta t))}{P(f(t))}
-\end{equation}
+A continuación, en la Figura~\ref{fig:Cte_W}, mostramos como evolucionan las métricas a medida que se agregan las distintas partes del modelo. Para cada una de 
+las modificaciones se ajustó la velocidad y la variación angular que mejor ajuste el MSD y el P(d)
 
-en donde $P(f(t)|f(t+\delta t))=1$ y $f(t)=A t^{-\alpha}$, con $A$ una constante de normalización. $P(f(t))$ puede calcularse de la siguiente manera:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{CteW.png}
+    \caption{Gráfico de evolución de las métricas a medida que se incorporan las distintas capas del modelo con tiempos de caminata constantes.}
+    \label{fig:Cte_W}
+\end{figure}
 
-\begin{equation}
-    P(f(t))=\int_{t}^{t_{\text{max}}}f(t')\,dt'=\frac{A\left(t_{\text{max}}^{1-\alpha}-t^{1-\alpha}\right)}{1-\alpha}
-\end{equation}
+Podemos observar que el modelo tiene la capacidad de replicar en buena medida las métricas obtenidas de los datos
 
-En esta ecuación estamos asumiendo que el estado comenzó en el tiempo $t=0$, por lo que, si aplicamos esto a la probabilidad condicional, obtenemos:
+\section*{$2^{\text{da}}$ Configuración: tiempo de reposo constante}
 
-\begin{equation}
-    P(f(t+\delta t)|f(t)) = \frac{t_{\text{max}}^{1-\alpha}-(t+\delta t)^{1-\alpha}}{t_{\text{max}}^{1-\alpha}-t^{1-\alpha}} 
-\end{equation}
+Para esta segunda configuración, fijamos el tiempo de reposo constante y dejamos que el tiempo de caminata siga una ley de potencia. En la Figura~\ref{fig:Cte_S},
+repetimos el análisis que realizamos con tiempos de caminata constantes.
 
-Finalmente, podemos expresar la tasa de transición como:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{CteS.png}
+    \caption{Gráfico de evolución de las métricas a medida que se incorporan las distintas capas del modelo con tiempos de reposo constantes}
+    \label{fig:Cte_S}
+\end{figure}
 
-\begin{equation}
-    \gamma (t)=\frac{(t+\delta t)^{1-\alpha}-t^{1-\alpha}}{t_{\text{max}}^{1-\alpha}-t^{1-\alpha}} 
-\end{equation}
+Si bien el modelo parece fallar para la métrica del NSD, la cuál es muy ruidosa, conviene destacar la buena capacidad que tiene esta configuración para replicar
+las métricas de P(d) y MSD diario.
 
+\section*{Conclusión}
+
+El descarte de estos modelos se debe principalmente a que al tener datos del acelerómetro se pudo medir en el trabajo de Callenbach~\cite{callenbach2025} 
+que las distribucion de probabilidad de pasar cierto tiempo en estado de reposo o de caminata no sigue una delta hubicada en algún valor constante.
+Si no fuera por esa información, no se haya suficiente información en los datos de GPS para elegir el modelo de leyes de potencia por sobre los presentados en este apéndice.
 
 %%% Local Variables: 
 %%% mode: latex
