@@ -599,7 +599,7 @@ de días en los que la tortuga todavía no salió a la hora $t$. Ajustamos a los
     \label{eq:supervivencia_salida}
 \end{equation}
 
-El ajuste con los 669 días válidos del año da $c = 11{:}19$ y $w = 2.0\,\mathrm{h}$; con estos valores, el $11\,\%$ de los días la tortuga sale antes de las 8 h. 
+El ajuste con los 669 días válidos del año da $c = 11{:}19$ y $w = 2.0\,\mathrm{h}$; con estos valores, el $11 \%$ de los días la tortuga sale antes de las 8 h. 
 Los días que solo tienen mediciones desde las 8 h se incorporan al ajuste como datos censurados.
 
 Esta función equivale a una tasa de salida
@@ -680,7 +680,7 @@ cada uno de los submodelos de reposo, exploración, y cambio de refugio, de toda
     \centering
     \includegraphics[width=0.95\textwidth]{Resultado_semifinal.png}
     \caption{Métricas del modelo combinando los submodelos segun los pesos de la Tabla~\ref{tab:Porcentajes_días}}
-    \label{fig:Result_exp_ret}
+    \label{fig:Result_finalII}
 \end{figure}
 
 Podemos ver como el modelo combinando todos los mini modelos que buscan caracterizar los tipos de trayectorias diarias consiguen replicar, 
@@ -690,18 +690,7 @@ en buena medida, todas las métricas analizadas en esta sección.
 
 Se logró armar un modelo que logre replicar simultáneamente la distribución de probabilidad de los desplazamientos cada 15 minutos, el desplazamiento
 cuadrático medio diario, la distribución de horarios de salida de refugio y la clasificación de días en caminatas de reposo, exploración y retorno, y
-cambio de refugio. Como consecuencia de esto uno podría pensar que se obtuvo un modelo capaz de replicar el comportamiento de las tortugas a lo largo
-del año, si fuera así no estaríamos recién en el capítulo 2. En la Figura~\ref{fig:datos_por_mes} mostramos la cantidad de datos por mes, en donde se 
-puede observar que los meses de junio a agosto tienen entre 5 y 13 datos menos que en los meses cálidos. Adicionalmente, al estar medidos entre las 
-11 y las 15:40, no se tuvieron en consideración para el análisis ya que habría que haber realizado un análisis diferenciado sobre ellos, en especial 
-para el MSD diario y la hora de salida del refugio. El cual, o sorpresa, se intentará abarcar en el Capítulo~\ref{Capitulo_3}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{distribucion_de_mediciones_mensual.png}
-    \caption{Histograma de cantidad datos por mes, en gris oscuro los datos utilizados y en gris claro los que quedaron afuera correspondientes a la época de brumación}
-    \label{fig:datos_por_mes}
-\end{figure}
+cambio de refugio. 
 
 %%% Local Variables: 
 %%% mode: latex

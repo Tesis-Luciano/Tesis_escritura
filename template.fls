@@ -244,9 +244,9 @@ INPUT .\template.toc
 INPUT .\template.toc
 INPUT template.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
-OUTPUT template.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmss12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
+OUTPUT template.toc
 INPUT .\template.lof
 INPUT .\template.lof
 INPUT template.lof
@@ -472,12 +472,6 @@ INPUT .\figs\Resultado_semifinal.png
 INPUT .\figs\Resultado_semifinal.png
 INPUT .\figs\Resultado_semifinal.png
 INPUT .\figs\Resultado_semifinal.png
-INPUT .\figs\distribucion_de_mediciones_mensual.png
-INPUT .\figs\distribucion_de_mediciones_mensual.png
-INPUT .\figs\distribucion_de_mediciones_mensual.png
-INPUT .\figs\distribucion_de_mediciones_mensual.png
-INPUT .\figs\distribucion_de_mediciones_mensual.png
-INPUT .\figs\distribucion_de_mediciones_mensual.png
 INPUT .\cap3.tex
 INPUT .\cap3.tex
 OUTPUT cap3.aux

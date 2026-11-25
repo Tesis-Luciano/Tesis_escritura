@@ -1,10 +1,10 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\'{I}ndice de s{\'{\i }}mbolos}{\es@scroman {v}}{section*.1}%
 \contentsline {chapter}{\'{I}ndice de contenidos}{\es@scroman {vii}}{section*.3}%
-\contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman {ix}}{section*.5}%
-\contentsline {chapter}{\'{I}ndice de tablas}{\es@scroman {xiii}}{section*.7}%
-\contentsline {chapter}{Resumen}{\es@scroman {xv}}{section*.9}%
-\contentsline {chapter}{Abstract}{\es@scroman {xvii}}{section*.11}%
+\contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman {xi}}{section*.5}%
+\contentsline {chapter}{\'{I}ndice de tablas}{\es@scroman {xv}}{section*.7}%
+\contentsline {chapter}{Resumen}{\es@scroman {xvii}}{section*.9}%
+\contentsline {chapter}{Abstract}{\es@scroman {xix}}{section*.11}%
 \babel@toc {english}{}\relax 
 \babel@toc {spanish}{}\relax 
 \babel@toc {english}{}\relax 
@@ -46,11 +46,14 @@
 \contentsline {subsection}{\numberline {2.7.1}Simulación, clasificación y comparación con los datos}{33}{subsection.2.7.1}%
 \contentsline {section}{\numberline {2.8}Modelando el comportamiento de Cambio de Refugio}{35}{section.2.8}%
 \contentsline {section}{\numberline {2.9}Modelando el comportamiento de Exploración y retorno}{37}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Juntamos los tipos de caminatas}{38}{section.2.10}%
-\contentsline {section}{\numberline {2.11}Conclusión}{40}{section.2.11}%
+\contentsline {subsection}{\numberline {2.9.1}Incorporación al modelo}{38}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.2}Resultados}{38}{subsection.2.9.2}%
+\contentsline {section}{\numberline {2.10}Juntamos los tipos de caminatas}{39}{section.2.10}%
+\contentsline {section}{\numberline {2.11}Conclusión}{41}{section.2.11}%
 \contentsline {chapter}{\numberline {3}Modelando y simulando patrones de movimiento a lo largo del año.}{43}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Introducción}{43}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Evolución de los tipos de caminata}{44}{section.3.2}%
+\contentsline {section}{\numberline {3.2}Movimientos de GPS}{44}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Evolución de los tipos de caminata}{44}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Mediciones y métricas para posibles futuras incorporaciones}{47}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Introducción}{47}{section.4.1}%
 \contentsline {chapter}{\numberline {5}Conclusiones}{49}{chapter.5}%
@@ -59,6 +62,6 @@
 \contentsline {chapter}{\numberline {C}Análisis de duracion de tiempos constantes de los estados}{57}{appendix.C}%
 \contentsline {chapter}{\numberline {D}Run and Tumble frente a tiempos con ley de potencia}{61}{appendix.D}%
 \contentsline {chapter}{\numberline {E}Sensibilidad al umbral de 10 m}{63}{appendix.E}%
-\contentsline {chapter}{Bibliograf{\'{\i }}a}{65}{section*.70}%
-\contentsline {chapter}{Publicaciones asociadas}{67}{section*.72}%
-\contentsline {chapter}{Agradecimientos}{69}{section*.74}%
+\contentsline {chapter}{Bibliograf{\'{\i }}a}{65}{section*.69}%
+\contentsline {chapter}{Publicaciones asociadas}{67}{section*.71}%
+\contentsline {chapter}{Agradecimientos}{69}{section*.73}%
