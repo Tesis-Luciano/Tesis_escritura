@@ -586,8 +586,41 @@ medio de ida aunque subestima tanto las idas muy cortas como las más largas. Us
 duración de la ida. El tiempo de regreso, en cambio, surge de la dinámica estocástica del caminante: consideramos que el
 individuo llegó al refugio cuando se encuentra a menos de $2\,\mathrm{m}$ de él, y a partir de ese momento deja de moverse por el
 resto del día; si a las 20~h todavía no llegó, el regreso continúa durante la noche. El error del GPS no interviene en esta
-dinámica: se agrega solo a las posiciones registradas, para calcular las métricas. En la Figura~\ref{fig:Result_exp_ret}
-mostramos la mejor configuración del barrido de parámetros.
+dinámica: se agrega solo a las posiciones registradas, para calcular las métricas. 
+
+
+\subsection{Incorporación al modelo}
+
+La hora de salida del refugio se modela como una variable aleatoria $T_s$, cuya función de supervivencia $S(t) = P(T_s > t)$ es la fracción 
+de días en los que la tortuga todavía no salió a la hora $t$. Ajustamos a los datos una función logística de centro $c$ y ancho $w$, que empieza a las $t_0 = 6$ h:
+
+\begin{equation}
+    S(t) = \frac{1 + e^{(t_0 - c)/w}}{1 + e^{(t - c)/w}}, \qquad t \geq t_0 .
+    \label{eq:supervivencia_salida}
+\end{equation}
+
+El ajuste con los 669 días válidos del año da $c = 11{:}19$ y $w = 2.0\,\mathrm{h}$; con estos valores, el $11\,\%$ de los días la tortuga sale antes de las 8 h. 
+Los días que solo tienen mediciones desde las 8 h se incorporan al ajuste como datos censurados.
+
+Esta función equivale a una tasa de salida
+\begin{equation}
+    h(t) = \frac{1}{w}\,\frac{1}{1 + e^{-(t-c)/w}},
+\end{equation}
+que crece a lo largo de la mañana y se satura en $1/w \approx 0.5\,\mathrm{h^{-1}}$. Con una salida exponencial, en cambio, la tasa sería constante, 
+lo que no se corresponde con los datos.
+
+Para simular, sorteamos la hora de salida por transformada inversa, como hicimos con las duraciones de los estados: dado un número aleatorio $u$ uniforme en $[0,1]$,
+\begin{equation}
+    t_s = c + w \ln\!\left(\frac{1 + e^{(t_0 - c)/w}}{u} - 1\right).
+\end{equation}
+
+El modelo arranca a las 6 h en el refugio, permanece quieto hasta $t_s$ y recién entonces comienza el \textit{Stop and Go}. La simulación se mide entre las 8 y las 
+20 h, igual que los datos, de modo que una tortuga que sale antes de las 8 h aparece ya caminando en la primera medición. 
+
+\subsection{Resultados}
+
+En la Figura~\ref{fig:Result_exp_ret} mostramos la mejor configuración del barrido de parámetros, que replique las curvas empíricas de los datos 
+clasificado como exploración y retorno.
 
 \begin{figure}[H]
     \centering
