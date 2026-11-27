@@ -21,53 +21,51 @@ Reallocating 'name_of_file' (item size: 1) to 11 items.
 A level-1 auxiliary file: apend3.aux
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 A level-1 auxiliary file: apend4.aux
-Reallocating 'name_of_file' (item size: 1) to 11 items.
-A level-1 auxiliary file: apend5.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 Database file #1: mibib.bib
 Warning--entry type for "oliva2023" isn't style-file defined
 --line 33 of file mibib.bib
-Warning--entry type for "madile2023" isn't style-file defined
---line 438 of file mibib.bib
-You've used 17 entries,
+Warning--I didn't find a database entry for "callenbach2025codes"
+Warning--I didn't find a database entry for "madile2023"
+You've used 15 entries,
             2634 wiz_defined-function locations,
-            1143 strings with 12788 characters,
-and the built_in function-call counts, 6095 in all, are:
-= -- 419
-> -- 208
+            1135 strings with 12417 characters,
+and the built_in function-call counts, 5705 in all, are:
+= -- 393
+> -- 200
 < -- 0
-+ -- 104
-- -- 52
-* -- 327
-:= -- 698
-add.period$ -- 53
-call.type$ -- 17
-change.case$ -- 19
++ -- 100
+- -- 50
+* -- 323
+:= -- 650
+add.period$ -- 47
+call.type$ -- 15
+change.case$ -- 17
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 596
-empty$ -- 591
-format.name$ -- 65
-if$ -- 1306
+cite$ -- 15
+duplicate$ -- 558
+empty$ -- 541
+format.name$ -- 63
+if$ -- 1216
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 172
-newline$ -- 92
-num.names$ -- 17
-pop$ -- 266
+int.to.str$ -- 15
+missing$ -- 162
+newline$ -- 82
+num.names$ -- 15
+pop$ -- 242
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 116
+skip$ -- 106
 stack$ -- 0
 substring$ -- 285
-swap$ -- 411
+swap$ -- 387
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 36
-width$ -- 19
-write$ -- 191
-(There were 2 warnings)
+while$ -- 34
+width$ -- 17
+write$ -- 171
+(There were 3 warnings)

@@ -85,7 +85,6 @@ familia, amigos, profesores y más.\\
 \include{apend2}
 \include{apend3}
 \include{apend4}
-\include{apend5}
 
 
 \begin{biblio}
@@ -110,6 +109,42 @@ Grazie Mille
 
 
 
+
+\end{seccion}
+
+\begin{seccion}{Declaración de uso de inteligencia artificial}
+
+Utilicé herramientas de inteligencia artificial (IA) de forma sustantiva, según se detalla a continuación.
+
+\textbf{Herramienta y versión:} Claude (Anthropic), modelos Opus~5.5 y Sonnet~5.5, mediante la aplicación de Claude, incluidas sesiones con 
+herramientas de código que leyeron y ejecutaron código sobre mis archivos, entre abril y noviembre de 2026.
+
+\textbf{Tipo de uso:} código que afecta los resultados; simulaciones y análisis numérico; análisis de datos y estadístico;
+generación de figuras; deducciones analíticas; razonamiento e interpretación; síntesis bibliográfica; redacción de borradores de afirmaciones científicas.
+
+\textbf{Cómo asistió:} Claude escribió y depuró código en Python con el que se obtuvieron resultados y figuras de los 
+Capítulos~\ref{Capitulo_2} y~\ref{Capitulo_3}. En el Capítulo~\ref{Capitulo_3}: el radio de giro mensual y la tasa de revisita (Figuras~\ref{fig:rog_mes} 
+y~\ref{fig:tasa_revisita}) y las curvas de selección de refugios $P(S)$ y $S(n)$ con sus errores por \textit{bootstrap} (Sección~\ref{III:refugios}). 
+En el Capítulo~\ref{Capitulo_2}: las simulaciones del modelo \textit{Stop and Go} y de cada una de sus capas, los barridos de parámetros con los que se 
+ajustó a los datos, la clasificación de los días simulados y el modelo conjunto (Tabla~\ref{tab:Porcentajes_días}), y los análisis de los 
+Apéndices~\ref{A:T_cte} y~\ref{A:Sensibilidad_10m_clasificacion}. También implementó la limpieza de posiciones de GPS duplicadas entre individuos usada 
+en las trayectorias de la Figura~\ref{fig:GPS}, y el script de la Figura~\ref{fig:Satelite}. Claude propuso además la deducción de la función de supervivencia, 
+la tasa de salida y el sorteo por transformada inversa de la hora de salida (Sección~\ref{II:hr_comienzo}), ayudó a plantear y organizar la construcción 
+del error del GPS (Sección~\ref{II:error_construccion}) y a interpretar resultados (por ejemplo, el significado de $\mu$ y $\gamma$ en la Sección~\ref{III:refugios} 
+y la variabilidad de la velocidad en la Sección~\ref{II:Var_vel}). Resumió a Song et al.~\cite{song2010modeling}, propuso a lo largo del trabajo bibliografía 
+para contrastar mis hipótesis y respaldar afirmaciones de varios capítulos (por ejemplo, que un único modo de movimiento no alcanza para describir las 
+trayectorias~\cite{morales2004extracting,fryxell2008multiple}), y propuso borradores de pasajes de los Capítulos~\ref{Capitulo_1} y~\ref{Capitulo_2}.
+
+\textbf{Cómo dirigí y verifiqué el resultado:} planteé el problema y el enfoque del modelo, definí sus capas, las métricas y los criterios de ajuste, 
+y decidí qué entraba en la tesis. Entre otras decisiones, planteé que un único modelo de caminata no podía reproducir los distintos tipos de trayectoria 
+diaria y que hacía falta modelar cada tipo de día por separado; fijé el prefactor $\rho = 1$ a partir de la definición de la métrica, elegí el umbral 
+de $10\,\mathrm{m}$ (con el de $11\,\mathrm{m}$ como alternativa en el Apéndice~\ref{A:Sensibilidad_10m_clasificacion}), la variación de la velocidad 
+por día y el ajuste de la hora de salida con todos los días. Ejecuté los códigos en mi computadora y en el cluster, revisé cada figura y comparé los 
+resultados con los datos y con la bibliografía; así detecté, por ejemplo, que el modelo de exploración y retorno no reproducía la distribución exponencial 
+del tiempo de ida. Descarté o corregí propuestas erróneas: una interpretación del modelo de Song et al., una doble aplicación del error del GPS en unas 
+figuras y una predicción sobre un ajuste que no se cumplió. Calculé a mano los pesos del modelo conjunto y revisé los valores numéricos del texto contra 
+mis notebooks. Con la bibliografía propuesta procedí como con un buscador convencional: leí las fuentes originales y decidí cuáles eran pertinentes y 
+cuáles citar. Reescribí con mis palabras los borradores propuestos, por lo que la redacción final es mía.
 
 \end{seccion}
 

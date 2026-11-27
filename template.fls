@@ -191,9 +191,6 @@ INPUT apend3.aux
 INPUT .\apend4.aux
 INPUT .\apend4.aux
 INPUT apend4.aux
-INPUT .\apend5.aux
-INPUT .\apend5.aux
-INPUT apend5.aux
 OUTPUT template.aux
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -241,9 +238,9 @@ INPUT .\template.toc
 INPUT .\template.toc
 INPUT template.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
-OUTPUT template.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmss12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
+OUTPUT template.toc
 INPUT .\template.lof
 INPUT .\template.lof
 INPUT template.lof
@@ -499,6 +496,12 @@ INPUT .\figs\Satelite reproduccion.png
 INPUT .\figs\Satelite reproduccion.png
 INPUT .\figs\Satelite reproduccion.png
 INPUT .\figs\Satelite reproduccion.png
+INPUT .\figs\Radio de giro mensual.png
+INPUT .\figs\Radio de giro mensual.png
+INPUT .\figs\Radio de giro mensual.png
+INPUT .\figs\Radio de giro mensual.png
+INPUT .\figs\Radio de giro mensual.png
+INPUT .\figs\Radio de giro mensual.png
 INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
 INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
 INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
@@ -511,6 +514,12 @@ INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
 INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
 INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
 INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
+INPUT .\figs\Tasa de revisita.png
+INPUT .\figs\Tasa de revisita.png
+INPUT .\figs\Tasa de revisita.png
+INPUT .\figs\Tasa de revisita.png
+INPUT .\figs\Tasa de revisita.png
+INPUT .\figs\Tasa de revisita.png
 INPUT .\figs\Probabilidad de revisita.png
 INPUT .\figs\Probabilidad de revisita.png
 INPUT .\figs\Probabilidad de revisita.png
@@ -523,6 +532,12 @@ INPUT .\figs\Probabilidad de nuevo refugio.png
 INPUT .\figs\Probabilidad de nuevo refugio.png
 INPUT .\figs\Probabilidad de nuevo refugio.png
 INPUT .\figs\Probabilidad de nuevo refugio.png
+INPUT .\figs\mu.png
+INPUT .\figs\mu.png
+INPUT .\figs\mu.png
+INPUT .\figs\mu.png
+INPUT .\figs\mu.png
+INPUT .\figs\mu.png
 INPUT .\cap4.tex
 INPUT .\cap4.tex
 OUTPUT cap4.aux
@@ -576,12 +591,6 @@ OUTPUT apend4.aux
 INPUT .\apend4.tex
 INPUT .\apend4.tex
 INPUT apend4.tex
-INPUT .\apend5.tex
-INPUT .\apend5.tex
-OUTPUT apend5.aux
-INPUT .\apend5.tex
-INPUT .\apend5.tex
-INPUT apend5.tex
 INPUT .\figs\comparacion_umbral_10_11_13.png
 INPUT .\figs\comparacion_umbral_10_11_13.png
 INPUT .\figs\comparacion_umbral_10_11_13.png
@@ -597,7 +606,6 @@ INPUT template.brf
 INPUT .\template.brf
 INPUT .\template.brf
 OUTPUT template.brf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
 INPUT template.aux
 INPUT .\resumen.aux
 INPUT .\resumen.aux
@@ -626,9 +634,6 @@ INPUT apend3.aux
 INPUT .\apend4.aux
 INPUT .\apend4.aux
 INPUT apend4.aux
-INPUT .\apend5.aux
-INPUT .\apend5.aux
-INPUT apend5.aux
 INPUT .\template.out
 INPUT .\template.out
 INPUT .\template.brf
@@ -677,5 +682,3 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb

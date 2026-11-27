@@ -1,14 +1,10 @@
-\backcite {callenbach2025}{{\es@scroman {ix}}{(document)}{Doc-Start}}
+\backcite {callenbach2025}{{\es@scroman {xi}}{(document)}{Doc-Start}}
 \backcite {callenbach2025}{{1}{1.1}{section.1.1}}
 \backcite {kubisch2023chelonoidis}{{2}{1.2}{section.1.2}}
 \backcite {kubisch2014}{{2}{1.2}{section.1.2}}
 \backcite {callenbach2025}{{3}{1.3}{section.1.3}}
 \backcite {oliva2023}{{3}{1.3}{section.1.3}}
-\backcite {callenbach2025codes}{{3}{1.3}{figure.caption.14}}
 \backcite {callenbach2025}{{4}{1.3}{figure.caption.15}}
-\backcite {madile2023}{{5}{1.4}{section.1.4}}
-\backcite {madile2023}{{6}{1.4.2}{subsection.1.4.2}}
-\backcite {madile2023}{{7}{1.4.3}{subsection.1.4.3}}
 \backcite {wensveen2015}{{8}{1.4.3}{figure.caption.18}}
 \backcite {jonsen2005}{{8}{1.4.3}{figure.caption.18}}
 \backcite {lange1989}{{8}{1.4.3}{figure.caption.18}}
@@ -24,6 +20,11 @@
 \backcite {callenbach2025}{{25}{2.4.2}{subsection.2.4.2}}
 \backcite {morales2004extracting}{{35}{2.8}{section.2.8}}
 \backcite {fryxell2008multiple}{{35}{2.8}{section.2.8}}
-\backcite {song2010modeling}{{48}{3.4}{section.3.4}}
-\backcite {callenbach2025}{{56}{B}{section*.59}}
-\backcite {callenbach2025}{{61}{C}{section*.70}}
+\backcite {song2010modeling}{{49}{3.4}{section.3.4}}
+\backcite {song2010modeling}{{50}{3.4}{figure.caption.58}}
+\backcite {song2010modeling}{{51}{3.4}{figure.caption.59}}
+\backcite {callenbach2025}{{58}{B}{section*.62}}
+\backcite {callenbach2025}{{63}{C}{section*.71}}
+\backcite {song2010modeling}{{73}{D}{appendix*.81}}
+\backcite {morales2004extracting}{{73}{D}{appendix*.81}}
+\backcite {fryxell2008multiple}{{73}{D}{appendix*.81}}

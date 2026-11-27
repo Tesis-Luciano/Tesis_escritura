@@ -28,24 +28,21 @@ se tienen datos.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\textwidth]{Reproduccion GPS.png}
-    \includegraphics[width=0.4\textwidth]{Puesta de huevo GPS.png}
-    \includegraphics[width=0.4\textwidth]{Brumacion GPS.png}
+    \includegraphics[width=0.35\textwidth]{Reproduccion GPS.png}
+    \includegraphics[width=0.35\textwidth]{Puesta de huevo GPS.png}
+    \includegraphics[width=0.35\textwidth]{Brumacion GPS.png}
     \caption{Registro de las posiciones medidas de GPS separado por períodos asociados a distintos comportamientos reproductivos. Cada tortuga tiene 
     un color, cuya una intensidad que aumenta con el paso del tiempo. Las estrellas marcas las posiciones de los refugios donde pasaron la noche.}
     \label{fig:GPS}
 \end{figure}
 
-De las figuras se puede observar como en la época asociada a la reproducción se da el mayor 
-solapamiento de trayectoria entre individuos de los tres períodos. A la par de esto se puede
-observar que este período es donde la mayoría de los individuos más espacio abarcan, mientras
-que esto se va reduciendo hasta llegar el período de brumación, en donde los individuos parecen
-utilizar un número reducido de refugios diferentes. 
+De las figuras se puede observar como en la época asociada a la reproducción se da el mayor solapamiento de trayectoria entre individuos de los tres 
+períodos. A la par de esto se puede observar que este período es donde la mayoría de los individuos más espacio abarcan, mientras
+que esto se va reduciendo hasta llegar el período de brumación, en donde los individuos parecen utilizar un número reducido de refugios diferentes. 
 
-Por otro lado llama la atención, la aparición de lineas rectas en los movimientos
-correspondientes al período de reproducción. Esto se debe, tal como se ve en la 
-Figura~\ref{fig:Satelite}, a que los individuos utilizaron los caminos artificiales
-predominantemente durante este período, en comparación a los otros meses del año.
+Por otro lado llama la atención, la aparición de lineas rectas en los movimientos correspondientes al período de reproducción. Esto se debe, 
+tal como se ve en la Figura~\ref{fig:Satelite}, a que los individuos utilizaron los caminos artificiales predominantemente durante este 
+período, en comparación a los otros meses del año.
 
 \begin{figure}[H]
     \centering
@@ -55,6 +52,33 @@ predominantemente durante este período, en comparación a los otros meses del a
     los bordes de las calles.}
     \label{fig:Satelite}
 \end{figure}
+
+
+Para cuantificar el espacio que abarca cada individuo, calculamos el radio de giro de sus posiciones de GPS filtradas dentro de cada mes,
+
+\begin{equation}
+    R_g = \sqrt{\frac{1}{N}\sum_{i=1}^{N} \left|\vec{r}_i - \vec{r}_{\rm cm}\right|^2},
+\end{equation}
+
+donde $\vec{r}_{\rm cm}$ es el centro de masa de las $N$ posiciones del mes. Optamos por una escala mensual y no por época porque el radio de giro 
+es muy sensible a desplazamientos largos aislados, como el traslado hacia el refugio de invierno o desde él, que en una ventana de varios meses 
+dominan el resultado. Consideramos el año completo comprendido entre febrero de 2022 y enero de 2023. El resultado se muestra en la 
+Figura~\ref{fig:rog_mes}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Radio de giro mensual.png}
+    \caption{Radio de giro mensual de las posiciones de GPS de cada tortuga, entre febrero de 2022 y enero de 2023. Las barras negras corresponden 
+    al promedio de los machos (M) y de las hembras (H), y el fondo indica la época.}
+    \label{fig:rog_mes}
+\end{figure}
+
+En los meses de reproducción, el radio de giro promedio supera los $150\,\mathrm{m}$, mientras que entre mayo y agosto se mantiene entre $13$ y 
+$30\,\mathrm{m}$, del orden del error del GPS (Sección~\ref{I:ruido_noche}). Abril y octubre aparecen como meses de 
+transición, dominados por desplazamientos largos de algunos individuos. Este efecto se ve al calcular el radio de giro sobre toda la época: 
+el de la brumación completa, de abril a octubre, es de $139 \pm 90\,\mathrm{m}$, similar al de la puesta de huevos ($144 \pm 73\,\mathrm{m}$), 
+pero si se restringe a los meses de mayo a septiembre baja a $50 \pm 28\,\mathrm{m}$, frente a $218 \pm 115\,\mathrm{m}$ en la reproducción. 
+
 
 
 
@@ -92,6 +116,28 @@ de la población entran y salen de la brumación al mismo tiempo, lo cual podrí
 se observa que la mayor parte del cambio de refugio de junio proviene de días de T30 y T54 cuyas posiciones finales se encuentran entre 
 10 y 11 metros de la inicial, es decir, justo en el umbral, por lo que son compatibles con ruido del GPS. 
 
+Otra forma de observar la variación estacional es a través del uso de los refugios. Para cada individuo y época definimos la tasa de revisita como
+
+\begin{equation}
+    R = 1 - \frac{S}{N},
+\end{equation}
+
+donde $S$ es la cantidad de refugios distintos y $N$ la cantidad de noches con refugio asignado en la época. Una noche en el mismo refugio que la 
+anterior cuenta como revisita, por lo que $R$ incluye tanto las estadías largas en un refugio como los regresos a refugios ya conocidos. Su 
+complemento, $S/N$, es la cantidad de refugios distintos por noche. Los resultados se muestran en la Figura~\ref{fig:tasa_revisita}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Tasa de revisita.png}
+    \caption{Tasa de revisita de los refugios de cada tortuga dentro de cada época completa. Las barras negras corresponden al promedio de los 
+    machos (M) y de las hembras (H).}
+    \label{fig:tasa_revisita}
+\end{figure}
+
+En la brumación, la tasa de revisita es de $0.91$ en promedio: las tortugas usan apenas $0.09$ refugios distintos por noche, es decir, un refugio 
+distinto cada $11$ o $12$ noches. En la puesta de huevos y en la reproducción, la tasa baja a $0.70$ y $0.64$, con $0.30$ y $0.36$ refugios 
+distintos por noche, respectivamente. Esto es consistente con el predominio del cambio de refugio en esas épocas (Figura~\ref{fig:ev_comportamiento}).
+
 \section{Dependencia en la selección de refugios}\label{III:refugios}
 
 Previamente, en el Capitulo~\ref{Capitulo_2} y en la Sección~\ref{III:Caminatas_ev} la clasificación de los tipos de movimiento dependía del 
@@ -120,10 +166,33 @@ vistos previamente
 \end{figure}
 
 Debido a la escasez de los datos se obtiene una métrica bastante ruidosa, cuyo resultado es una dependencia tipo ley de potencia entre la 
-probabilidad y el número de refugios distintos explorados previamente con un exponente $\gamma=-0.22(2)$, mientras que en los seres humanos
-este valor es $\gamma=-0.21(2)$.
+probabilidad y el número de refugios distintos explorados previamente $P(S)=S^{-\gamma}$con un exponente $\gamma=0.22(2)$, mientras que en los seres humanos
+este valor es $\gamma=0.21(2)$.
+
+Una forma independiente de poner a prueba este resultado es medir cómo crece la cantidad de refugios distintos visitados, $S(n)$, con el número de 
+eventos $n$. En el modelo de Song et al.~\cite{song2010modeling}, $S$ crece como $S \sim t^{\mu}$, con
+
+\begin{equation}
+    \mu = \frac{\beta}{1+\gamma},
+\end{equation}
+
+donde $\beta$ es el exponente de la distribución de tiempos de espera entre saltos, $P(\Delta t) \sim \Delta t^{-1-\beta}$. Al contar el tiempo en 
+eventos, el tiempo entre dos eventos es siempre uno, lo que equivale a $\beta = 1$, y la predicción queda $\mu = 1/(1+\gamma) = 0.82(1)$ con el 
+$\gamma$ medido. En la Figura~\ref{fig:mu} mostramos $\langle S(n) \rangle$, promediado sobre las seis tortugas hasta $n = 70$, el número de eventos 
+de la tortuga con menos cambios de refugio.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{mu.png}
+    \caption{Cantidad de refugios distintos visitados en función del número de eventos $n$, donde $n = 1$ corresponde al primer refugio observado. 
+    En gris, cada tortuga; en azul, el promedio de las seis. La línea punteada es el ajuste $\langle S(n) \rangle \sim n^{\mu}$.}
+    \label{fig:mu}
+\end{figure}
+
+El ajuste da $\mu = 0.80(2)$, cercano a la predicción. Que $\mu$ sea menor que uno indica que los refugios nuevos aparecen cada vez más espaciados; 
+en los seres humanos, medido en tiempo real, $\mu = 0.60(2)$~\cite{song2010modeling}.
 
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "template"
-%%% End: 
+%%% End:

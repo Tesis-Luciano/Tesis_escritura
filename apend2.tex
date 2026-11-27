@@ -73,7 +73,7 @@ Sin hora de salida, cada día empieza a las 8:00 caminando con probabilidad $p_W
 del tiempo que se pasa caminando, y en reposo en caso contrario.
 
 Con hora de salida, la simulación empieza a las 6:00 con la tortuga en reposo en el refugio. La hora de salida se sortea de la sigmoide ajustada a los datos 
-(sección~\ref{sec:salida}) por la inversa de su función de distribución: con $u$ uniforme en $(0,1]$,
+(sección~\ref{II:hr_comienzo}) por la inversa de su función de distribución: con $u$ uniforme en $(0,1]$,
 
 \begin{equation}
     t_s = c + w\,\ln\!\left(\frac{1 + e^{-c/w}}{u} - 1\right),
@@ -94,7 +94,7 @@ empieza el día siguiente.
 El error GPS (sección~\ref{I:corr_error}) se suma después de simular, solo a las 49 posiciones de 8 a 20~h. Sobre las posiciones con error se calculan las métricas
 con las mismas definiciones que en los datos (sección~\ref{I:metricas}): el P(d) con los pasos entre posiciones de 9 a 17~h, el MSD diario con todos los pares del 
 día y el NSD desde la posición de las 8:00. Como las posiciones simuladas están equiespaciadas, cada bin del MSD contiene exactamente los pares separados por ese 
-múltiplo de 15~min. Cada día simulado se clasifica con la misma regla que los datos (sección~\ref{sec:clasificacion}). La única diferencia es que el refugio de 
+múltiplo de 15~min. Cada día simulado se clasifica con la misma regla que los datos (sección~\ref{II:Movimientos_caracterizacion}). La única diferencia es que el refugio de 
 cada noche se compara con las posiciones reales, que el modelo conoce.
 
 \section*{Ajuste de los parámetros}
@@ -107,19 +107,8 @@ entre 0{,}3 y 1{,}1) que minimiza la distancia
 \end{equation}
 el promedio de las diferencias entre modelo y datos medidas en errores estándar, sobre los $N_P$ bines del P(d) y los $N_M$ puntos del MSD diario con 
 $\tau \le 600$~min, con el mismo peso para las dos métricas. Cada punto de la grilla se evalúa con 3000 días simulados, y los 8 mejores se vuelven a evaluar 
-con 40\,000 días. El NSD no entra en el ajuste.
+con 40\,000 días. 
 
-\section*{El año simulado}
-
-Para el año (capítulo~\ref{Capitulo_3}), cada modelo se simula con 20\,000 días por época y se clasifica con la regla de los datos. Así se obtiene la matriz 
-de derrame $M$, cuya fila $i$ es la fracción de los días del modelo $i$ que se clasifican en cada tipo. Las probabilidades $q$ de sortear cada modelo en cada 
-mes son las que, pasadas por $M$, reproducen los porcentajes de cada tipo de día medidos ese mes. Se obtienen por mínimos cuadrados no negativos, imponiendo 
-$\sum_i q_i = 1$. Se simulan 600 tortugas durante 365 días, y cada día empieza en la posición donde la tortuga pasó la noche anterior.
-
-\section*{Cálculo}
-
-Los simuladores están escritos en Python y compilados con Numba, con el bucle sobre los días en paralelo, ya que los días son independientes entre sí. Las curvas 
-de cada modelo se calculan con al menos 20\,000 días simulados, con lo que su ruido de Monte Carlo queda muy por debajo de la banda de error de los datos. 
 
 %%% Local Variables: 
 %%% mode: latex
