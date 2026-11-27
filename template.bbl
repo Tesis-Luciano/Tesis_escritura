@@ -26,7 +26,21 @@ Kubisch, E., Echave, M.~E., Echave, L.
 Trevisan, A.~O.
 \newblock Desarrollo de un dispositivo de sensores integrados para el estudio
   del comportamiento animal.
-\newblock https://ricabib.cab.cnea.gov.ar/1196/, 2023.
+\newblock Proyecto Fin de Carrera, Eng. Master Thesis, Instituto Balseiro,
+  2023.
+
+\bibitem{callenbach2025codes}
+Tellechea, C. E.~C.
+\newblock Códigos utilizados: modelos de \emph{machine learning} y
+  simulaciones.
+\newblock \url{https://github.com/charli6080/Tesis_Callenbach}, 2025.
+
+\bibitem{madile2023}
+Hjelt, M.~M.
+\newblock Estudio del movimiento de poblaciones animales: redes complejas de
+  interacción inspiradas en datos de campo.
+\newblock Proyecto Fin de Carrera, Physics Master Thesis, Instituto Balseiro,
+  2023.
 
 \bibitem{wensveen2015}
 Wensveen, P.~J., Thomas, L., Miller, P. J.~O.

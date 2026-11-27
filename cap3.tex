@@ -1,4 +1,4 @@
-\chapter{Modelando y simulando patrones de movimiento a lo largo del año.}\label{Capitulo_3}
+\chapter{Modelando y simulando patrones de movimiento a lo largo del año}\label{Capitulo_3}
 \chapterquote{}{}
 \section{Introducción}\label{III:introduccion}
 
@@ -10,19 +10,19 @@ resguardándose en refugios excavados en el suelo.
 
 Si bien estos conocimientos son más propios de las ciencias naturales, la biología y la ecología, la cuantificación de los cambios estacionales
 en el comportamiento de los animales es un tema que puede abordarse desde la perspectiva de la física o del análisis de datos. Por ello, en este
-capítulo vamos a presentar los datos obtenidos a lo largo de un año con las mediciones de GPS, nombradas en el capítulo~\ref{Capitulo_1}, 
+capítulo vamos a presentar los datos obtenidos a lo largo de un año con las mediciones de GPS, nombradas en el Capítulo~\ref{Capitulo_1}, 
 para posteriormente ofrecer métricas cuantitativas que caractericen la evolución del comportamiento de esta especie. El objetivo de este capítulo 
 será intentar observar el comportamiento de brumación, generalmente clasificada durante los meses de abril a octubre; el comportamiento 
-durante el período de reproducción, que abarca los meses cálidos de noviembre a enero; y la puesta de huevo, comprendido entre febrero y marzo.
+durante el período de reproducción, que abarca los meses cálidos de noviembre a enero; y la puesta de huevo, comprendida entre febrero y marzo.
 Esto se intentará hacer a partir de las métricas evaluadas, como también brindar algún aporte que contribuya al entendimiento de los métodos de 
 la selección de refugios nocturnos.
 
 \section{Movimientos de GPS a lo largo del año}
 
 Para comenzar a entender la existencia de una variabilidad en el tipo de movimiento a lo largo del año, es necesario empezar viendo la forma
-de las trayectorias de GPS a lo largo de cada uno los períodos asociados a la actividad reproductiva. A continuación, en la Figura~\ref{fig:GPS}
+de las trayectorias de GPS a lo largo de cada uno de los períodos asociados a la actividad reproductiva. A continuación, en la Figura~\ref{fig:GPS}
 mostramos las posiciones de GPS donde los individuos se distinguen por color, con una intensidad que incrementa con el tiempo. Adicionalmente, 
-se marcan con estrellas los refugios en donde los individuos pasaron las noches. Las líneas punteados conectan registros entre los cuales no 
+se marcan con estrellas los refugios en donde los individuos pasaron las noches. Las líneas punteadas conectan registros entre los cuales no 
 se tienen datos.
 
 
@@ -31,23 +31,23 @@ se tienen datos.
     \includegraphics[width=0.35\textwidth]{Reproduccion GPS.png}
     \includegraphics[width=0.35\textwidth]{Puesta de huevo GPS.png}
     \includegraphics[width=0.35\textwidth]{Brumacion GPS.png}
-    \caption{Registro de las posiciones medidas de GPS separado por períodos asociados a distintos comportamientos reproductivos. Cada tortuga tiene 
-    un color, cuya una intensidad que aumenta con el paso del tiempo. Las estrellas marcas las posiciones de los refugios donde pasaron la noche.}
+    \caption{Registro de las posiciones medidas de GPS separadas por períodos asociados a distintos comportamientos reproductivos. Cada tortuga tiene 
+    un color, cuya intensidad que aumenta con el paso del tiempo. Las estrellas marcan las posiciones de los refugios donde pasaron la noche.}
     \label{fig:GPS}
 \end{figure}
 
-De las figuras se puede observar como en la época asociada a la reproducción se da el mayor solapamiento de trayectoria entre individuos de los tres 
+De las figuras se puede observar cómo en la época asociada a la reproducción se da el mayor solapamiento de trayectoria entre individuos de los tres 
 períodos. A la par de esto se puede observar que este período es donde la mayoría de los individuos más espacio abarcan, mientras
-que esto se va reduciendo hasta llegar el período de brumación, en donde los individuos parecen utilizar un número reducido de refugios diferentes. 
+que esto se va reduciendo hasta llegar al período de brumación, en donde los individuos parecen utilizar un número reducido de refugios diferentes. 
 
-Por otro lado llama la atención, la aparición de lineas rectas en los movimientos correspondientes al período de reproducción. Esto se debe, 
+Por otro lado, llama la atención la aparición de líneas rectas en los movimientos correspondientes al período de reproducción. Esto se debe, 
 tal como se ve en la Figura~\ref{fig:Satelite}, a que los individuos utilizaron los caminos artificiales predominantemente durante este 
 período, en comparación a los otros meses del año.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{Satelite reproduccion.png}
-    \caption{Registro de las posiciones medidas de GPS Para el período de reproducción, 
+    \caption{Registro de las posiciones medidas de GPS para el período de reproducción, 
     montado sobre la imagen satelital del terreno, mostrando una utilización considerable de
     los bordes de las calles.}
     \label{fig:Satelite}
@@ -85,20 +85,20 @@ pero si se restringe a los meses de mayo a septiembre baja a $50 \pm 28\,\mathrm
 \section{Evolución de los tipos de caminata}\label{III:Caminatas_ev}
 
 Previamente, en el Capítulo~\ref{Capitulo_2} definimos tres tipos de caminata: Descanso, Exploración y retorno, y Cambio de refugio. Ahora, 
-un concepto biológico muy conocido sobre los reptiles es que su actividad varía a lo largo del año, especiálmente durante los días fríos de 
-invierno donde su actividad se reduce entrando en brumación, simil a la hibernación de los mamíferos. Por ello, es de esperar que en esta 
+un concepto biológico muy conocido sobre los reptiles es que su actividad varía a lo largo del año, especialmente durante los días fríos de 
+invierno donde su actividad se reduce entrando en brumación, símil a la hibernación de los mamíferos. Por ello, es de esperar que en esta 
 etapa del año predomine el tipo de caminata de descanso, mientras que la frecuencia de este comportamiento debiera disminuir con el incremento 
-de temperaturas. A continuación, en la Figura~\ref{fig:ev_comportamiento} vamos a ver como la frecuencia de los tipos de caminata varía a lo 
-largo del año. Cabe destacar que en durante el mes de Junio, el rastreador de la tortuga T10 dejó de funcionar, de forma correcta, por lo que 
-se tuvo que descartar dichos datos de la estadística mensual, la justificación de este descarte se puede hallar en el Apéndice~\ref{A:Problemas_T10}.
+de temperaturas. A continuación, en la Figura~\ref{fig:ev_comportamiento} vamos a ver cómo la frecuencia de los tipos de caminata varía a lo 
+largo del año. Cabe destacar que durante el mes de junio el rastreador de la tortuga T10 dejó de funcionar de forma correcta, por lo que 
+se tuvieron que descartar dichos datos de la estadística mensual. La justificación de este descarte se puede hallar en el Apéndice~\ref{A:Problemas_T10}.
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{Evolucion mensual del tipo de caminata a lo largo del año.png}
     \includegraphics[width=0.85\textwidth]{Evolucion del tipo de caminata a lo largo del año.png}
-    \caption{En la primer figura se muestra la evolución mensual de los tres tipos de caminata a lo largo del año, mientras que en la segunda figura se muestra el promedio
-    de los mismos separados por período de actividad reproductiva: Reprododucción (Noviembre a Enero), Puesta de Huevo (Febrero a Marzo) y Brumación (Abril a Octubre).
+    \caption{En la primera figura se muestra la evolución mensual de los tres tipos de caminata a lo largo del año, mientras que en la segunda figura se muestra el promedio
+    de los mismos separados por período de actividad reproductiva: Reproducción (noviembre a enero), Puesta de huevo (febrero a marzo) y Brumación (abril a octubre).
     Los valores son el promedio entre individuos (n$=5$), y las barras corresponden a la desviación estándar entre ellos.}
     \label{fig:ev_comportamiento}
 \end{figure}
@@ -108,8 +108,8 @@ con el objetivo de encontrar alguna pareja para la copulación. Finalmente, dura
 el cambio de refugio (42\%) se suceden con frecuencias similares, superando ampliamente al descanso. Una posible explicación es que las hembras recorran
 el terreno en busca de un lugar adecuado para depositar sus huevos.
 
-Por otro lado vemos como durante los meses de brumación el descanso es el tipo de caminata más frecuente, aunque sin ser mayoritario 
-(44\% frente a los 34\% de exploración y retorno), siendo especialmente ruidosos los valores del mes de junio. Gran parte de esto puede
+Por otro lado, vemos cómo durante los meses de brumación el descanso es el tipo de caminata más frecuente, aunque sin ser mayoritario 
+(44\% frente al 34\% de exploración y retorno), siendo especialmente ruidosos los valores del mes de junio. Gran parte de esto puede
 ser explicado por los meses de abril y octubre que parecen meses de transición, por lo que las frecuencias de cada tipo de 
 caminata durante estos meses no son tan marcadas como en las tres etapas de actividad reproductiva. Una posible explicación es que no todos los individuos 
 de la población entran y salen de la brumación al mismo tiempo, lo cual podría verificarse analizando cada individuo por separado. Adicionalmente, 
@@ -140,23 +140,23 @@ distintos por noche, respectivamente. Esto es consistente con el predominio del 
 
 \section{Dependencia en la selección de refugios}\label{III:refugios}
 
-Previamente, en el Capitulo~\ref{Capitulo_2} y en la Sección~\ref{III:Caminatas_ev} la clasificación de los tipos de movimiento dependía del 
+Previamente, en el Capítulo~\ref{Capitulo_2} y en la Sección~\ref{III:Caminatas_ev} la clasificación de los tipos de movimiento dependía del 
 retorno al mismo refugio del cual salió o si cambió de refugio. Sin embargo, esta clasificación no analiza el funcionamiento de la selección de
-los refugios. Es sabido que los seres humanos tienen una mayor probabilidad de revisitar un lugar($\Pi$) en función de la frecuencia ($f$) de visita previa
-de dicho lugar~\cite{song2010modeling}, nuestro objetivo será replicar el análisis realizado en dicho trabajo y ver si la misma dependencia
-se da en nuestros animales, el resultado de la métrica se muestra en la Figura~\ref{fig:P(f)}.
+los refugios. Es sabido que los seres humanos tienen una mayor probabilidad de revisitar un lugar ($\Pi$) en función de la frecuencia ($f$) de visita previa
+de dicho lugar~\cite{song2010modeling}. Nuestro objetivo será replicar el análisis realizado en dicho trabajo y ver si la misma dependencia
+se da en nuestros animales. El resultado de la métrica se muestra en la Figura~\ref{fig:P(f)}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{Probabilidad de revisita.png}
-    \caption{Probabilidad de revisita de un refugio en función de la frecuencia de visita previa del refugio}
+    \caption{Probabilidad de revisita de un refugio en función de la frecuencia de visita previa del refugio.}
     \label{fig:P(f)}
 \end{figure}
 
 De este gráfico observamos que existe una relación aproximadamente lineal entre la probabilidad de visitar un refugio y la frecuencia de visita 
-$\Pi (f) = f^{\alpha}$, con $\alpha = 0.97(2)$. Por otro lado podemos analizar la probabilidad de cambiar a un refugio no explorado, para ello 
+$\Pi (f) = f^{\alpha}$, con $\alpha = 0.97(2)$. Por otro lado, podemos analizar la probabilidad de cambiar a un refugio no explorado; para ello, 
 graficamos en la Figura~\ref{fig:P_nuevo(S)} la probabilidad de visitar un refugio nuevo en función de la cantidad de refugios distintos 
-vistos previamente
+vistos previamente.
 
 \begin{figure}[H]
     \centering
@@ -166,7 +166,7 @@ vistos previamente
 \end{figure}
 
 Debido a la escasez de los datos se obtiene una métrica bastante ruidosa, cuyo resultado es una dependencia tipo ley de potencia entre la 
-probabilidad y el número de refugios distintos explorados previamente $P(S)=S^{-\gamma}$con un exponente $\gamma=0.22(2)$, mientras que en los seres humanos
+probabilidad y el número de refugios distintos explorados previamente $P(S)=S^{-\gamma}$ con un exponente $\gamma=0.22(2)$, mientras que en los seres humanos
 este valor es $\gamma=0.21(2)$.
 
 Una forma independiente de poner a prueba este resultado es medir cómo crece la cantidad de refugios distintos visitados, $S(n)$, con el número de 

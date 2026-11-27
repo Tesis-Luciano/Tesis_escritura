@@ -31,7 +31,7 @@ Estos reptiles son nativos de Sudamérica, abarcando gran parte de Argentina, el
 \end{figure}
 
 La especie estudiada se caracteriza por su larga esperanza de vida y su dieta herbívora. Adicionalmente, al igual que cualquier reptil, es ectoterma, 
-por lo que no poseen un mecanismo interno para regular su temperatura corporal, dependiendo de la temperatura ambiental para mantener su metabolismo activo. 
+por lo que no posee un mecanismo interno para regular su temperatura corporal, dependiendo de la temperatura ambiental para mantener su metabolismo activo. 
 Esta necesidad de depender del entorno para regular la temperatura hace que los individuos deban refugiarse en sombras provistas por la vegetación 
 y reducir su actividad en condiciones de baja temperatura, dadas durante el invierno, en el que entran en brumación. Al entrar en brumación, los individuos 
 se resguardan en refugios excavados en el suelo.
@@ -95,7 +95,7 @@ explicaremos el dispositivo utilizado, que sirve para el trabajo desarrollado en
 
 La unidad de navegación utilizada durante la campaña para la obtención de registros espaciotemporales de la ubicación de los individuos fue el dispositivo 
 comercial i-gotU GT120, mostrado en la Figura~\ref{fig:igotU}. Este dispositivo posee un receptor de GPS, cuya frecuencia es ajustable mediante el 
-software del fabricante. La batería del dispositivo tiene una autonomía de 7 días y su peso es de $21 g$, dicho peso representa un $1.5 \%$ del peso promedio 
+software del fabricante. La batería del dispositivo tiene una autonomía de 7 días y su peso es de $21\,\mathrm{g}$. Dicho peso representa un $1.5 \%$ del peso promedio 
 de las tortugas, lo cual se encuentra dentro del margen del $5 \%$ para evitar perturbar el comportamiento. La unidad de memoria almacena posición y hora 
 para cada dato adquirido, siendo accesible mediante conexión USB. 
 
@@ -114,11 +114,11 @@ decisión se revirtió, tomando datos adicionales de 1am a 2am, con el objetivo 
 final contó con aproximadamente 3300 horas de rastreo por tortuga.
 
 \subsection{Filtrado de datos}\label{I:filtrado}
-Tal como fue contado previamente, los datos de GPS corresponden a la experiencia de campo durante la realización tesis de la 
-tesis de maestría M. Madile~\cite{madile2023} en 2022-2023. A estos datos se les tuvo que aplicar un filtrado para poder eliminar algunos saltos entre 
-mediciones continuas de ubicaciones, las cuales serían imposible de realizar por tortugas terrestre que tienen un desplazamiento lento. 
+Tal como fue contado previamente, los datos de GPS corresponden a la experiencia de campo durante la realización de la 
+tesis de maestría de M. Madile~\cite{madile2023} en 2022-2023. A estos datos se les tuvo que aplicar un filtrado para poder eliminar algunos saltos entre 
+mediciones continuas de ubicaciones, las cuales serían imposibles de realizar por tortugas terrestres que tienen un desplazamiento lento. 
 
-La principal técnica que se utilizó para descartar mediciones inconsistentes, fue a partir de poner una cota máxima ($v_{\max}$) a la velocidad promedio entre mediciones.
+La principal técnica que se utilizó para descartar mediciones inconsistentes fue a partir de poner una cota máxima ($v_{\max}$) a la velocidad promedio entre mediciones.
 Por ello se tomaron dos mediciones consecutivas con una diferencia temporal $\delta t$ y a una distancia $\delta x$, entonces si $\frac{\delta x}{\delta t} \geq v_{\max}$ 
 se descartaba la última de las dos mediciones, dado que al hacer este proceso en orden cronológico, la primera ya fue validada. Fijamos este umbral en 
 $v_{\max}=0.1\,\mathrm{m/s}$, lo que equivale a un desplazamiento máximo de aproximadamente $90\,\mathrm{m}$ entre mediciones separadas por 15 minutos.
@@ -152,7 +152,7 @@ y no de la conducta del animal, lo cual permite descartar sin preocuparnos de es
 \subsection{Errores de GPS}\label{I:ruido_noche}
 
 Como en todo trabajo de materias de laboratorio de la facultad, lo primero que hay que hacer es caracterizar el dispositivo de medición. En este caso,
-estudiamos el error de posición del GPS, para lo cual se requería de tener mediciones en donde se supiera la posición real del dispositivo. Para ello,
+estudiamos el error de posición del GPS, para lo cual se requería tener mediciones en donde se supiera la posición real del dispositivo. Para ello,
 se usaron los pocos datos que se tenían de las mediciones nocturnas, dado que las tortugas no suelen moverse en dicho período, como fue verificado por el equipo
 de campo \cite{madile2023}. Trabajamos con las posiciones sin filtrar entre las 22 y las 6 h, ya que el filtro de velocidad elimina justamente los errores grandes que queremos 
 caracterizar, y descartamos los pares con $d\geq90\,\mathrm{m}$, que es lo máximo que dejaría pasar dicho filtro. Excluimos además a T6, cuyo dispositivo presenta un 17\% de pares 
@@ -297,12 +297,12 @@ con el que se arman las gráficas, por lo que a continuación detallaremos el ar
 
 Para el gráfico de la distribución de desplazamientos se optó por tomar dos mediciones contiguas de GPS, generalmente separadas entre 13 y 17 minutos, registradas entre las
 9 de la mañana y las 17 horas, para de esta manera reducir el impacto de las noches en estos análisis, y trabajando con los datos previamente filtrados según 
-la sección~\ref{I:filtrado}. 
+la Sección~\ref{I:filtrado}. 
 
-Teniendo en cuenta los datos con los que se va a trabajar, se tomó un rango de mediciones de entre 1 y 100 metros, separando estos en cajas de 18 \textit{Bines} logarítmico. 
-La selección de una cota inferior de 1 metro para el análisis se debe al ruido de GPS y a la resolución de la grilla de adquisición del dispositivo, el cual es de 
-$\approx 0.21 \text{m}$ para la latitud (convertida a metros con la ecuación proyección equirectangular local) y de $\approx 0.32 \text{m}$ para la longitud.
-Se contavilizó del total de datos cuantas caían dentro de cada una de estas cajas ($h_j$) y se las normalizó por el ancho de las mismas ($W_j$) y el número total de datos ($N$), 
+Teniendo en cuenta los datos con los que se va a trabajar, se tomó un rango de mediciones de entre 1 y 100 metros, separando estos en 18 \textit{bines} logarítmicos. 
+La selección de una cota inferior de 1 metro para el análisis se debe al ruido de GPS y a la resolución de la grilla de adquisición del dispositivo, la cual es de 
+$\approx 0.21\,\text{m}$ para la latitud (convertida a metros con la ecuación de proyección equirectangular local) y de $\approx 0.32\,\text{m}$ para la longitud.
+Se contabilizó del total de datos cuántas caían dentro de cada una de estas cajas ($h_j$) y se las normalizó por el ancho de las mismas ($W_j$) y el número total de datos ($N$), 
 según se muestra en la ecuación a continuación:
 
 \begin{equation*}

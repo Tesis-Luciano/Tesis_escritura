@@ -2,9 +2,9 @@
 \chapterquote{}{}
 \section{Introducción}\label{II:introduccion}
 
-A lo largo de la historia, el ser humano ha intentado comprender el mundo que lo rodea. Para ello existen dos metodologías predominantes en el ámbito, la rama 
-cualitativa, predominante en la biología y la rama cuantitativa, predominante en la física. Ante esto, no es de extrañar la aparición de gente que busque 
-unificar estos rubros usando metodologías aprendidas en una de las ramas, aplicándolas sobre objetos de estudios de la otra. En lo que a nuestro trabajo 
+A lo largo de la historia, el ser humano ha intentado comprender el mundo que lo rodea. Para ello existen dos metodologías predominantes en el ámbito: la rama 
+cualitativa, predominante en la biología, y la rama cuantitativa, predominante en la física. Ante esto, no es de extrañar la aparición de gente que busque 
+unificar estos rubros usando metodologías aprendidas en una de las ramas, aplicándolas sobre objetos de estudio de la otra. En lo que a nuestro trabajo 
 concierne, esta aproximación de ambos mundos toma el nombre de biología o comportamiento cuantitativo. Parte de lo que se estudia en este mundo interdisciplinario
 son los modelos de caminantes, los cuales conectan conceptos vistos comúnmente en materias de probabilidad y procesos aleatorios dentro de la carrera de física, que 
 podemos usar para intentar replicar los patrones de movimiento de especies registrados con localizadores de GPS.
@@ -27,9 +27,9 @@ estadísticas relevantes, como el desplazamiento cuadrático medio (MSD) diario 
 
 \section{Evolución del modelo único para todo el año}\label{II:modelo_unico}
 
-En esta sección mostraremos la evolución de un modelo de (S$\&$G) al cual se le fueron agregando cierto condimentos, con el objetivo de poder replicar las mayor cantidad 
+En esta sección mostraremos la evolución de un modelo de (S$\&$G) al cual se le fueron agregando ciertos condimentos, con el objetivo de poder replicar la mayor cantidad de 
 métricas medidas de los datos de GPS. En el Apéndice~\ref{A:implementacio_num}, se cuentan las implementaciones numéricas de estos modelos, los cuales se desarrollan
-sobre un esepacio homogéneo continuo, es decir, sin vegetación u obstáculos que puedan introducir heterogeneidad espacial. Adicionalmente, todos los individuos 
+sobre un espacio homogéneo continuo, es decir, sin vegetación u obstáculos que puedan introducir heterogeneidad espacial. Adicionalmente, todos los individuos 
 simulados se comportan como partículas independientes, indicando nula interacción entre ellos.
 
 \subsection*{Stop and Go}
@@ -52,7 +52,7 @@ En este caso, la correlación aparece al variar la dirección en cada paso tempo
     \label{fig:Correlated_Random_Walk}
 \end{figure}
 
-De esta manera, una vez obtenida la nueva dirección, el individuo se desplaza una distancia $L = v * 1.6 s$, con $v$ la velocidad instantánea paso a paso 
+De esta manera, una vez obtenida la nueva dirección, el individuo se desplaza una distancia $L = v * 1.7 s$, con $v$ la velocidad instantánea paso a paso 
 (parámetro de la simulación), y la nueva posición del individuo queda definida como:
 
 \begin{equation}
@@ -70,15 +70,15 @@ y el único proceso que avanza es el conteo del tiempo.
 La duración de cada \textit{bout} (período temporal ininterrumpido que un individuo permanece en un estado), tanto de \textit{Go} como de \textit{Stop}, se sortea 
 al momento de ingresar al estado correspondiente. En el análisis de este trabajo se utilizaron distribuciones tipo ley de potencia, inspiradas en las distribuciones 
 empíricas reportadas por Callenbach~\cite{callenbach2025} para cada uno de los dos estados. Adicionalmente, en el Apéndice~\ref{A:T_cte} se analiza la posibilidad de usar
-tiempos constantes para la duración en cada uno de los estados, los cuales llegaron a dar resultados positivos, pero debido a las mediciones empíricas de Calenbach, 
+tiempos constantes para la duración en cada uno de los estados, los cuales llegaron a dar resultados positivos, pero debido a las mediciones empíricas de Callenbach, 
 decidimos no optar por estas distribuciones constantes.
 
 \subsection{Modelo Stop and Go pelado}
 
 La primera aproximación a este problema consta de un modelo de \textit{Stop and Go}, en donde analizamos la posibilidad de replicar las métricas de P(d) modificando
-los exponetes de las distribuciones de tiempos $\alpha_S, \alpha_W > 0$. Lo que se encontró es que para encontrar un exponente $-\alpha_d<0$ en $P(d) \propto d^{-\alpha_d}$ 
-es necesario que la distribución de reposo decae más lento que la de caminata, es decir, cuando $\alpha_S < \alpha_W$. En la Figura \ref{fig:Exponents} se 
-muestra un ejemplo de esta dependencia, en donde cabe aclarar que la velocidad $v=\frac{1 \, \text{u.a.}}{1.6 \, \text{s}}$, por lo que el eje X está en unidades arbitrarias.
+los exponentes de las distribuciones de tiempos $\alpha_S, \alpha_W > 0$. Lo que se encontró es que para encontrar un exponente $-\alpha_d<0$ en $P(d) \propto d^{-\alpha_d}$ 
+es necesario que la distribución de reposo decaiga más lento que la de caminata, es decir, cuando $\alpha_S < \alpha_W$. En la Figura~\ref{fig:Exponents} se 
+muestra un ejemplo de esta dependencia, en donde cabe aclarar que la velocidad $v=\frac{1 \, \text{u.a.}}{1.7 \, \text{s}}$, por lo que el eje X está en unidades arbitrarias.
 
 \begin{figure}[H]
     \centering
@@ -88,7 +88,7 @@ muestra un ejemplo de esta dependencia, en donde cabe aclarar que la velocidad $
 \end{figure}
 
 Dentro de la región $\alpha_S < \alpha_W$, buscamos las combinaciones que reprodujeran el comportamiento observado empíricamente. En la Figura~\ref{fig:BEST_PL},
-mostramos las configuraciones que mejor ajustan las métricas estudiadas. Durante el barrido de parámetros se encontró que no existe ningun conjunto de parámetros que ajuste
+mostramos las configuraciones que mejor ajustan las métricas estudiadas. Durante el barrido de parámetros se encontró que no existe ningún conjunto de parámetros que ajuste
 a la perfección el MSD diario y el P(d), por ello graficamos tres curvas: la que mejor ajusta el MSD, la que mejor ajusta el P(d) y un compromiso entre ambas métricas.
 
 \begin{figure}[H]
@@ -104,20 +104,20 @@ $\alpha_S=1.4$ es ligeramente inferior a los valores experimentales.
 \subsection{Conclusiones}\label{II:Conclusiones_mod_simple}
 
 Podemos observar que este modelo es incapaz de replicar de forma simultánea los datos empíricos del P(d) y del MSD, por lo tanto es necesario pensar en nuevas mecánicas a 
-incorporar al modelos, que sean medibles y no agreguen grados de libertad. 
+incorporar al modelo, que sean medibles y no agreguen grados de libertad. 
 
 \section{Ruido de GPS}\label{II:Agregamos_ruido}
 
-Unas de las cosas que se decidieron comparar para entender la discrepancia entre el modelo y los datos, fue la cantidad de desplazamientos de 0 metros. El resultado de 
-esto fue que mientras los datos de GPS, el porcentaje es inferior al $0.7 \%$ en las simulaciones escaló al $80 \%$ en el caso de mejor MSD y $76 \%$ en los otros dos. 
+Una de las cosas que se decidió comparar para entender la discrepancia entre el modelo y los datos fue la cantidad de desplazamientos de 0 metros. El resultado de 
+esto fue que, mientras en los datos de GPS el porcentaje es inferior al $0.7 \%$, en las simulaciones escaló al $80 \%$ en el caso de mejor MSD y $76 \%$ en los otros dos. 
 Esto se puede explicar teniendo en consideración que nuestro modelo base no incorpora el ruido del GPS a las mediciones. Por lo que, mientras los períodos de 15 minutos 
-de reposo de la simulación no aparecen en el P(d), debido a que se grafica en escala logarítmica, en los datos alimenta predominantemente los bines de desplazamientos 
-chicos. Esta discrepancia puede ser una de las razones que expliquen porque el modelo se aplana en los valores de distancias bajas y en los datos mantenga en gran 
+de reposo de la simulación no aparecen en el P(d), debido a que se grafica en escala logarítmica, en los datos alimentan predominantemente los bines de desplazamientos 
+chicos. Esta discrepancia puede ser una de las razones que expliquen por qué el modelo se aplana en los valores de distancias bajas y los datos mantienen en gran 
 medida la pendiente observada a distancias intermedias y altas.
 
-Con el objetivo de no agregar más grados de libertad sobre el modelo, se utilizaron las mediciones de error visto en el Capítulo~\ref{Capitulo_1}. En él vimos como 
-el ruido de GPS queda descrito por tres elementos: una distribución t de Student de la diferencia a 15 minutos~\ref{I:ruido_noche}, una componente correlacionada 
-con una memoria de unos 30 minutos y una componente lenta que suma unos $1.3\,\mathrm{m}$ por eje en una a dos horas~\ref{I:corr_error}. 
+Con el objetivo de no agregar más grados de libertad sobre el modelo, se utilizaron las mediciones de error vistas en el Capítulo~\ref{Capitulo_1}. En él vimos cómo 
+el ruido de GPS queda descrito por tres elementos: una distribución t de Student de la diferencia a 15 minutos (Sección~\ref{I:ruido_noche}), una componente correlacionada 
+con una memoria de unos 30 minutos y una componente lenta que suma unos $1.3\,\mathrm{m}$ por eje en una a dos horas (Sección~\ref{I:corr_error}). 
 
 \subsection{Construcción del error}\label{II:error_construccion}
 
@@ -155,14 +155,14 @@ $h_0=0.83$ para la propia posición y $h_{\pm1}=0.39$ para la anterior y la sigu
 la curva del modelo reproduce $\sigma_{\rm dif}$ a $15$, $30$ y $45$ minutos ($1.22$, $1.85$ y $2.18\,\mathrm{m}$, frente a $1.24$, $1.94$ y $2.14\,\mathrm{m}$ medidos en las noches; 
 Figura~\ref{fig:ajuste_deriva}), es decir, la memoria de unos $30$ minutos de la Sección~\ref{I:corr_error}. Después de ese tiempo la curva se aplana en $\sim2.2\,\mathrm{m}$.
 
-\paragraph{Memoria lenta.} A cada eje se le suma además una deriva de Ornstein-Uhlenbeck,
+\paragraph{Memoria lenta.} A cada eje se le suma además una deriva de Ornstein--Uhlenbeck,
 
 \begin{equation}
     o_{k+1}=\phi\,o_k+\sigma_l\sqrt{1-\phi^2}\,\xi_k, \qquad \phi=e^{-\Delta t/\tau_l},
     \label{eq:deriva}
 \end{equation}
 
-con $\Delta t=15\,\mathrm{min}$ y $\xi_k$ gaussiana de media cero y varianza uno. Es la versión discreta de un proceso de Gauss-Markov de primer orden, del tipo que 
+con $\Delta t=15\,\mathrm{min}$ y $\xi_k$ gaussiana de media cero y varianza uno. Es la versión discreta de un proceso de Gauss--Markov de primer orden, del tipo que 
 se menciona en la Sección~\ref{I:corr_error}, y es estacionaria con desvío $\sigma_l$ desde la primera posición. La posición medida resulta entonces
 
 \begin{equation}
@@ -181,7 +181,7 @@ minutos, mientras que con deriva sigue a los datos hasta las $5$ horas.
     \centering
     \includegraphics[width=0.8\textwidth]{GPS_error_drift.png}
     \caption{Desvío robusto por eje de la diferencia entre dos posiciones de una tortuga quieta, en función del tiempo que las separa, para noches (22--6 h) y 
-    brumación profunda (mayo-agosto, 11--15:45 h), junto con el modelo sin deriva (discontinuo) y con deriva (continuo).}
+    brumación profunda (mayo--agosto, 11--15:45 h), junto con el modelo sin deriva (discontinuo) y con deriva (continuo).}
     \label{fig:ajuste_deriva}
 \end{figure}
 
@@ -197,7 +197,7 @@ suponiendo errores lentos independientes entre las dos posiciones.
         Parámetro & Valor & Origen \\
         \hline
         escala del sorteo $a$ & $0.93\,\mathrm{m}$ & $s=1.06\,\mathrm{m}$ de la diferencia a 15 min (noches) \\
-        $\nu$ de cada sorteo & $2$ & t de Student con $\nu\approx2$ (Cap.~\ref{I:ruido_noche}) \\
+        $\nu$ de cada sorteo & $2$ & t de Student con $\nu\approx2$ (Sec.~\ref{I:ruido_noche}) \\
         error máximo & $45\,\mathrm{m}$ & fijado a mano (actúa pocas veces) \\
         $\tau_c$ (memoria rápida) & $24.6\,\mathrm{min}$ & $\sigma_{\rm dif}$ entre 15 y 45 min \\
         $\sigma_l$, $\tau_l$ (deriva) & $1.75\,\mathrm{m}$, $8\,\mathrm{h}$ & ajuste a noches y brumación \\
@@ -215,7 +215,7 @@ A continuación, en la Figura~\ref{fig:err_res}, se muestran los resultados de l
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Resultados_Modelo_Error.png}
-    \caption{Métricas de configuraciones en donde se maximiza la similitud a las curvas empíricas del P(d), del MSD o un compromiso entre ambas métricas}
+    \caption{Métricas de configuraciones en donde se maximiza la similitud a las curvas empíricas del P(d), del MSD o un compromiso entre ambas métricas.}
     \label{fig:err_res}
 \end{figure}
 
@@ -223,29 +223,29 @@ Vale la pena remarcar que los mejores ajustes siguen dando con exponentes de cam
 tras haber agregado el ruido de GPS las coincidencias entre simulaciones y datos en la métrica de desplazamientos se aproximaron mucho más unos a otros. Adicionalmente, 
 estos casos se dieron con exponente de espera $\alpha_S$ dentro de los rangos experimentales. 
 
-A continuación, en la Figura~\ref{fig:err_aw_emp} mostramos como darían las curvas mostradas previamente, si forzamos el exponente de caminata $\alpha_W$ a quedar
+A continuación, en la Figura~\ref{fig:err_aw_emp} mostramos cómo darían las curvas mostradas previamente, si forzamos el exponente de caminata $\alpha_W$ a quedar
 dentro del rango experimental de la tesis de C. Callenbach~\cite{callenbach2025}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Modelo_err_aw_emp.png}
-    \caption{Métricas de configuraciones en donde se maximiza la similitud a las curvas empíricas del P(d), del MSD o un compromiso entre ambas métricas}
+    \caption{Métricas de configuraciones en donde se maximiza la similitud a las curvas empíricas del P(d), del MSD o un compromiso entre ambas métricas.}
     \label{fig:err_aw_emp}
 \end{figure}
 
 El haber reducido el valor de $\alpha_W$ tuvo como consecuencia una reducción en el exponente de espera para poder ajustar de mejor manera las métricas. Debido a 
-estas variaciones fue que el P(d) una distancia característica en las distancias largas, donde se da un incremento de la probabilidad en oposición a la tendencia de 
+estas variaciones fue que el P(d) muestra una distancia característica en las distancias largas, donde se da un incremento de la probabilidad en oposición a la tendencia de 
 la curva de valores previos. Este pico, que aparecía menos pronunciado en el anterior barrido, se debe principalmente a mediciones en donde el individuo estuvo 
-caminando continuamente durante los 15 minutos de medición, por ende al reducir el sigma todos estos casos pueden agruparse en una espercie de Gaussiana centrada 
-en $d=v*15 \text{min}$. Un caso extremo se obtendría si fijamos $\sigma_\theta=0$, donde la Gaussiana sería una delta obteniendo un pico en el último valor de la medición. 
-En sentido opuesto, al incrementar $\sigma_\theta$ este valor se dispersa debido a que la relación tiempo de caminata--distancia de caminata se ve más afectado por la 
-variabilidad de la dirección de caminata. Cabe destacar que esta situación no es exclusiva del modelo con error, si no que es una consecuencia del modelo S$\&$G.
+caminando continuamente durante los 15 minutos de medición, por ende al reducir el sigma todos estos casos pueden agruparse en una especie de gaussiana centrada 
+en $d=v*15 \text{min}$. Un caso extremo se obtendría si fijamos $\sigma_\theta=0$, donde la gaussiana sería una delta obteniendo un pico en el último valor de la medición. 
+En sentido opuesto, al incrementar $\sigma_\theta$ este valor se dispersa debido a que la relación tiempo de caminata--distancia de caminata se ve más afectada por la 
+variabilidad de la dirección de caminata. Cabe destacar que esta situación no es exclusiva del modelo con error, sino que es una consecuencia del modelo S$\&$G.
 
 
 \subsection{Conclusiones}\label{II:conclusiones_err}
 
-Tras haber agregado el ruido, observamos como existe un mejor ajuste de las ambas métricas de forma simultanea. A pesar de ello, los mejores resultados siguen sucediéndose
-para $\alpha_W$ fuera de los valores experimentales. Al querer forzar este exponente dentro del rango de valores empíricos, si bien los resultados son mejores al del modelo
+Tras haber agregado el ruido, observamos cómo existe un mejor ajuste de ambas métricas de forma simultánea. A pesar de ello, los mejores resultados siguen sucediéndose
+para $\alpha_W$ fuera de los valores experimentales. Al querer forzar este exponente dentro del rango de valores empíricos, si bien los resultados son mejores que los del modelo
 base, empieza a aparecer un pico propio de mediciones de caminatas ininterrumpidas de 15 minutos.
 
 
@@ -253,20 +253,20 @@ base, empieza a aparecer un pico propio de mediciones de caminatas ininterrumpid
 
 La siguiente capa a agregar al modelo fue un horario de salida no constante. Previamente asumíamos que el modelo arrancaba a caminar en cierta hora y frenaba 
 independientemente del estado después de 12 horas, cerrando de esta forma un día. En la Figura~\ref{fig:motiv_hr_salida}, mostramos con un histograma gris la 
-distribución de probabilidad salir a cierta hora del refugio y la fracción de individuos que todavía no salió. Siguiendo lo contado en la sección~\ref{I:refugios} 
-definimos la salida del refugio cuando la mediana de movil de tres posiciones se distanciaba por primera vez en más de 10 metros de la mediana de las primeras 3 
-posiciones registradas del día. A la par de las mediciones, se muestra en azul como da el histograma de las mejores configuraciones del modelo previo, respecto del
+distribución de probabilidad de salir a cierta hora del refugio y la fracción de individuos que todavía no salió. Siguiendo lo contado en la Sección~\ref{I:refugios} 
+definimos la salida del refugio cuando la mediana móvil de tres posiciones se distanciaba por primera vez en más de 10 metros de la mediana de las primeras 3 
+posiciones registradas del día. A la par de las mediciones, se muestra en azul cómo da el histograma de las mejores configuraciones del modelo previo, respecto del
 MSD y del P(d). Por otro lado, en naranja, mostramos el mismo histograma correspondiente a una sigmoide al tiempo en el que arranca a caminar ajustado a los datos.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Motivación hora de salida.png}
     \caption{Histograma de hora a la cual el individuo se aleja por primera vez a una distancia mayor a 10 metros en los datos, las mejores configuraciones del modelo 
-    previo (azul) y ajuste de una sigmoide a los datos}
+    previo (azul) y ajuste de una sigmoide a los datos.}
     \label{fig:motiv_hr_salida}
 \end{figure}
 
-Podemos observar que por si solo el modelo no puede replicar la curva de los datos, mientras que una función sigmoide, con centro 11:19 y un ancho de 2 horas, es capaz 
+Podemos observar que por sí solo el modelo no puede replicar la curva de los datos, mientras que una función sigmoide, con centro 11:19 y un ancho de 2 horas, es capaz 
 de seguir de forma correcta la curva empírica.
 
 \subsection{Incorporación al modelo}
@@ -331,9 +331,9 @@ Si bien la implementación de una hora de salida aportó a mejorar algunas métr
 pequeños. Ante esto y con el objetivo de acercarnos un poco más a las curvas fue que se optó por incorporar una nueva capa al modelo que permita incrementar el
 grado de libertad del sistema.
 
-\section{Variabilidad en las Velocidades}\label{II:Var_vel}
+\section{Variabilidad en las velocidades}\label{II:Var_vel}
 
-En la naturaleza es de esperar que dos individuos con distintas características, ya sea el sexo, la edad, el peso, entre otras cosas; caminen a distintas velocidades.
+En la naturaleza es de esperar que dos individuos con distintas características, ya sea el sexo, la edad, el peso, entre otras cosas, caminen a distintas velocidades.
 Por ello quisimos explorar la posibilidad de variar la velocidad de los individuos, optando por una distribución de velocidad tipo log-normal. Esta distribución nos
 permite agregar una variable nueva, que es la variancia del logaritmo de las velocidades $\sigma_v$ y la velocidad media de la distribución, la cual sería 
 el equivalente a la velocidad constante que veníamos usando.
@@ -343,43 +343,43 @@ que multiplica la velocidad de todas las caminatas de ese día. Como los días s
 días, estas métricas no distinguen si esa variación ocurre entre días de una misma tortuga o entre tortugas distintas. Separar ambas contribuciones 
 requiere más individuos y mediciones de campo.
 
-Primero quisimos corroborar que la incorporación de este nuevo grado de libertad haya vuelto inecesario la incorporación de las capas previas al modelo, 
-por eso, en la Figura~\ref{fig:Vel_base}, mostramos los resultados de un barrido de parámetros con solo la capa de variación de velocidad. En donde se 
-puede ver como no alcanza con el agregado del nuevo grado de libertad.
+Primero quisimos corroborar que la incorporación de este nuevo grado de libertad haya vuelto innecesaria la incorporación de las capas previas al modelo, 
+por eso, en la Figura~\ref{fig:Vel_base}, mostramos los resultados de un barrido de parámetros con solo la capa de variación de velocidad, en donde se 
+puede ver cómo no alcanza con el agregado del nuevo grado de libertad.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{Resultados_Modelo_SoloVelVar.png}
     \caption{Modelo base, agregando únicamente la variabilidad de la velocidad instantánea mientras camina. En línea azul se muestra la mejor configuración que intenta
-    replicar los datos de ambas métricas}
+    replicar los datos de ambas métricas.}
     \label{fig:Vel_base}
 \end{figure}
 
-Una vez observado que es necesaria la incorporación de las capas previas del modelo, mostramos en la Figura~\ref{fig:Var_vel} los resultados la mejor configuración 
-resultante de un barrido de parámetro, que intente replicar ambas métricas.
+Una vez observado que es necesaria la incorporación de las capas previas del modelo, mostramos en la Figura~\ref{fig:Var_vel} los resultados de la mejor configuración 
+resultante de un barrido de parámetros, que intente replicar ambas métricas.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{Resultados_Modelo_VelVar.png}
     \caption{Modelo con las capas de ruido de GPS, horario de salida y variabilidad en la velocidad. En línea naranja se muestra la mejor configuración que intenta
-    replicar los datos de las métricas}
+    replicar los datos de las métricas.}
     \label{fig:Var_vel}
 \end{figure}
 
-Finalmente, llegamos a un modelo que es capaz de replicar tanto el P(d), como el MSD diario. En cuanto al horario de salida, se adelantó el ajuste en 45 minutos 
-respecto al ajuste de la sección anterior para dar cuenta del atraso propio entre la hora de salida y el tiempo que tarda en llegar a 10 m, esto se muesta en la
+Finalmente, llegamos a un modelo que es capaz de replicar tanto el P(d) como el MSD diario. En cuanto al horario de salida, se adelantó el ajuste en 45 minutos 
+respecto al ajuste de la sección anterior para dar cuenta del atraso propio entre la hora de salida y el tiempo que tarda en llegar a 10 m. Esto se muestra en la
 Figura~\ref{fig:Var_vel_salida}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{hora_salida_sigmoide_adelantada.png}
-    \caption{Métrica de hora en la que el modelo cruza el umbral de los 10 metros (naranja), respecto a la curva ajustada en la sección anterior\ref{II:hr_comienzo} y 
-    de los datos}
+    \caption{Métrica de hora en la que el modelo cruza el umbral de los 10 metros (naranja), respecto a la curva ajustada en la sección anterior (Sección~\ref{II:hr_comienzo}) y 
+    de los datos.}
     \label{fig:Var_vel_salida}
 \end{figure}
 
-Si bien el modelo puede replicar las métricas cuantitativas que analiza el modelo en forma de promedio. Es necesario saber como se ven las trayectorias que este
-modelo genera y para ello hay que ver primero como son las caminatas diarias en los datos de GPS.
+Si bien el modelo puede replicar las métricas cuantitativas que analiza el modelo en forma de promedio, es necesario saber cómo se ven las trayectorias que este
+modelo genera y para ello hay que ver primero cómo son las caminatas diarias en los datos de GPS.
 
 \section{Movimientos}\label{II:tipos_de_movs}
 
@@ -399,29 +399,29 @@ Para clasificar cada día utilizamos las mediciones entre las 8 y las 20 h, junt
 explica en la Sección~\ref{I:refugios}. Como posición inicial del día tomamos la mediana de las tres primeras mediciones y, para calcular la distancia máxima a dicha 
 posición, utilizamos una mediana móvil de tres mediciones, de modo que un salto aislado del GPS no se cuente como un desplazamiento.
 
-En estos ejemplos se puede observar como los tres tipos de trayectorias se diferencian considerablemente entre sí. Llamamos Descanso al caso de una tortuga que no se 
-aleja a más $10\,\mathrm{m}$ de su posición inicial, ya sea porque no salió del refugio o porque salió y se mantuvo dentro de ese radio. Este tipo de movimiento se 
+En estos ejemplos se puede observar cómo los tres tipos de trayectorias se diferencian considerablemente entre sí. Llamamos Descanso al caso de una tortuga que no se 
+aleja a más de $10\,\mathrm{m}$ de su posición inicial, ya sea porque no salió del refugio o porque salió y se mantuvo dentro de ese radio. Este tipo de movimiento se 
 encuentra dominado por el ruido del GPS. En el caso de Exploración y retorno, la tortuga se aleja $10\,\mathrm{m}$ o más pero duerme en el mismo refugio que en la 
-noche anterior. Esta categoría es muy heterogénea, ya que incluye desde pequeñas exploraciones cerca del umbral, hasta exploraciones que pueden llegar hasta los 
+noche anterior. Esta categoría es muy heterogénea, ya que incluye desde pequeñas exploraciones cerca del umbral hasta exploraciones que pueden llegar hasta los 
 100 metros de distancia del refugio de origen. Finalmente, en el caso de Cambio de refugio, la tortuga también supera el umbral, pero el refugio de la noche 
 siguiente es distinto al de la noche anterior. Para los pocos días en los que no se dispone del refugio de alguna de las dos noches 
 (alrededor del $13\%$), la decisión se toma comparando la posición final del día con la inicial, con el mismo umbral de $10\,\mathrm{m}$.
 
 Cabe destacar que el umbral de $10\,\mathrm{m}$ está cerca del error del GPS, por lo que algunos días de descanso real pueden clasificarse como exploración y retorno. 
 Estimamos que esto ocurre en torno al $23\%$ de los días de descanso, de modo que la frecuencia de descanso podría estar subestimada. 
-En cambio, el ruido casi no genera cambios de refugio falsos. La selección de dicho umbral es arbitraria, sin embargo en el 
-Apéndice~\ref{A:Sensibilidad_10m_clasificacion} analizamos la posibilidad de incrementar dicho umbral a 11 y 13 metros, viendo como esto afecta
+En cambio, el ruido casi no genera cambios de refugio falsos. La selección de dicho umbral es arbitraria; sin embargo, en el 
+Apéndice~\ref{A:Sensibilidad_10m_clasificacion} analizamos la posibilidad de incrementar dicho umbral a 11 y 13 metros, viendo cómo esto afecta
 a la clasificación de los datos y a los futuros modelos propuestos para replicar los tipos de trayectorias.
 
 Al clasificar las trayectorias de esta manera a lo largo del año, obtenemos que el $22.6\%$ de los días corresponden a descanso, combinando todos los días de todas 
 las tortugas. Por otro lado, este número es el $32.7\%$ para el comportamiento de exploración y retorno, y, finalmente, el $44.7\%$ de los días corresponden a 
-cambios de refugio. En contraposición, el modelo de la Sección anterior~\ref{II:Var_vel} da $6.1 \%$ de días en descanso, 
+cambios de refugio. En contraposición, el modelo de la sección anterior (Sección~\ref{II:Var_vel}) da $6.1 \%$ de días en descanso, 
 $8.5 \%$ de exploración y $85.4 \%$ de cambio de refugio.
 
 \subsection{Caracterizando movimientos}\label{II:Movimientos_caracterizacion}
 
-Una vez distinguido los tipos de trayectorias y sus frecuencias de aparición, toca caracterizarlos. Para ello, podemos analizar la distribución de desplazamientos
-cada 15 minutos, la cual se muestra en la Figura~\ref{fig:Desplazamientos_15_min_dist_tray}, como el desplazamiento cuadrático medio medio($\text{MSD}_{\text{Diario}}$), 
+Una vez distinguidos los tipos de trayectorias y sus frecuencias de aparición, toca caracterizarlos. Para ello, podemos analizar la distribución de desplazamientos
+cada 15 minutos, la cual se muestra en la Figura~\ref{fig:Desplazamientos_15_min_dist_tray}, como el desplazamiento cuadrático medio diario ($\text{MSD}_{\text{Diario}}$), 
 que se muestra en la Figura~\ref{fig:MSD_diario_dist_tray}. 
 
 \begin{figure}[H]
@@ -431,7 +431,7 @@ que se muestra en la Figura~\ref{fig:MSD_diario_dist_tray}.
     \label{fig:Desplazamientos_15_min_dist_tray}
 \end{figure}
 
-En esta figura podemos observar como la distribución de desplazamientos se diferencian fuertemente entre sí. Especial es el caso de la de comportamiento de reposo, cuya 
+En esta figura podemos observar cómo las distribuciones de desplazamientos se diferencian fuertemente entre sí. Especial es el caso de la de comportamiento de reposo, cuya 
 distribución es muy similar a la curva resultante del ruido de GPS analizado en la Sección~\ref{I:ruido_noche}, lo cual indica que la mayoría de los días de descanso
 corresponden a tortugas que no se movieron lo suficiente como para superar el error del GPS. Por otro lado, las distribuciones de exploración y retorno y de cambio de
 refugio presentan curvas muy similares entre sí, siendo que la de cambio de refugio tiene una mayor probabilidad de desplazamientos largos, consistente con la definición
@@ -445,32 +445,32 @@ de dichos movimientos.
 \end{figure}
 
 Si bien no existía mucha diferencia entre las trayectorias de exploración y retorno y de cambio de refugio en la distribución de desplazamientos, sí se observa una diferencia
-significativa en el MSD diario. En particular, el MSD de exploración y retorno presenta un comportamiento incial superdifusivo para tiempo menores a 60 minutos, que 
-transiciona a uno subdifusivo para tiempos mayores. Por otro lado, el MSD de cambio de refugio presenta un comportamiento superdifusivo para todo los tiempos, siendo 
-que dicho exponente es mayor para tiempos cortos. Esto se debe a que, al regresar al mismo refugio, el desplazamiento cuadrático medio se va a ver forzado disminuir, ya
+significativa en el MSD diario. En particular, el MSD de exploración y retorno presenta un comportamiento inicial superdifusivo para tiempos menores a 60 minutos, que 
+transiciona a uno subdifusivo para tiempos mayores. Por otro lado, el MSD de cambio de refugio presenta un comportamiento superdifusivo para todos los tiempos, siendo 
+que dicho exponente es mayor para tiempos cortos. Esto se debe a que, al regresar al mismo refugio, el desplazamiento cuadrático medio se va a ver forzado a disminuir, ya
 que el mismo es medido respecto a la primera posición del día, a la vez que el cambio de refugio se caracteriza por ser un movimiento muy balístico, al ir dirigido en una 
 dirección. Finalmente, las trayectorias de reposo tienen un comportamiento subdifusivo para todo tiempo. 
 
-Debido a las grandes diferencias entre los distintos tipos de trayectorias se vuelve imposible proponer un único modelo que explique el comportamiento el global de los
+Debido a las grandes diferencias entre los distintos tipos de trayectorias se vuelve imposible proponer un único modelo que explique el comportamiento global de los
 movimientos. Ante esto optamos por proponer tres modelos distintos: para el reposo vamos a optar por simular únicamente el ruido de GPS, dejando fijo al individuo en el 
 refugio; para el cambio de refugio, optamos por el modelo con todas las capas agregadas hasta este momento, en donde esperamos que el sigma sea menor al obtenido del ajuste
-global; y para el comportamiento de Exploración y Retorno, agregaremos una capa adicional de memoria al modelo previo para poder guíar al caminante, a partir de cierto
-momento al refugio del cual salió. Estos modelos y sus resultado se detallarán a continuación.
+global; y para el comportamiento de exploración y retorno, agregaremos una capa adicional de memoria al modelo previo para poder guiar al caminante, a partir de cierto
+momento, al refugio del cual salió. Estos modelos y sus resultados se detallarán a continuación.
 
-\section{Modelando el comportamiento de Reposo}\label{II:Reposo_Modelo}
+\section{Modelando el comportamiento de reposo}\label{II:Reposo_Modelo}
 
-En las secciones~\ref{I:ruido_noche} y~\ref{I:corr_error} se analizó la dinámica del ruido del dispositivo de GPS en donde la distribución de errores sigue 
-t de Student de la diferencia a 15 minutos, tiene una componente correlacionada con una memoria de unos 30 minutos y una componente lenta que suma unos 
+En las Secciones~\ref{I:ruido_noche} y~\ref{I:corr_error} se analizó la dinámica del ruido del dispositivo de GPS en donde la distribución de errores sigue 
+una t de Student de la diferencia a 15 minutos, tiene una componente correlacionada con una memoria de unos 30 minutos y una componente lenta que suma unos 
 $1.3\,\mathrm{m}$ por eje en una a dos horas. Esta caracterización nos es de gran importancia, ya que el modelo para el comportamiento de reposo consta 
-únicamente de mediciones probocadas exclusivamente por el ruido, dejando fija la posición del individuo, en la posición inicial del día.
+únicamente de mediciones provocadas exclusivamente por el ruido, dejando fija la posición del individuo en la posición inicial del día.
 
 \subsection{Simulación, clasificación y comparación con los datos}
 
 Una vez habiendo armado el modelo toca ponerlo a andar y observar los resultados obtenidos. Se realizaron 20.000 días de simulaciones, en donde cada uno consiste en 
 49 datos medidos (equivalentes a datos adquiridos de 8 a 20 horas cada 15 minutos). Clasificamos cada uno de estos días siguiendo los criterios establecidos para los datos
-empíricos de las tortugas salvajes, con la salvedad que al no tener una tabla de refugios en las simulaciones se comparan posicion inicial con final, para determinar si 
-volvió al refugio de donde partió. Es importante aclarar, que todo análisis comparativo de este modelo se realizó entre los días clasificados como reposo de la simulación 
-con los de la naturaleza. A continuación, en la Figura~\ref{fig:sim_vs_datos_reposo} se muestran ejemplos de las trayectorias de reposo de los datos comparado con los 
+empíricos de las tortugas salvajes, con la salvedad de que, al no tener una tabla de refugios en las simulaciones se comparan posición inicial con final, para determinar si 
+volvió al refugio de donde partió. Es importante aclarar que todo análisis comparativo de este modelo se realizó entre los días clasificados como reposo de la simulación 
+con los de la naturaleza. A continuación, en la Figura~\ref{fig:sim_vs_datos_reposo} se muestran ejemplos de las trayectorias de reposo de los datos comparados con los 
 obtenidos de la simulación.
 
 \begin{figure}[H]
@@ -483,7 +483,7 @@ obtenidos de la simulación.
 \end{figure}
 
 Si bien a simple vista el modelo parece replicar bastante bien los datos, la comparación tiene que hacerse a través de las mismas métricas que usamos para 
-caracterizar los datos. En la Figura~\ref{fig:analisis_cuantitativo_reposo}, analizamos que tan bueno es el modelo para replicar las métricas de MSD a lo 
+caracterizar los datos. En la Figura~\ref{fig:analisis_cuantitativo_reposo}, analizamos qué tan bueno es el modelo para replicar las métricas de MSD a lo 
 largo de un día (respecto del comienzo del mismo), de la distribución de desplazamientos cada 15 minutos y analizando la distancia máxima recorrida en el día.
 
 
@@ -495,9 +495,9 @@ largo de un día (respecto del comienzo del mismo), de la distribución de despl
     \label{fig:analisis_cuantitativo_reposo}
 \end{figure}
 
-Se puede observar como el modelo con errores correlacionados con deriva lenta es el que mejor ajusta a los datos empíricos; seguido de los errores correlacionados, la cual 
-ajusta a la curva de los deplazamientos cada 15 minutos y la primera hora del MSD, pero falla en tiempos más largos y en la distancia máxima del día; finalmente, el modelo
-de errores independientes falla en todas las metricas observadas. Además, como en el modelo la tortuga nunca se mueve, permite medir qué tan bien funciona la 
+Se puede observar cómo el modelo con errores correlacionados con deriva lenta es el que mejor ajusta a los datos empíricos; seguido de los errores correlacionados, que 
+ajusta a la curva de los desplazamientos cada 15 minutos y la primera hora del MSD, pero falla en tiempos más largos y en la distancia máxima del día; finalmente, el modelo
+de errores independientes falla en todas las métricas observadas. Además, como en el modelo la tortuga nunca se mueve, permite medir qué tan bien funciona la 
 clasificación: todo día simulado que no sale como Reposo es error del GPS tomado por movimiento. Los porcentajes de las clasificaciones se encuentran en la 
 Tabla~\ref{tab:Clasif_reposo_err}. 
 
@@ -517,13 +517,13 @@ Tabla~\ref{tab:Clasif_reposo_err}.
 \end{table}
 
 A pesar de que el modelo independiente es el que mejor retiene la clasificación, no podemos confirmar que este derrame de tortugas quietas en alguna
-de las otras clasificaciones no se de en los datos. Por ello, nos quedamos con el modelo con errores correlacionado con deriva, ya que surge de
+de las otras clasificaciones no se dé en los datos. Por ello, nos quedamos con el modelo con errores correlacionados con deriva, ya que surge de
 las mediciones de los datos de la Sección~\ref{I:corr_error}.
 
-\section{Modelando el comportamiento de Cambio de Refugio}\label{II:CambioRefugio_Modelo}
+\section{Modelando el comportamiento de cambio de refugio}\label{II:CambioRefugio_Modelo}
 
 Por simplicidad, y siguiendo el orden en que se desarrolló el trabajo, a continuación explicamos el modelo correspondiente al tipo
-de trayectoria diaria que denominamos ``Cambio de Refugio''. En un principio se buscó un único modelo que describiera todo el
+de trayectoria diaria que denominamos ``Cambio de refugio''. En un principio se buscó un único modelo que describiera todo el
 comportamiento de las tortugas, sin saber que esto ya se había intentado en otros animales y que los modelos con un único modo de
 movimiento resultaban insuficientes frente a mezclas de varios modos~\cite{morales2004extracting, fryxell2008multiple}.
 
@@ -532,22 +532,22 @@ horario de salida y variación de velocidades. La motivación de usar este model
 $\approx 85 \%$ como de cambio de refugio. 
 
 A continuación, mostramos los resultados de realizar un barrido de parámetros para ajustar en esta ocasión a los datos del MSD diario y del P(d), 
-correspondientes a los días clasificados como trayectoria de cambio de refugio, presentes en la Figura~\ref{fog:Result_Cambio_ref}
+correspondientes a los días clasificados como trayectoria de cambio de refugio, presentes en la Figura~\ref{fig:Result_Cambio_ref}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{Chequeo metricas de cambio de refugio.png}
-    \caption{Análisis de las métricas de desplazamientos cada 15 minutos (a) y el MSD diario (b), para la configurarción que mejor los datos correspondiente a 
+    \caption{Análisis de las métricas de desplazamientos cada 15 minutos (a) y el MSD diario (b), para la configuración que mejor ajusta los datos correspondientes a 
     las trayectorias de cambio de refugio.}
     \label{fig:Result_Cambio_ref}
 \end{figure}
 
-Podemos ver como el modelo es capaz de replicar, en gran medida, las métricas estudiadas para las trayectorias de cambio de refugio, manteniendo los valores de los exponentes 
+Podemos ver cómo el modelo es capaz de replicar, en gran medida, las métricas estudiadas para las trayectorias de cambio de refugio, manteniendo los valores de los exponentes 
 $\alpha_S$ y $\alpha_W$ del modelo que buscaba ajustar estas métricas a lo largo de todo el año. Cabe destacar que no es la mejor configuración de parámetros
-que permiten ajustar a los datos, se logró replicar mejor los datos reduciendo la velocidad media y compensando con un decaimiento más rápido de las distribución 
+que permite ajustar los datos: se logró replicar mejor los datos reduciendo la velocidad media y compensando con un decaimiento más rápido de la distribución 
 temporal del estado de reposo ($v=1.75$ m/min y $\alpha_S=1.7$). La configuración final que aparece en la Figura~\ref{fig:Result_Cambio_ref} genera un $2.7 \%$ de
 días de reposo, un $2.8 \%$ de días de exploración y retorno, y un $94.5 \%$ de días de cambio de refugio, mejor que antes de ajustar los parámetros exclusivamente
-con los datos de cambio de refugio. Por completitud mostramos la métrica de hora de salida para este modelo en la Figura~\ref{fig:hr_salida_cambioref}
+con los datos de cambio de refugio. Por completitud mostramos la métrica de hora de salida para este modelo en la Figura~\ref{fig:hr_salida_cambioref}.
 
 \begin{figure}[H]
     \centering
@@ -556,20 +556,20 @@ con los datos de cambio de refugio. Por completitud mostramos la métrica de hor
     \label{fig:hr_salida_cambioref}
 \end{figure}
 
-\section{Modelando el comportamiento de Exploración y retorno}\label{II:Exploracion_Modelo}
+\section{Modelando el comportamiento de exploración y retorno}\label{II:Exploracion_Modelo}
 
-En cuanto a las trayectorias donde la tortuga sale de su refugios para explorar distancias mayores a los $10$ metros de umbral, para posteriormente
+En cuanto a las trayectorias donde la tortuga sale de su refugio para explorar distancias mayores a los $10$ metros de umbral, para posteriormente
 regresar a su refugio de partida, decidimos agregar al modelo una capa de memoria en la cual se le permitiera orientar al individuo a un punto. 
-Para lograr esto se varió el funcionamiento de la distribución gaussiana que sorteaba la variación en la dirección de caminata, mientras que 
+Para lograr esto se varió el funcionamiento de la distribución gaussiana que sorteaba la variación en la dirección de caminata: mientras que 
 en los modelos previos se centraba en la orientación del paso anterior, en este instante va a estar centrada en un ángulo $\beta$ que definiremos 
 a continuación.
 
 El centro de la gaussiana para orientar al caminante de regreso al refugio lo definimos como el ángulo que se forma entre la orientación actual 
-y el eje que conecta al individuo con el refugio. Sin embargo, con el objetivo de que esto no provoque cambios abruptos la orientación, fijamos 
-que $\beta$ no podía tomar valores superiores a $\pm \, 2 \sigma_\theta$. Una vez decidido como vamos a orientar al individuo tocaba analizar 
-cuando ibamos a activar la memoria, dado que si la colocamos desde el principio el individuo hará caminatas de distancias pequeñas, por lo que 
-recurrimos a los datos para entender que convenía utilizar para determinar el momento de retorno. Se analizó la distancia máxima alcanzada, el tiempo entre
-salida y retorno, las cuales fueron descartadas por requerir un estudio más intenso de como el caminante llega a esas distancias y tiempos. 
+y el eje que conecta al individuo con el refugio. Sin embargo, con el objetivo de que esto no provoque cambios abruptos en la orientación, fijamos 
+que $\beta$ no podía tomar valores superiores a $\pm \, 2 \sigma_\theta$. Una vez decidido cómo vamos a orientar al individuo tocaba analizar 
+cuándo íbamos a activar la memoria, dado que si la colocamos desde el principio el individuo hará caminatas de distancias pequeñas, por lo que 
+recurrimos a los datos para entender qué convenía utilizar para determinar el momento de retorno. Se analizaron la distancia máxima alcanzada y el tiempo entre
+salida y retorno, que fueron descartados por requerir un estudio más intenso de cómo el caminante llega a esas distancias y tiempos. 
 La métrica finalmente utilizada fue el tiempo que tardaba el individuo en llegar a la distancia máxima del día una vez se alejaba a más de $10$ metros
 del refugio. En la Figura~\ref{fig:tiempos_de_exploración}, se muestra la distribución de los tiempos de la métrica seleccionada.
 
@@ -577,7 +577,7 @@ del refugio. En la Figura~\ref{fig:tiempos_de_exploración}, se muestra la distr
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{Tiempo de exploración.png}
-    \caption{Análisis de la métrica de tiempo que tardan las caminatas de exploración y refugio en llegar desde que sale del refugio hasta la distancia máxima de la caminata.}
+    \caption{Análisis de la métrica de tiempo que tardan las caminatas de exploración y retorno en llegar desde que sale del refugio hasta la distancia máxima de la caminata.}
     \label{fig:tiempos_de_exploración}
 \end{figure}
 
@@ -588,52 +588,23 @@ individuo llegó al refugio cuando se encuentra a menos de $2\,\mathrm{m}$ de é
 resto del día; si a las 20~h todavía no llegó, el regreso continúa durante la noche. El error del GPS no interviene en esta
 dinámica: se agrega solo a las posiciones registradas, para calcular las métricas. 
 
-
-\subsection{Incorporación al modelo}
-
-La hora de salida del refugio se modela como una variable aleatoria $T_s$, cuya función de supervivencia $S(t) = P(T_s > t)$ es la fracción 
-de días en los que la tortuga todavía no salió a la hora $t$. Ajustamos a los datos una función logística de centro $c$ y ancho $w$, que empieza a las $t_0 = 6$ h:
-
-\begin{equation}
-    S(t) = \frac{1 + e^{(t_0 - c)/w}}{1 + e^{(t - c)/w}}, \qquad t \geq t_0 .
-    \label{eq:supervivencia_salida}
-\end{equation}
-
-El ajuste con los 669 días válidos del año da $c = 11{:}19$ y $w = 2.0\,\mathrm{h}$; con estos valores, el $11 \%$ de los días la tortuga sale antes de las 8 h. 
-Los días que solo tienen mediciones desde las 8 h se incorporan al ajuste como datos censurados.
-
-Esta función equivale a una tasa de salida
-\begin{equation}
-    h(t) = \frac{1}{w}\,\frac{1}{1 + e^{-(t-c)/w}},
-\end{equation}
-que crece a lo largo de la mañana y se satura en $1/w \approx 0.5\,\mathrm{h^{-1}}$. Con una salida exponencial, en cambio, la tasa sería constante, 
-lo que no se corresponde con los datos.
-
-Para simular, sorteamos la hora de salida por transformada inversa, como hicimos con las duraciones de los estados: dado un número aleatorio $u$ uniforme en $[0,1]$,
-\begin{equation}
-    t_s = c + w \ln\!\left(\frac{1 + e^{(t_0 - c)/w}}{u} - 1\right).
-\end{equation}
-
-El modelo arranca a las 6 h en el refugio, permanece quieto hasta $t_s$ y recién entonces comienza el \textit{Stop and Go}. La simulación se mide entre las 8 y las 
-20 h, igual que los datos, de modo que una tortuga que sale antes de las 8 h aparece ya caminando en la primera medición. 
-
 \subsection{Resultados}
 
 En la Figura~\ref{fig:Result_exp_ret} mostramos la mejor configuración del barrido de parámetros, que replique las curvas empíricas de los datos 
-clasificado como exploración y retorno.
+clasificados como exploración y retorno.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{Chequeo metricas de exploracion y retorno.png}
     \caption{Análisis de las métricas de desplazamientos cada 15 minutos, el MSD diario y la fracción de días con tiempo de exploración mayor al eje x, 
-    para la configurarción que mejor los datos correspondiente a las trayectorias de Exploración y retorno.}
+    para la configuración que mejor ajusta los datos correspondientes a las trayectorias de Exploración y retorno.}
     \label{fig:Result_exp_ret}
 \end{figure}
 
-Podemos ver como el modelo es capaz de replicar las métricas de los datos empíricas, para las caminatas clasificadas como de exploración y retorno. 
-Para la configuración que mejor aproxima de forma simultánea estas metricas obtuvimos que un $36.1 \%$ de los días se clasifican como reposo, 
-$59.4 \%$ como exploración y retorno, y un $4,5 \%$ como cambio de refugio. Por completitud mostramos la métrica de hora de salida para este modelo
-en la Figura~\ref{fig:hr_salida_exploracion}
+Podemos ver cómo el modelo es capaz de replicar las métricas de los datos empíricos, para las caminatas clasificadas como de exploración y retorno. 
+Para la configuración que mejor aproxima de forma simultánea estas métricas obtuvimos que un $36.1 \%$ de los días se clasifican como reposo, 
+$59.4 \%$ como exploración y retorno, y un $4.5 \%$ como cambio de refugio. Por completitud mostramos la métrica de hora de salida para este modelo
+en la Figura~\ref{fig:hr_salida_exploracion}.
 
 \begin{figure}[H]
     \centering
@@ -669,8 +640,8 @@ peso asignado a cada uno y el porcentaje final, en comparación con los datos.
     \label{tab:Porcentajes_días}
 \end{table}
 
-Es notorio como es necesario solo un $3.6 \%$ de simulaciones de reposo, gran parte de esto se explica debido a que el modelo de exploración y retorno termina 
-generando muchas clasificaciones de este tipo de caminata. Esto no es de extrañar ya que ejemplos de caminatas, que tengan una distancia menor a 10 metros
+Es notorio cómo es necesario solo un $3.6 \%$ de simulaciones de reposo. Gran parte de esto se explica debido a que el modelo de exploración y retorno termina 
+generando muchas clasificaciones de este tipo de caminata. Esto no es de extrañar ya que ejemplos de caminatas que tengan una distancia menor a 10 metros
 serán clasificadas muy probablemente como de reposo, por la forma de clasificar los datos utilizando un umbral constante.
 
 Teniendo en consideración estos pesos, mostramos en la Figura~\ref{fig:Result_finalII} los resultados de aplicar estos pesos en la densidad de días en la que se ejecuta 
@@ -679,16 +650,16 @@ cada uno de los submodelos de reposo, exploración, y cambio de refugio, de toda
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{Resultado_semifinal.png}
-    \caption{Métricas del modelo combinando los submodelos segun los pesos de la Tabla~\ref{tab:Porcentajes_días}}
+    \caption{Métricas del modelo combinando los submodelos según los pesos de la Tabla~\ref{tab:Porcentajes_días}.}
     \label{fig:Result_finalII}
 \end{figure}
 
-Podemos ver como el modelo combinando todos los mini modelos que buscan caracterizar los tipos de trayectorias diarias consiguen replicar, 
+Podemos ver cómo el modelo combinando todos los mini modelos que buscan caracterizar los tipos de trayectorias diarias consigue replicar, 
 en buena medida, todas las métricas analizadas en esta sección.
 
 \section{Conclusión}
 
-Se logró armar un modelo que logre replicar simultáneamente la distribución de probabilidad de los desplazamientos cada 15 minutos, el desplazamiento
+Se logró armar un modelo que logra replicar simultáneamente la distribución de probabilidad de los desplazamientos cada 15 minutos, el desplazamiento
 cuadrático medio diario, la distribución de horarios de salida de refugio y la clasificación de días en caminatas de reposo, exploración y retorno, y
 cambio de refugio. 
 

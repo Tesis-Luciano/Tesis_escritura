@@ -73,7 +73,7 @@ Sin hora de salida, cada día empieza a las 8:00 caminando con probabilidad $p_W
 del tiempo que se pasa caminando, y en reposo en caso contrario.
 
 Con hora de salida, la simulación empieza a las 6:00 con la tortuga en reposo en el refugio. La hora de salida se sortea de la sigmoide ajustada a los datos 
-(sección~\ref{II:hr_comienzo}) por la inversa de su función de distribución: con $u$ uniforme en $(0,1]$,
+(Sección~\ref{II:hr_comienzo}) por la inversa de su función de distribución: con $u$ uniforme en $(0,1]$,
 
 \begin{equation}
     t_s = c + w\,\ln\!\left(\frac{1 + e^{-c/w}}{u} - 1\right),
@@ -91,15 +91,15 @@ empieza el día siguiente.
 
 \section*{Error GPS y observación}
 
-El error GPS (sección~\ref{I:corr_error}) se suma después de simular, solo a las 49 posiciones de 8 a 20~h. Sobre las posiciones con error se calculan las métricas
-con las mismas definiciones que en los datos (sección~\ref{I:metricas}): el P(d) con los pasos entre posiciones de 9 a 17~h, el MSD diario con todos los pares del 
+El error GPS (Sección~\ref{I:corr_error}) se suma después de simular, solo a las 49 posiciones de 8 a 20~h. Sobre las posiciones con error se calculan las métricas
+con las mismas definiciones que en los datos (Sección~\ref{I:metricas}): el P(d) con los pasos entre posiciones de 9 a 17~h, el MSD diario con todos los pares del 
 día y el NSD desde la posición de las 8:00. Como las posiciones simuladas están equiespaciadas, cada bin del MSD contiene exactamente los pares separados por ese 
-múltiplo de 15~min. Cada día simulado se clasifica con la misma regla que los datos (sección~\ref{II:Movimientos_caracterizacion}). La única diferencia es que el refugio de 
+múltiplo de 15~min. Cada día simulado se clasifica con la misma regla que los datos (Sección~\ref{II:Movimientos_caracterizacion}). La única diferencia es que el refugio de 
 cada noche se compara con las posiciones reales, que el modelo conoce.
 
 \section*{Ajuste de los parámetros}
 
-En el modelo único (sección~\ref{II:modelo_unico}) los exponentes $\alpha_W$ y $\alpha_S$ quedan fijos, porque son medidos, y se ajustan $v$, $\sigma$ y, 
+En el modelo único (Sección~\ref{II:modelo_unico}) los exponentes $\alpha_W$ y $\alpha_S$ quedan fijos, porque son medidos, y se ajustan $v$, $\sigma$ y, 
 cuando corresponde, $\sigma_v$. El ajuste es un barrido en una grilla ($v$ de 1 a 4~m/min cada 0{,}25~m/min; $\sigma$ entre 0{,}03 y 0{,}3; $\sigma_v$ 
 entre 0{,}3 y 1{,}1) que minimiza la distancia
 \begin{equation}
