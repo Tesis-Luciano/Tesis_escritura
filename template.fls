@@ -179,9 +179,6 @@ INPUT cap3.aux
 INPUT .\cap4.aux
 INPUT .\cap4.aux
 INPUT cap4.aux
-INPUT .\cap5.aux
-INPUT .\cap5.aux
-INPUT cap5.aux
 INPUT .\apend1.aux
 INPUT .\apend1.aux
 INPUT apend1.aux
@@ -244,9 +241,9 @@ INPUT .\template.toc
 INPUT .\template.toc
 INPUT template.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
+OUTPUT template.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmss12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
-OUTPUT template.toc
 INPUT .\template.lof
 INPUT .\template.lof
 INPUT template.lof
@@ -478,6 +475,30 @@ OUTPUT cap3.aux
 INPUT .\cap3.tex
 INPUT .\cap3.tex
 INPUT cap3.tex
+INPUT .\figs\Reproduccion GPS.png
+INPUT .\figs\Reproduccion GPS.png
+INPUT .\figs\Reproduccion GPS.png
+INPUT .\figs\Reproduccion GPS.png
+INPUT .\figs\Reproduccion GPS.png
+INPUT .\figs\Reproduccion GPS.png
+INPUT .\figs\Puesta de huevo GPS.png
+INPUT .\figs\Puesta de huevo GPS.png
+INPUT .\figs\Puesta de huevo GPS.png
+INPUT .\figs\Puesta de huevo GPS.png
+INPUT .\figs\Puesta de huevo GPS.png
+INPUT .\figs\Puesta de huevo GPS.png
+INPUT .\figs\Brumacion GPS.png
+INPUT .\figs\Brumacion GPS.png
+INPUT .\figs\Brumacion GPS.png
+INPUT .\figs\Brumacion GPS.png
+INPUT .\figs\Brumacion GPS.png
+INPUT .\figs\Brumacion GPS.png
+INPUT .\figs\Satelite reproduccion.png
+INPUT .\figs\Satelite reproduccion.png
+INPUT .\figs\Satelite reproduccion.png
+INPUT .\figs\Satelite reproduccion.png
+INPUT .\figs\Satelite reproduccion.png
+INPUT .\figs\Satelite reproduccion.png
 INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
 INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
 INPUT .\figs\Evolucion mensual del tipo de caminata a lo largo del año.png
@@ -490,18 +511,24 @@ INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
 INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
 INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
 INPUT .\figs\Evolucion del tipo de caminata a lo largo del año.png
+INPUT .\figs\Probabilidad de revisita.png
+INPUT .\figs\Probabilidad de revisita.png
+INPUT .\figs\Probabilidad de revisita.png
+INPUT .\figs\Probabilidad de revisita.png
+INPUT .\figs\Probabilidad de revisita.png
+INPUT .\figs\Probabilidad de revisita.png
+INPUT .\figs\Probabilidad de nuevo refugio.png
+INPUT .\figs\Probabilidad de nuevo refugio.png
+INPUT .\figs\Probabilidad de nuevo refugio.png
+INPUT .\figs\Probabilidad de nuevo refugio.png
+INPUT .\figs\Probabilidad de nuevo refugio.png
+INPUT .\figs\Probabilidad de nuevo refugio.png
 INPUT .\cap4.tex
 INPUT .\cap4.tex
 OUTPUT cap4.aux
 INPUT .\cap4.tex
 INPUT .\cap4.tex
 INPUT cap4.tex
-INPUT .\cap5.tex
-INPUT .\cap5.tex
-OUTPUT cap5.aux
-INPUT .\cap5.tex
-INPUT .\cap5.tex
-INPUT cap5.tex
 INPUT .\apend1.tex
 INPUT .\apend1.tex
 OUTPUT apend1.aux
@@ -587,9 +614,6 @@ INPUT cap3.aux
 INPUT .\cap4.aux
 INPUT .\cap4.aux
 INPUT cap4.aux
-INPUT .\cap5.aux
-INPUT .\cap5.aux
-INPUT cap5.aux
 INPUT .\apend1.aux
 INPUT .\apend1.aux
 INPUT apend1.aux

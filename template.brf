@@ -1,4 +1,4 @@
-\backcite {callenbach2025}{{\es@scroman {xi}}{(document)}{Doc-Start}}
+\backcite {callenbach2025}{{\es@scroman {ix}}{(document)}{Doc-Start}}
 \backcite {callenbach2025}{{1}{1.1}{section.1.1}}
 \backcite {kubisch2023chelonoidis}{{2}{1.2}{section.1.2}}
 \backcite {kubisch2014}{{2}{1.2}{section.1.2}}
@@ -24,5 +24,6 @@
 \backcite {callenbach2025}{{25}{2.4.2}{subsection.2.4.2}}
 \backcite {morales2004extracting}{{35}{2.8}{section.2.8}}
 \backcite {fryxell2008multiple}{{35}{2.8}{section.2.8}}
-\backcite {callenbach2025}{{54}{B}{section*.55}}
-\backcite {callenbach2025}{{59}{C}{section*.66}}
+\backcite {song2010modeling}{{48}{3.4}{section.3.4}}
+\backcite {callenbach2025}{{56}{B}{section*.59}}
+\backcite {callenbach2025}{{61}{C}{section*.70}}

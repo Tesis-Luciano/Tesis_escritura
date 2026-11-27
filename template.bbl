@@ -100,4 +100,9 @@ Fryxell, J.~M., Hazell, M., B{\"o}rger, L., Dalziel, B.~D., Haydon, D.~T.,
 \newblock \emph{Proceedings of the National Academy of Sciences},
   \textbf{105}~(49), 19114--19119, 2008.
 
+\bibitem{song2010modeling}
+Song, C., Koren, T., Wang, P., Barab{\'a}si, A.-L.
+\newblock Modeling the scaling properties of human mobility.
+\newblock \emph{Nature Physics}, \textbf{6}~(10), 818--823, 2010.
+
 \end{thebibliography}
