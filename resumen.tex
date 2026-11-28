@@ -1,28 +1,22 @@
 \begin{resumen}%
-    En este trabajo de tesis se estudia el comportamiento y movimiento de una 
-    especie poco estudiada, la tortuga \textit{Chelonoidis chilensis}, la cual
-    se encuentra en peligro de extinción. Entender el comportamiento de este animal
-    ayuda a su protección y aporta nuevas bases para desarrollar estrategias de 
-    conservación.\\
+En esta tesis estudiamos el movimiento de la tortuga terrestre argentina, \textit{Chelonoidis chilensis}, una especie
+en peligro y poco estudiada, a partir de un año de registros de GPS de seis individuos de una población de Río Negro.
+Entender cómo se mueve y cómo usa su hábitat aporta bases cuantitativas para su conservación.
 
-    Lo que contienen estas múltiples páginas es el análisis de datos de GPS de 
-    un grupo de individuos de la especie y su utilización, en conjunto con trabajos
-    desarrollados previamente con acelerómetros, para definir un modelo de caminante
-    estocástico que pueda replicar la mayor cantidad de métricas posible de este
-    grupo de individuos.\\
+Primero caracterizamos el error del GPS: la diferencia entre posiciones de una tortuga quieta sigue una distribución
+t de Student de colas pesadas, y el error tiene memoria en dos escalas, de unos 30 minutos y de algunas horas. Para un
+animal tan lento, este error es comparable al movimiento y debe incluirse en el modelo.
 
-    Se encontró, a partir de mediciones de múltiples métricas, que era necesaria
-    la utilización de un modelo que tenga en consideración los distintos períodos
-    del año, no pudiendo encontrar un modelo único anual. A su vez, fue necesario
-    incorporar el ruido de GPS, debido al lento movimiento de la especie; tiempos
-    de comienzo de caminata sigmoides; variación en comportamiento de caminata,
-    si cambia de refugio nocturno o vuelve al mismo y variación de velocidad en 
-    la población de animales para que el modelo markoviano de \textit{Stop and Go}
-    replique la mayor cantidad de datos posibles.\\
-    
-    Finalmente, se dejaron análisis y métricas que no se incorporaron a las 
-    simulaciones con el objetivo de que alguna continuación de este trabajo opte
-    por incorporarlas y estudiarlas. 
+Luego construimos un modelo estocástico de \textit{Stop and Go}, con duraciones de caminata y reposo en ley de potencias
+tomadas de mediciones previas con acelerómetros, y le agregamos por capas el error del GPS, una hora de salida del
+refugio sigmoide y una velocidad variable entre días. Este modelo reproduce la distribución de desplazamientos a 15
+minutos y el desplazamiento cuadrático medio diario, pero no los tipos de día observados. Clasificamos los días en
+reposo, exploración y retorno, y cambio de refugio, y modelamos cada tipo por separado: combinados, los tres submodelos
+reproducen todas las métricas analizadas.
+
+Finalmente, describimos cómo cambia el comportamiento a lo largo del año: en la reproducción las tortugas usan más
+espacio, cambian más de refugio y salen más temprano que en la brumación. La selección de refugios sigue una dinámica
+de exploración y retorno preferencial similar a la observada en seres humanos.
 
 \end{resumen}
 

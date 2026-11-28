@@ -1,4 +1,4 @@
-\chapter{Modelando y simulando patrones de movimiento a lo largo del año}\label{Capitulo_3}
+\chapter{Comportamiento a lo largo del año}\label{Capitulo_3}
 \chapterquote{}{}
 \section{Introducción}\label{III:introduccion}
 
@@ -102,19 +102,37 @@ se tuvieron que descartar dichos datos de la estadística mensual. La justificac
     Los valores son el promedio entre individuos (n$=5$), y las barras corresponden a la desviación estándar entre ellos.}
     \label{fig:ev_comportamiento}
 \end{figure}
+Podemos observar que durante los meses de reproducción predomina ampliamente el cambio de refugio ($65 \pm 6 \%$). Esto podría deberse a una mayor exploración
+con el objetivo de encontrar alguna pareja para la copulación. Por otro lado, durante los meses de puesta de huevos, la exploración y retorno ($39 \pm 5 \%$) y 
+el cambio de refugio ($42 \pm 7 \%$) se suceden con frecuencias similares, superando ampliamente al descanso ($18 \pm 4 \%$). Una posible explicación es que 
+las hembras recorran el terreno en busca de un lugar adecuado para depositar sus huevos.
 
-Podemos observar que durante los meses de reproducción predomina ampliamente el cambio de refugio (65\%). Esto podría deberse a una mayor exploración
-con el objetivo de encontrar alguna pareja para la copulación. Finalmente, durante los meses de puesta de huevos, la exploración y retorno (39\%) y 
-el cambio de refugio (42\%) se suceden con frecuencias similares, superando ampliamente al descanso. Una posible explicación es que las hembras recorran
-el terreno en busca de un lugar adecuado para depositar sus huevos.
-
-Por otro lado, vemos cómo durante los meses de brumación el descanso es el tipo de caminata más frecuente, aunque sin ser mayoritario 
-(44\% frente al 34\% de exploración y retorno), siendo especialmente ruidosos los valores del mes de junio. Gran parte de esto puede
-ser explicado por los meses de abril y octubre que parecen meses de transición, por lo que las frecuencias de cada tipo de 
-caminata durante estos meses no son tan marcadas como en las tres etapas de actividad reproductiva. Una posible explicación es que no todos los individuos 
+Por otro lado, vemos cómo durante los meses de brumación el descanso es el tipo de caminata más frecuente, siendo especialmente ruidosos los valores del 
+mes de junio. Gran parte de esto se puede explicar por los meses de abril y octubre que resultan ser meses de transición, sin llegar a niveles de tipo
+de caminata de reposo como se dan en los meses de brumación profunda, a partir de mayo hasta agosto. Una posible explicación es que no todos los individuos 
 de la población entran y salen de la brumación al mismo tiempo, lo cual podría verificarse analizando cada individuo por separado. Adicionalmente, 
 se observa que la mayor parte del cambio de refugio de junio proviene de días de T30 y T54 cuyas posiciones finales se encuentran entre 
-10 y 11 metros de la inicial, es decir, justo en el umbral, por lo que son compatibles con ruido del GPS. 
+10 y 11 metros de la inicial, es decir, justo en el umbral, por lo que son compatibles con ruido del GPS y no merecen un descarte total del modelo. Por otro
+lado, dado que los porcentajes de reposo durante la época de brumación profunda son superiores al $80\%$ es necesario remarcar que esto se debe a que
+las escasas mediciones de GPS se realizaron entre las $11{:}00$ y las $15{:}40$, midiendo cada 30 minutos. Esta variación en el tiempo y frecuencia reduce los 
+efectos de la deriva lenta del error de GPS analizado en la Sección~\ref{I:corr_error} y de esta manera reduce la posibilidad de clasificar los días
+del modelo de reposo como de exploración y retorno. Si se sigue el muestreo de los meses invernales el modelo de reposo logra tener un $95 \%$ de días 
+con su misma clasificación.
+
+Siguiendo con las mediciones realizadas en el Capítulo~\ref{Capitulo_2}, procedemos a analizar la variación de la hora media de salida al igual que en 
+la Sección~\ref{II:hr_comienzo}. A continuación, en la Figura~\ref{fig:salida_periodo}, mostramos los histogramas para las distintas épocas del año.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{salida_hist_por_epoca.png}
+    \caption{Histograma de hora de salida del refugio según el tipo de caminata y el período del año.}
+    \label{fig:salida_periodo}
+\end{figure}
+
+Podemos observar cómo durante el período de reproducción los individuos salen de media más temprano que en cualquiera de las otras épocas, seguido de 
+la de puesta de huevo y la de brumación. Por otro lado, la comparación entre los distintos tipos de caminata en un mismo período muestra que al 
+realizar un cambio de refugio el individuo sale de media más temprano que cuando va a realizar una exploración y retorno. Debido a la escasa cantidad
+de datos se vuelve muy difícil realizar un análisis mensual de esta métrica dificultando el ajuste de una sigmoide.
 
 Otra forma de observar la variación estacional es a través del uso de los refugios. Para cada individuo y época definimos la tasa de revisita como
 

@@ -1,10 +1,129 @@
 \chapter{Discusiones, conclusiones y futuro}\label{Capitulo_4}
 \chapterquote{}{}
 
-\section{Discusiones}
+\section{Discusiones}\label{IV:discusiones}
 
+El objetivo de esta tesis fue reproducir con un modelo de caminante estocástico el movimiento diario de las tortugas registrado con GPS, y describir
+cómo cambia ese movimiento a lo largo del año. A continuación discutimos los resultados principales y sus limitaciones.
 
-\section{Conclusiones}
+\subsection{El error del GPS}
 
+Para un animal que se desplaza unos pocos metros cada 15 minutos, el error del GPS es del mismo orden que el movimiento que se quiere medir. La
+caracterización del Capítulo~\ref{Capitulo_1} muestra que este error no es gaussiano ni independiente: la diferencia entre dos posiciones de una tortuga
+quieta sigue una t de Student con $\nu \approx 2$, de colas mucho más pesadas que una gaussiana, y el error tiene dos escalas de memoria, una rápida de
+unos 30 minutos y una lenta que suma unos $1.3\,\mathrm{m}$ por eje en una a dos horas (Secciones~\ref{I:ruido_noche} y~\ref{I:corr_error}).
 
-\section{Trabajo futuro}
+Estas características tienen consecuencias directas sobre el modelado. Sin el error, entre el $76$ y el $80 \%$ de los pasos simulados de 15 minutos
+son nulos, mientras que en los datos son menos del $0.7 \%$ (Sección~\ref{II:Agregamos_ruido}). Además, la memoria del error hace que una tortuga quieta
+parezca alejarse más de $10\,\mathrm{m}$ de su posición inicial: con el error correlacionado y la deriva lenta, cerca del $23 \%$ de los días simulados
+de reposo no se clasifica como reposo (Tabla~\ref{tab:Clasif_reposo_err}). Por eso, en lugar de filtrar el error, optamos por incorporarlo al modelo y
+aplicar a las simulaciones las mismas métricas y la misma clasificación que a los datos.
+
+\subsection{Un único modelo no alcanza}
+
+El modelo \textit{Stop and Go} con duraciones de los estados en ley de potencias reproduce la forma de ley de potencias del P(d) solo cuando el reposo
+decae más lento que la caminata, $\alpha_S < \alpha_W$ (Sección~\ref{II:modelo_unico}), que es lo que se observa en las mediciones del
+acelerómetro~\cite{callenbach2025}. Sin embargo, el modelo base no reproduce a la vez el P(d) y el MSD diario. Agregar el error del GPS, la hora de salida
+y la variabilidad de la velocidad permite ajustar ambas métricas y la hora de salida con exponentes dentro del rango medido (Secciones~\ref{II:Agregamos_ruido}
+a~\ref{II:Var_vel}). Aun así, ese modelo clasifica el $85.4 \%$ de sus días como cambio de refugio, frente al $44.7 \%$ de los datos
+(Sección~\ref{II:tipos_de_movs}). Es decir, las métricas promediadas sobre todos los días no alcanzan para restringir el modelo: un modelo puede reproducir
+el P(d) y el MSD diario promedio y, al mismo tiempo, generar días muy distintos de los observados.
+
+La clasificación de los días muestra que el movimiento diario es una mezcla de comportamientos con P(d) y MSD diario propios
+(Sección~\ref{II:Movimientos_caracterizacion}). Este resultado coincide con lo encontrado en otros animales, donde los modelos con un único modo de
+movimiento resultan insuficientes frente a mezclas de varios modos~\cite{morales2004extracting, fryxell2008multiple}. Por eso optamos por un submodelo
+para cada tipo de día: solo el error del GPS para el reposo, el \textit{Stop and Go} con todas sus capas para el cambio de refugio y una caminata con
+memoria del refugio para la exploración y retorno. Los pesos de la simulación conjunta se eligen para reproducir los porcentajes de cada tipo de día
+(Tabla~\ref{tab:Porcentajes_días}), de modo que esos porcentajes se cumplen por construcción. Lo que el modelo conjunto reproduce sin haber sido ajustado
+para ello es la combinación del P(d), el MSD diario y la hora de salida de todos los días.
+
+\subsection{Reposo y exploración y retorno}
+
+El peso del submodelo de reposo en la simulación conjunta es de solo el $3.6 \%$, aunque el $22.6 \%$ de los días de los datos se clasifica como reposo.
+Esto ocurre porque el $36.1 \%$ de los días del submodelo de exploración y retorno se clasifica como reposo, y el $22.8 \%$ de los días del submodelo
+de reposo, como exploración y retorno (Tabla~\ref{tab:Porcentajes_días}). Con un umbral de $10\,\mathrm{m}$, cercano al error del GPS, el reposo y las
+exploraciones cortas no se distinguen bien, y lo que en los datos aparece como dos categorías podría ser un mismo comportamiento con excursiones de
+distinto alcance. El análisis de sensibilidad del Apéndice~\ref{A:Sensibilidad_10m_clasificacion} apunta en el mismo sentido: al subir el umbral, solo
+pasan días de exploración y retorno a reposo. El cambio de refugio, en cambio, aparece como un comportamiento bien definido: su fracción casi no depende
+del umbral y su submodelo clasifica el $94.5 \%$ de sus días como cambio de refugio.
+
+\subsection{Hora de salida y velocidad}
+
+La hora de salida del refugio no sigue una distribución exponencial: la tasa de salida crece a lo largo de la mañana y se satura en unos
+$0.5\,\mathrm{h^{-1}}$ (Sección~\ref{II:hr_comienzo}). Además, la salida se adelanta en la época de reproducción y se retrasa en la brumación, y en cada
+época los días de cambio de refugio empiezan antes que los de exploración y retorno (Capítulo~\ref{Capitulo_3}). Una posible lectura es que la salida
+responde a la temperatura y que los días de cambio de refugio empiezan antes porque requieren más tiempo de caminata, pero los datos de GPS solos no
+permiten confirmarlo. También hay que tener en cuenta que la hora detectada es posterior a la real, porque la regla de detección necesita que la tortuga
+ya se haya alejado del refugio.
+
+La variabilidad de la velocidad fue necesaria para ajustar el P(d) y el MSD diario a la vez. Como los días simulados son independientes, el modelo no
+distingue si esa variabilidad ocurre entre días de una misma tortuga o entre tortugas distintas (Sección~\ref{II:Var_vel}). Del mismo modo, el
+Apéndice~\ref{A:T_cte} muestra que modelos con duraciones constantes en uno de los estados también reproducen el P(d) y el MSD diario: con posiciones
+cada 15 minutos no es posible distinguir entre esas alternativas, y la elección de leyes de potencia se apoya en las mediciones del
+acelerómetro~\cite{callenbach2025}. El GPS y el acelerómetro resultan complementarios: el primero fija la escala espacial del movimiento y el segundo,
+su estructura temporal.
+
+\subsection{Variación a lo largo del año}
+
+El uso del espacio cambia fuertemente con la época. El radio de giro mensual supera los $150\,\mathrm{m}$ en la reproducción y baja a entre $13$ y
+$30\,\mathrm{m}$ entre mayo y agosto, del orden del error del GPS (Figura~\ref{fig:rog_mes}); la tasa de revisita pasa de $0.64$ en la reproducción a
+$0.91$ en la brumación (Figura~\ref{fig:tasa_revisita}); y el cambio de refugio, que domina la reproducción ($65 \%$ de los días), pierde peso frente
+al reposo durante la brumación (Sección~\ref{III:Caminatas_ev}). Abril y octubre se comportan como meses de transición, posiblemente porque no todos los
+individuos entran y salen de la brumación al mismo tiempo.
+
+La selección de refugios sigue una dinámica de exploración y retorno preferencial similar a la descrita para seres humanos~\cite{song2010modeling}: la
+probabilidad de volver a un refugio crece de forma aproximadamente lineal con sus visitas previas ($\alpha = 0.97(2)$), la probabilidad de usar uno
+nuevo decae como $S^{-\gamma}$ con $\gamma = 0.22(2)$, compatible con el valor de los seres humanos, y el número de refugios distintos crece como
+$n^{\mu}$ con $\mu = 0.80(2)$, cercano a la predicción $\mu = 1/(1+\gamma)$ (Sección~\ref{III:refugios}). Con seis individuos y un año de datos, estos
+exponentes deben tomarse con cautela.
+
+\subsection{Limitaciones}
+
+Los resultados tienen las limitaciones propias de los datos: seis individuos (cinco en la clasificación diaria) de una sola población, un año de registro,
+noches sin mediciones durante parte del año y una brumación profunda medida solo entre las 11:00 y las 15:40 h. El modelo, por su parte, supone un
+espacio homogéneo, individuos independientes y días independientes entre sí. La Figura~\ref{fig:Satelite} muestra que el espacio no es homogéneo: durante
+la reproducción, las tortugas recorren los bordes de los caminos. Por último, la clasificación depende de un umbral fijo de $10\,\mathrm{m}$, cuya
+elección analizamos en el Apéndice~\ref{A:Sensibilidad_10m_clasificacion}.
+
+\section{Conclusiones}\label{IV:conclusiones}
+
+\begin{enumerate}
+    \item El error de posición de los GPS utilizados sigue una distribución t de Student con $\nu \approx 2$ y tiene memoria en dos escalas, de unos
+    30 minutos y de algunas horas. Para animales tan lentos como \textit{Chelonoidis chilensis}, este error es del orden del movimiento a 15 minutos y
+    debe incluirse en el modelo, aplicando a las simulaciones las mismas mediciones que a los datos.
+    \item Un modelo \textit{Stop and Go} con duraciones en ley de potencias, en el que el reposo decae más lento que la caminata, con el error del GPS,
+    una hora de salida sigmoide y una velocidad lognormal que varía entre días, reproduce el P(d) y el MSD diario de todo el año, pero no la proporción de
+    tipos de día observada.
+    \item El movimiento diario es una mezcla de tres comportamientos: reposo, exploración y retorno, y cambio de refugio. Un submodelo para cada uno,
+    combinados con pesos, reproduce simultáneamente el P(d), el MSD diario, la hora de salida y la clasificación de los días. Con un umbral de
+    $10\,\mathrm{m}$, el reposo y las exploraciones cortas no se separan con claridad, mientras que el cambio de refugio sí.
+    \item La hora de salida del refugio sigue una función logística (centro 11:19~h, ancho 2~h) con una tasa de salida que crece durante la mañana, y
+    cambia con la época y con el tipo de día.
+    \item El comportamiento varía fuertemente a lo largo del año: en la reproducción las tortugas usan más espacio, cambian más de refugio y salen más
+    temprano que en la brumación. La selección de refugios sigue una dinámica de exploración y retorno preferencial, con $\gamma = 0.22(2)$ y
+    $\mu = 0.80(2)$.
+\end{enumerate}
+
+\section{Trabajo futuro}\label{IV:futuro}
+
+\begin{itemize}
+    \item \textbf{Simulación del año completo.} Combinar los tres submodelos con pesos y horas de salida propias de cada época permitiría simular un año
+    y compararlo con las métricas del Capítulo~\ref{Capitulo_3}. Es posible que un único juego de parámetros por submodelo no alcance y que haga falta
+    ajustar los parámetros de cada época.
+    \item \textbf{Memoria entre días.} En el modelo actual los días son independientes. Incorporar la selección de refugios del Capítulo~\ref{Capitulo_3}
+    (retorno preferencial y exploración de refugios nuevos) conectaría el movimiento diario con el uso del espacio en escalas de semanas a meses.
+    \item \textbf{Clasificación de los días.} Reemplazar el umbral fijo por una clasificación que tenga en cuenta el modelo del error del GPS, o unificar
+    el reposo y las exploraciones cortas en una sola categoría.
+    \item \textbf{Factores ambientales.} Incorporar la temperatura horaria permitiría probar si la hora de salida y la entrada en brumación responden a
+    un umbral térmico.
+    \item \textbf{Heterogeneidad espacial.} Incluir caminos y vegetación a partir de imágenes satelitales, ya que durante la reproducción las tortugas
+    usan los bordes de los caminos.
+    \item \textbf{Más individuos y dispositivos combinados.} Más individuos permitirían separar la variabilidad de la velocidad entre días y entre
+    tortugas, y estudiar diferencias entre sexos. Registrar GPS y acelerómetro en el mismo animal permitiría validar la clasificación y los exponentes
+    de las duraciones de los estados.
+\end{itemize}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "template"
+%%% End:
